@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Brief — 2026.05.25</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:    #faf9f7;
+      --text:  #0d0c0b;
+      --muted: #888;
+      --rule:  #e0ddd9;
+    }
+
+    html { font-size: 14px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    a:hover { opacity: 0.6; }
+
+    /* ── TOPNAV ── */
+    .nav {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13px;
+    }
+
+    .nav-brand a {
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+    }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 12px; }
+    .nav-links a:hover { color: var(--text); opacity: 1; }
+
+    /* ── MAIN ── */
+    .wrap {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 52px 24px 120px;
+    }
+
+    /* ── DATE BULLET ── */
+    .dateline {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 32px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── SECTION BREAK ── */
+    .rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 48px 0;
+    }
+
+    /* ── ENTRY ── */
+    .entry { margin-bottom: 0; }
+
+    .entry-num {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    .entry-cat {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .entry-title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .entry-source {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+    .entry-source a { text-decoration: underline; text-underline-offset: 2px; }
+    .entry-source .sep { margin: 0 4px; opacity: 0.5; }
+
+    /* ── LANG TOGGLE ── */
+    .lang-toggle {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .lang-btn {
+      font-size: 11px;
+      color: var(--muted);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-family: inherit;
+      letter-spacing: 0.04em;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .lang-btn.active {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .summary-text {
+      font-size: 13.5px;
+      line-height: 1.78;
+      color: var(--text);
+      display: none;
+    }
+    .summary-text.visible { display: block; }
+    .summary-text strong { font-weight: 500; }
+
+    /* ── VOCAB ── */
+    .learn-section { margin-top: 28px; }
+
+    .learn-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .learn-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .learn-table td {
+      font-size: 12.5px;
+      padding: 5px 0;
+      vertical-align: top;
+      border-bottom: 1px solid var(--rule);
+      line-height: 1.5;
+    }
+
+    .learn-table tr:last-child td { border-bottom: none; }
+
+    .learn-table .col-en {
+      width: 40%;
+      padding-right: 16px;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .learn-table .col-kr {
+      color: var(--muted);
+    }
+
+    /* ── SIGNAL ── */
+    .signal-section { }
+
+    .signal-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .signal-body {
+      font-size: 13.5px;
+      line-height: 1.82;
+    }
+    .signal-body strong { font-weight: 500; }
+
+    /* ── SOURCES ── */
+    .sources-section { }
+
+    .sources-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .sources-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sources-list li {
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+    .sources-list li::before { content: '→  '; }
+    .sources-list a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 0 24px 52px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-top: 1px solid var(--rule);
+      padding-top: 20px;
+    }
+
+    .footer a { text-decoration: none; }
+    .footer a:hover { opacity: 0.6; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 560px) {
+      .wrap { padding: 36px 20px 100px; }
+      .nav { padding: 22px 20px 0; }
+      .footer { padding-left: 20px; padding-right: 20px; }
+      .learn-table .col-en { width: 45%; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand"><a href="./index.html">AI Brief</a></div>
+  <div class="nav-links">
+    <a href="./index.html">archive</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="dateline">• 2026.05.25 — No.001</div>
+
+  <!-- ── 01 ── -->
+  <div class="entry" id="s1">
+    <div class="entry-num">01</div>
+    <div class="entry-cat">AI for Creators / Designers</div>
+    <h2 class="entry-title">Google Gemini, Adobe·Canva·CapCut 통합 — 대화 한 번으로 풀 크리에이티브 스튜디오 구현</h2>
+    <div class="entry-source">
+      <a href="https://www.eweek.com/news/google-gemini-adobe-canva-capcut-integrations/" target="_blank">eWeek</a>
+      <span class="sep">·</span>May 22, 2026
+      &ensp;
+      <a href="https://9to5google.com/2026/05/21/capcut-announces-partnership-with-gemini-app/" target="_blank">9to5Google</a>
+      <span class="sep">·</span>May 21, 2026
+    </div>
+
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('art','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('art','en')">English</button>
+    </div>
+
+    <p class="summary-text visible" id="art-kr">
+      Google이 I/O 2026 이후 Gemini 앱에 Adobe Firefly AI 에이전트, Canva Magic Layers, CapCut 편집 기능을 직접 통합한다고 발표했습니다. 이제 Gemini에서 이미지를 생성하면 곧바로 Canva의 레이어별 편집 화면으로 넘어가거나, Adobe의 Photoshop·Premiere·Illustrator를 에이전트 방식으로 실행할 수 있습니다. CapCut 통합(5월 21일 발표, 곧 출시)은 영상 트리밍·자막 자동 생성·효과 적용을 Gemini 대화창 안에서 처리합니다. 크리에이터 입장에서는 탭 전환 없이 하나의 대화 흐름으로 <strong>생성→편집→완성</strong> 워크플로가 가능해지며, Canva Magic Layers는 Gemini AI Ultra 구독자에게 이미 early rollout 중입니다.
+    </p>
+    <p class="summary-text" id="art-en">
+      Google announced post-I/O 2026 integrations bringing Adobe Firefly AI Assistant, Canva Magic Layers, and CapCut directly into the Gemini app. Users can now generate an image in Gemini and immediately open it in Canva with every element on a separate editable layer, or invoke Adobe's full suite as an agent from within the chat. The CapCut integration adds video trimming, auto-captioning, and effects via conversational prompts. This effectively turns Gemini into a <strong>single-window creative hub</strong>, removing the tab-switching friction that has defined AI-assisted design workflows. Canva Magic Layers is already in early rollout for Gemini AI Ultra subscribers.
+    </p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn-table">
+        <tr><td class="col-en">integrate</td><td class="col-kr">통합, 결합 (시스템 통합)</td></tr>
+        <tr><td class="col-en">hub</td><td class="col-kr">중심점, 허브</td></tr>
+        <tr><td class="col-en">in early rollout</td><td class="col-kr">초기 배포 중</td></tr>
+        <tr><td class="col-en">invoke</td><td class="col-kr">실행하다, 호출하다</td></tr>
+        <tr><td class="col-en">frictionless</td><td class="col-kr">마찰 없는, 매끄러운</td></tr>
+      </table>
+
+      <div class="learn-label">key phrases</div>
+      <table class="learn-table">
+        <tr><td class="col-en">bring X directly into Y</td><td class="col-kr">X를 Y에 직접 통합하다</td></tr>
+        <tr><td class="col-en">removing the tab-switching friction</td><td class="col-kr">탭 전환 불편함을 없애다</td></tr>
+        <tr><td class="col-en">turn X into a single-window hub</td><td class="col-kr">X를 단일 창 허브로 전환하다</td></tr>
+        <tr><td class="col-en">rolling out soon</td><td class="col-kr">곧 출시 예정이다</td></tr>
+        <tr><td class="col-en">in early rollout for</td><td class="col-kr">~의 초기 배포 중이다</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── 02 ── -->
+  <div class="entry" id="s2">
+    <div class="entry-num">02</div>
+    <div class="entry-cat">AI Tools / Model Release</div>
+    <h2 class="entry-title">OpenAI 내부 AI 모델, 80년 미해결 Erdős 수학 난제 자율 증명 — "AI 수학의 이정표"</h2>
+    <div class="entry-source">
+      <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" target="_blank">OpenAI Blog</a>
+      <span class="sep">·</span>May 20, 2026
+      &ensp;
+      <a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-23-2026" target="_blank">Build Fast with AI</a>
+      <span class="sep">·</span>May 22, 2026
+    </div>
+
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('tech','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('tech','en')">English</button>
+    </div>
+
+    <p class="summary-text visible" id="tech-kr">
+      OpenAI가 내부 범용 추론 모델이 1946년 Paul Erdős가 제기한 단위거리 추측(Unit Distance Conjecture)을 125페이지 증명으로 자율 반증했다고 발표했습니다. 이 모델은 특정 문제에 <strong>훈련되지 않은 채</strong> 대수적 정수론(Golod-Shafarevich 기준)을 기하학 문제에 연결하는 방식으로 해결했으며, 수학 커뮤니티가 기존에 적용해본 적 없던 접근입니다. 필즈상 수상자 Tim Gowers는 "AI 수학의 이정표"라고 평가했고, Princeton 수학자 Will Sawin이 결과를 독립적으로 검증했습니다. 경진대회 벤치마크가 아닌 실제 수학 분야의 핵심 미해결 문제를 AI가 처음으로 자율 해결한 사례입니다.
+    </p>
+    <p class="summary-text" id="tech-en">
+      OpenAI announced that an internal general-purpose reasoning model autonomously disproved the Erdős Unit Distance Conjecture — an 80-year-old open problem in discrete geometry — producing a 125-page proof. The model was <strong>not trained on this specific problem</strong>; it independently connected the geometry question to algebraic number theory, a link mathematicians had never considered. Fields medalist Tim Gowers called it "a milestone in AI mathematics," and Princeton mathematician Will Sawin independently verified the result. This marks the first time AI has autonomously solved a prominent open mathematical problem central to an entire field.
+    </p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn-table">
+        <tr><td class="col-en">conjecture</td><td class="col-kr">추측, 가설 (disprove a conjecture: 추측을 반증하다)</td></tr>
+        <tr><td class="col-en">autonomously</td><td class="col-kr">자율적으로</td></tr>
+        <tr><td class="col-en">milestone</td><td class="col-kr">이정표, 획기적 사건</td></tr>
+        <tr><td class="col-en">verify</td><td class="col-kr">검증하다</td></tr>
+        <tr><td class="col-en">discrete geometry</td><td class="col-kr">이산 기하학</td></tr>
+      </table>
+
+      <div class="learn-label">key phrases</div>
+      <table class="learn-table">
+        <tr><td class="col-en">autonomously disprove X</td><td class="col-kr">X를 자율적으로 반증하다</td></tr>
+        <tr><td class="col-en">a milestone in AI mathematics</td><td class="col-kr">AI 수학의 이정표</td></tr>
+        <tr><td class="col-en">was not trained on this specific problem</td><td class="col-kr">이 특정 문제에 훈련되지 않았다</td></tr>
+        <tr><td class="col-en">independently verified the result</td><td class="col-kr">결과를 독립적으로 검증했다</td></tr>
+        <tr><td class="col-en">central to an entire field</td><td class="col-kr">한 분야 전체의 핵심적인</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── 03 ── -->
+  <div class="entry" id="s3">
+    <div class="entry-num">03</div>
+    <div class="entry-cat">AI Startup / VC / Industry</div>
+    <h2 class="entry-title">OpenAI, 연매출 $25B로 IPO S-1 극비 제출 — $1조 기업가치 목표, 손실은 연 $140억</h2>
+    <div class="entry-source">
+      <a href="https://fortune.com/2026/05/22/openai-ipo-filing-1-trillion-may-finally-answer-these-big-questions/" target="_blank">Fortune</a>
+      <span class="sep">·</span>May 22, 2026
+      &ensp;
+      <a href="https://crypto.news/openai-ipo-targets-late-2026-as-revenue-hits-25bn/" target="_blank">crypto.news</a>
+      <span class="sep">·</span>May 2026
+    </div>
+
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('biz','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('biz','en')">English</button>
+    </div>
+
+    <p class="summary-text visible" id="biz-kr">
+      OpenAI가 2026년 5월 22일 SEC에 S-1 IPO 서류를 <strong>극비 제출</strong>했습니다. Goldman Sachs·Morgan Stanley 주관으로 Q4 2026 상장, 기업가치 $8,520억~$1조를 목표로 합니다. 현재 연간 매출 $25B, 소비자 구독자 5,000만 명·기업 고객 900만 명을 보유합니다. 그러나 매출 $1당 $1.22를 지출해 연간 영업손실 $140억이 전망되며 2030년까지 추가 자본 $2,070억이 필요합니다. 이 IPO는 <strong>승리 선언이 아닌 구조적 자금 조달</strong>의 필요에 의한 것이며, Anthropic도 같은 주 첫 분기 영업 흑자를 기록해 AI 빅플레이어 간 수익성 경쟁이 본격화되고 있습니다.
+    </p>
+    <p class="summary-text" id="biz-en">
+      OpenAI <strong>confidentially filed its S-1</strong> IPO prospectus with the SEC on May 22, 2026, targeting a Q4 2026 listing at a valuation of $852B–$1T, led by Goldman Sachs and Morgan Stanley. The company has reached $25B in annualized revenue with 50M consumer subscribers and 9M business users. However, it spends $1.22 for every dollar of revenue — projecting a $14B operating loss for 2026 — and needs an estimated $207B in additional capital through 2030. This IPO is <strong>a forced capital event, not a victory lap</strong>; public markets are the only pool large enough to bridge the gap. Anthropic simultaneously reported its first quarterly operating profit the same week.
+    </p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn-table">
+        <tr><td class="col-en">prospectus</td><td class="col-kr">(투자) 사업설명서</td></tr>
+        <tr><td class="col-en">confidentially</td><td class="col-kr">극비로, 비밀리에</td></tr>
+        <tr><td class="col-en">annualized revenue</td><td class="col-kr">연간 환산 매출</td></tr>
+        <tr><td class="col-en">operating loss</td><td class="col-kr">영업손실</td></tr>
+        <tr><td class="col-en">forced capital event</td><td class="col-kr">강제적 자금 조달</td></tr>
+      </table>
+
+      <div class="learn-label">key phrases</div>
+      <table class="learn-table">
+        <tr><td class="col-en">confidentially file an S-1</td><td class="col-kr">S-1을 극비리에 제출하다</td></tr>
+        <tr><td class="col-en">a forced capital event, not a victory lap</td><td class="col-kr">승리 선언이 아닌 강제적 자금 조달</td></tr>
+        <tr><td class="col-en">spend $X for every dollar of revenue</td><td class="col-kr">매출 $1당 $X를 지출하다</td></tr>
+        <tr><td class="col-en">the only pool large enough to bridge the gap</td><td class="col-kr">격차를 메울 만큼 큰 유일한 자금원</td></tr>
+        <tr><td class="col-en">making X the defining storyline</td><td class="col-kr">X를 핵심 서사로 만들다</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── Signal ── -->
+  <div class="signal-section" id="signal">
+    <div class="signal-label">signal</div>
+    <div class="signal-body">
+      빅테크와 AI 네이티브 플레이어들이 동시에 세 방향으로 수렴하고 있습니다. <strong>크리에이터 워크플로</strong> 측면에서는 생성 AI가 단독 도구에서 벗어나 Adobe·Canva·CapCut 같은 기존 편집 생태계의 허브 레이어로 자리잡으며 "생성→편집→배포"를 단일 대화로 통합하고 있고, <strong>모델 추론 역량</strong> 측면에서는 AI가 수학 난제 자율 해결이라는 기준점을 넘어 연구·과학 영역으로 실용 범위를 확장하고 있습니다. 그 모든 흐름의 기저에는 <strong>자본 집중</strong>이 있습니다 — OpenAI IPO와 Anthropic 흑자 전환은, AI 인프라 비용 구조상 승자만 살아남는 선별 압력이 이제 수익화 단계에서도 작동하기 시작했음을 보여줍니다. 브랜딩·크리에이티브 스타트업 대표라면 "어떤 AI 툴을 쓸 것인가"보다 <strong>"어떤 플랫폼 생태계 안에서 워크플로를 설계할 것인가"</strong>가 더 중요한 전략 질문이 되었음을 인식할 시점입니다.
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── Sources ── -->
+  <div class="sources-section">
+    <div class="sources-label">sources</div>
+    <ul class="sources-list">
+      <li><a href="https://www.eweek.com/news/google-gemini-adobe-canva-capcut-integrations/" target="_blank">Google Gemini to Add Adobe, Canva, and CapCut — eWeek</a> · May 22, 2026</li>
+      <li><a href="https://9to5google.com/2026/05/21/capcut-announces-partnership-with-gemini-app/" target="_blank">CapCut announces partnership with Gemini app — 9to5Google</a> · May 21, 2026</li>
+      <li><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-23-2026" target="_blank">AI News Today - May 23, 2026 — Build Fast with AI</a> · May 22, 2026</li>
+      <li><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" target="_blank">Model disproves discrete geometry conjecture — OpenAI</a> · May 20, 2026</li>
+      <li><a href="https://fortune.com/2026/05/22/openai-ipo-filing-1-trillion-may-finally-answer-these-big-questions/" target="_blank">OpenAI's trillion-dollar IPO filing — Fortune</a> · May 22, 2026</li>
+      <li><a href="https://crypto.news/openai-ipo-targets-late-2026-as-revenue-hits-25bn/" target="_blank">OpenAI IPO targets late 2026 as revenue hits $25bn — crypto.news</a> · May 2026</li>
+    </ul>
+  </div>
+
+</div><!-- /wrap -->
+
+<footer class="footer">
+  <span><a href="./index.html">AI Brief</a></span>
+  <span>2026.05.25</span>
+  <span style="width:100%;font-size:10px;color:#bbb;margin-top:6px;">© enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+</footer>
+
+<script>
+function switchLang(id, lang) {
+  const kr = document.getElementById(id + '-kr');
+  const en = document.getElementById(id + '-en');
+  const entry = kr.closest('.entry');
+  const btns = entry.querySelectorAll('.lang-btn');
+
+  kr.classList.toggle('visible', lang === 'kr');
+  en.classList.toggle('visible', lang === 'en');
+
+  btns.forEach(btn => btn.classList.remove('active'));
+  if (lang === 'kr') btns[0].classList.add('active');
+  else btns[1].classList.add('active');
+}
+</script>
+
+</body>
+</html>
