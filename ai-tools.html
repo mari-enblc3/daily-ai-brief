@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Brief — AI Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:    #faf9f7;
+      --text:  #0d0c0b;
+      --muted: #888;
+      --rule:  #e0ddd9;
+    }
+
+    html { font-size: 14px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; }
+    a:hover { opacity: 0.5; }
+
+    /* ── NAV ── */
+    .nav {
+      max-width: 520px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 28px 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13px;
+    }
+    .nav-brand a { text-decoration: none; letter-spacing: 0.01em; }
+
+    /* ── WRAP ── */
+    .wrap {
+      max-width: 520px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 48px 24px 100px;
+      flex: 1;
+    }
+
+    /* ── TAB NAV ── */
+    .tab-nav {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .tab-nav a {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .tab-nav a.active { color: var(--text); }
+    .tab-nav a:hover { opacity: 0.5; }
+
+    /* ── TOOL BLOCK ── */
+    .tool {
+      margin-bottom: 0;
+    }
+
+    .tool-header {
+      margin-bottom: 20px;
+    }
+
+    .tool-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .tool-name {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .tool-tag {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .tool-desc {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      margin-top: 16px;
+    }
+
+    .tl-row {
+      display: flex;
+      gap: 16px;
+      padding: 9px 0;
+      border-top: 1px solid var(--rule);
+      align-items: baseline;
+    }
+    .tl-row:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .tl-date {
+      font-size: 11px;
+      color: var(--muted);
+      flex-shrink: 0;
+      width: 76px;
+      letter-spacing: 0.01em;
+      padding-top: 1px;
+    }
+
+    .tl-text {
+      font-size: 12.5px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .tl-text strong { font-weight: 500; }
+
+    .tl-badge {
+      display: inline-block;
+      font-size: 9.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--rule);
+      padding: 1px 5px;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-left: 5px;
+      white-space: nowrap;
+    }
+
+    .rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 52px 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: 520px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 18px 24px 32px;
+      border-top: 1px solid var(--rule);
+      font-size: 10px;
+      color: #bbb;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 36px 20px 80px; }
+      .nav { padding: 22px 20px 0; }
+      footer { padding-left: 20px; padding-right: 20px; }
+      .tl-date { width: 64px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand"><a id="nav-brand-link" href="./index.html">AI Brief</a></div>
+</nav>
+
+<div class="wrap">
+
+  <div class="tab-nav">
+    <a href="./index.html">Archive</a>
+    <a href="./ai-tools.html" class="active">AI Tools</a>
+    <a href="./glossary.html">Dictionary</a>
+  </div>
+
+  <!-- ── MIDJOURNEY ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">Midjourney</span>
+        <span class="tool-tag">이미지 생성</span>
+      </div>
+      <p class="tool-desc">David Holz가 창업한 독립 리서치 랩. 텍스트→이미지 생성 분야에서 가장 먼저 대중화를 이끈 서비스. 초기 Discord 기반 → 현재 웹앱 전환. 외부 투자 없이 수익 기반으로 운영.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2022.02</span><span class="tl-text"><strong>v1</strong> — 베타 오픈. Discord 기반 서비스 시작</span></div>
+      <div class="tl-row"><span class="tl-date">2022.04</span><span class="tl-text"><strong>v2</strong> — Upscaling·Variation 기능 추가</span></div>
+      <div class="tl-row"><span class="tl-date">2022.07</span><span class="tl-text"><strong>v3</strong> — --stylize, --quality 파라미터 도입</span></div>
+      <div class="tl-row"><span class="tl-date">2022.11</span><span class="tl-text"><strong>v4</strong> — 품질 도약. Stable Diffusion 계열 대비 확연한 우위 확보</span></div>
+      <div class="tl-row"><span class="tl-date">2023.03</span><span class="tl-text"><strong>v5</strong> — 사진 수준 리얼리즘, 다양성·일관성 대폭 향상</span></div>
+      <div class="tl-row"><span class="tl-date">2023.05</span><span class="tl-text"><strong>v5.1</strong> — 프롬프트 준수율 개선, --tile 파라미터</span></div>
+      <div class="tl-row"><span class="tl-date">2023.06</span><span class="tl-text"><strong>v5.2</strong> — Zoom Out(아웃페인팅), Shorten 명령 추가</span></div>
+      <div class="tl-row"><span class="tl-date">2023.12</span><span class="tl-text"><strong>v6</strong> — 긴 프롬프트 이해, 이미지 내 텍스트 렌더링 지원</span></div>
+      <div class="tl-row"><span class="tl-date">2024.07</span><span class="tl-text"><strong>v6.1</strong> — v6 대비 25% 속도 향상, 디테일·텍스처 정밀도 개선</span></div>
+      <div class="tl-row"><span class="tl-date">2024</span><span class="tl-text">무료 트라이얼 종료. 웹앱 메인 인터페이스로 전환 (Discord 보조화)</span></div>
+      <div class="tl-row"><span class="tl-date">2025</span><span class="tl-text"><strong>v7</strong> — 이미지 품질·스타일 제어력 향상. 포토그래픽 정확도 강화</span></div>
+      <div class="tl-row"><span class="tl-date">2026.01</span><span class="tl-text"><strong>Niji 7</strong> — 애니메이션 특화 모델. 일관성·디테일 대폭 향상 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── MAGNIFIC → FREEPIK → MAGNIFIC ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">Magnific</span>
+        <span class="tool-tag">이미지 업스케일링 · 플랫폼</span>
+      </div>
+      <p class="tool-desc">Javi López · Emilio Nicolás가 스페인 무르시아에서 창업. AI 이미지 업스케일러로 바이럴. 2024년 Freepik이 인수했고, 2026년 Freepik 전체가 Magnific으로 리브랜딩. $230M ARR, 유료 구독자 100만+.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2023.11</span><span class="tl-text"><strong>Magnific AI 런칭</strong> — 출시 첫날 3만 명 사인업. AI 업스케일링·Reimagination 기능으로 바이럴</span></div>
+      <div class="tl-row"><span class="tl-date">2024.05</span><span class="tl-text"><strong>Freepik 인수</strong> — 14년 업력의 스톡 에셋 플랫폼이 2인 스타트업을 인수. 규모·유통망 확보</span></div>
+      <div class="tl-row"><span class="tl-date">2024</span><span class="tl-text">첫 풀 년도 매출 $10.2M. 이미지 생성·편집 기능 확장</span></div>
+      <div class="tl-row"><span class="tl-date">2025</span><span class="tl-text">매출 $34.4M. Business Plan 론칭 → 6주 만에 2,000팀 구독 (주 150팀 증가세)</span></div>
+      <div class="tl-row"><span class="tl-date">2026.01</span><span class="tl-text">Business Plan 가속 성장. 엔터프라이즈 290개 팀 (Guess, BBC, R/GA 등)</span></div>
+      <div class="tl-row"><span class="tl-date">2026.04.28</span><span class="tl-text"><strong>Freepik → Magnific 전사 리브랜딩</strong> — 인수된 스타트업 이름으로 모기업이 교체. 이미지·영상·오디오·2억+ 에셋 통합 플랫폼 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── COMFYUI ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">ComfyUI</span>
+        <span class="tool-tag">워크플로 · 오픈소스</span>
+      </div>
+      <p class="tool-desc">comfyanonymous(익명 개발자)가 만든 노드 기반 Stable Diffusion 워크플로 도구. 복잡한 AI 파이프라인을 시각적으로 설계·실행 가능. 전문 크리에이터들의 사실상 표준 로컬 워크플로 툴.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2023.01</span><span class="tl-text"><strong>GitHub 공개</strong> — 노드 기반 SD 인터페이스로 출시. 기존 WebUI 대비 워크플로 자유도 확장</span></div>
+      <div class="tl-row"><span class="tl-date">2024.06</span><span class="tl-text"><strong>Comfy Org 설립</strong> — Stability AI와 분리. 핵심 개발팀 독립 조직화</span></div>
+      <div class="tl-row"><span class="tl-date">2024.07</span><span class="tl-text">NVIDIA RTX Remix 모딩 소프트웨어에 ComfyUI 공식 통합</span></div>
+      <div class="tl-row"><span class="tl-date">2024.08</span><span class="tl-text"><strong>Flux 모델 지원 추가</strong> — Black Forest Labs의 Flux.1 노드 호환. Linux Foundation Open Model Initiative 합류</span></div>
+      <div class="tl-row"><span class="tl-date">2024 후반</span><span class="tl-text"><strong>Series A $19M</strong> — Chemistry Ventures, Cursor Capital, Vercel 창업자 Guillermo Rauch 참여</span></div>
+      <div class="tl-row"><span class="tl-date">2025.09</span><span class="tl-text">GitHub 스타 89.2k. 데스크탑 앱 버전 정식 배포</span></div>
+      <div class="tl-row"><span class="tl-date">2026.04</span><span class="tl-text"><strong>기업가치 $500M</strong> — 로컬 AI 워크플로 시장 성장으로 프리미엄 재평가 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── WEAVY → FIGMA WEAVE ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">Weavy → Figma Weave</span>
+        <span class="tool-tag">이미지·영상 생성 · 디자인 통합</span>
+      </div>
+      <p class="tool-desc">텔아비브에서 창업한 멀티모달 크리에이티브 플랫폼. 주요 AI 모델을 한 캔버스에 통합. 2025년 Figma가 인수 후 Figma Weave로 전환. 이미지·영상·모션·VFX 생성을 Figma 내에서 처리.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2024</span><span class="tl-text">이스라엘 텔아비브에서 창업. 노드 기반 멀티모달 크리에이티브 캔버스 개발 시작</span></div>
+      <div class="tl-row"><span class="tl-date">2025.06</span><span class="tl-text"><strong>시드 $4M 투자</strong> — Entrée Capital 리드, Designer Fund·Founder Collective·Fiverr 창업자 참여. 엔터프라이즈 클라이언트 NVIDIA·Wix·eToro 확보</span></div>
+      <div class="tl-row"><span class="tl-date">2025 퍼블릭</span><span class="tl-text">Google·Kling·OpenAI·Runway·Luma·Flux 등 주요 모델 통합 단일 캔버스 공개 베타</span></div>
+      <div class="tl-row"><span class="tl-date">2025.10.30</span><span class="tl-text"><strong>Figma가 인수</strong> — 이미지·영상·애니메이션·모션디자인·VFX 생성 역량을 Figma 플랫폼에 내재화</span></div>
+      <div class="tl-row"><span class="tl-date">현재</span><span class="tl-text"><strong>Figma Weave</strong>로 리브랜딩. Figma 내 AI 미디어 생성 허브로 통합 개발 중 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── HIGGSFIELD ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">Higgsfield</span>
+        <span class="tool-tag">영상 생성 · 마케팅 플랫폼</span>
+      </div>
+      <p class="tool-desc">Alex Mashrabov·Erzat Dulat가 창업. 소셜 미디어 마케터 타깃의 AI 영상 생성 플랫폼. 런칭 9개월 만에 $200M ARR, 1,500만 유저. 기업가치 $1.3B (유니콘).</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2023</span><span class="tl-text">창업. Davidovs Venture Collective·Alpha Intelligence Capital·K5 Global 초기 투자 유치 시작</span></div>
+      <div class="tl-row"><span class="tl-date">2024.04</span><span class="tl-text">초기 투자 라운드 마무리. 제품 개발 본격화</span></div>
+      <div class="tl-row"><span class="tl-date">2025.04</span><span class="tl-text"><strong>공식 론칭</strong> — 소셜 미디어 마케터 타깃의 AI 영상 플랫폼 오픈. 카메라 컨트롤·캐릭터 일관성 기능 주목</span></div>
+      <div class="tl-row"><span class="tl-date">2025.06</span><span class="tl-text">론칭 2개월 만에 <strong>ARR $11M</strong>, MAU 200만, 일 최대 60만 명</span></div>
+      <div class="tl-row"><span class="tl-date">2025.09</span><span class="tl-text"><strong>Series A $50M</strong> (GFT Ventures 리드) — 기업가치 <strong>$1.0B (유니콘)</strong>. 일 영상 생성 450만 건</span></div>
+      <div class="tl-row"><span class="tl-date">2026.01</span><span class="tl-text"><strong>Series A 익스텐션 $80M</strong> (Accel 리드) — 기업가치 <strong>$1.3B</strong>. 15개월 만에 유저 1,500만, ARR $200M</span></div>
+      <div class="tl-row"><span class="tl-date">2026.03</span><span class="tl-text">Similarity Scoring 출시 — 유명인 외모·브랜드 로고 유사도 사전 감지 (86.6% 정확도)</span></div>
+      <div class="tl-row"><span class="tl-date">2026</span><span class="tl-text">Marketing Studio 업데이트 — AI Hook Generator, 캠페인 관리 기능 통합 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── RUNWAY ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">Runway</span>
+        <span class="tool-tag">영상 생성 · AI 크리에이티브 스위트</span>
+      </div>
+      <p class="tool-desc">Cristóbal Valenzuela 등이 창업한 AI 영상 플랫폼. Gen 시리즈로 텍스트/이미지→영상 생성 선도. 영상 생성 외 립싱크·프레임 보간·생성 오디오 등 종합 크리에이티브 툴킷 제공.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2018</span><span class="tl-text">창업. 초기에는 크리에이터용 AI 영상 편집 도구로 시작</span></div>
+      <div class="tl-row"><span class="tl-date">2023.02</span><span class="tl-text"><strong>Gen-1</strong> — 영상→영상(Video-to-Video). 레퍼런스 이미지/텍스트로 클립 스타일 변환</span></div>
+      <div class="tl-row"><span class="tl-date">2023.03</span><span class="tl-text"><strong>Gen-2</strong> Discord 공개 — 텍스트·이미지로 영상 생성. 6월 퍼블릭 오픈</span></div>
+      <div class="tl-row"><span class="tl-date">2024.06</span><span class="tl-text"><strong>Gen-3 Alpha</strong> — 모션 품질·프롬프트 준수율 대폭 향상. 시네마틱 제어 강화</span></div>
+      <div class="tl-row"><span class="tl-date">2025</span><span class="tl-text"><strong>Gen-4</strong> — 씬 전반의 일관성·제어력 개선. 캐릭터·오브젝트 연속성 유지</span></div>
+      <div class="tl-row"><span class="tl-date">2025.12</span><span class="tl-text"><strong>Gen-4.5</strong> — 모션 다이나믹스·디테일 추가 개선 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── KLING ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">Kling (쾌수)</span>
+        <span class="tool-tag">영상 생성</span>
+      </div>
+      <p class="tool-desc">중국 숏폼 플랫폼 Kuaishou(快手)의 AI 영상 생성 모델. 저렴한 가격과 빠른 업데이트 속도로 글로벌 시장 진입. 2026년 현재 업계 최상위권 모델 중 하나로 평가.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2024.06</span><span class="tl-text"><strong>Kling v1 공개</strong> — Kuaishou 자체 영상 편집 앱 KuaiYing에서 퍼블릭 테스트 시작</span></div>
+      <div class="tl-row"><span class="tl-date">2024.12</span><span class="tl-text"><strong>Kling 1.6</strong> — 영상 생성 품질 전반 향상. 글로벌 독립 서비스 확장</span></div>
+      <div class="tl-row"><span class="tl-date">2025.04</span><span class="tl-text"><strong>Kling 2.0</strong> — 모션 일관성·카메라 제어력 대폭 향상</span></div>
+      <div class="tl-row"><span class="tl-date">2025.05</span><span class="tl-text"><strong>Kling 2.1</strong> — 품질/속도 모드 선택 옵션 추가</span></div>
+      <div class="tl-row"><span class="tl-date">2025.09</span><span class="tl-text"><strong>Kling 2.5 Turbo</strong> — 비용 30% 절감. 속도·가성비 강화</span></div>
+      <div class="tl-row"><span class="tl-date">2025.12.03</span><span class="tl-text"><strong>Kling 2.6</strong> — 오디오·비주얼 동시 생성(Simultaneous Audio-Visual). 영상·사운드 통합 워크플로</span></div>
+      <div class="tl-row"><span class="tl-date">2026.01.31</span><span class="tl-text"><strong>Kling 3.0</strong> 글로벌 출시 — 멀티모달 비디오 모델. Higgsfield 등 주요 플랫폼에 통합 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── HAILUO (MINIMAX) ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">Hailuo (MiniMax)</span>
+        <span class="tool-tag">영상 생성</span>
+      </div>
+      <p class="tool-desc">중국 AI 기업 MiniMax의 영상 생성 모델. 인물 표현·모션 품질로 초기부터 주목. 접근성 높은 무료 플랜과 API 공개로 글로벌 크리에이터 생태계 빠르게 확보.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2024.08.31</span><span class="tl-text"><strong>MiniMax Video-01 공개</strong> — 인물 표현·다이나믹 모션으로 출시 직후 커뮤니티에서 화제</span></div>
+      <div class="tl-row"><span class="tl-date">2025</span><span class="tl-text">Director 모드 출시 — 카메라 무브먼트 제어 (T2V-01-Director, I2V-01-Director). 시네마틱 제어 강화</span></div>
+      <div class="tl-row"><span class="tl-date">2025.06</span><span class="tl-text"><strong>Hailuo 02</strong> — 품질·비용 효율 동시 개선. "레코드 브레이킹 비용 효율"로 발표</span></div>
+      <div class="tl-row"><span class="tl-date">2025</span><span class="tl-text">VEED 파트너십 — Hailuo 2.3 통합으로 프로덕션급 AI 영상 워크플로 제공</span></div>
+      <div class="tl-row"><span class="tl-date">현재</span><span class="tl-text"><strong>Hailuo 2.3</strong> — 다이나믹 표현·영상 안정성 향상. fal.ai 등 주요 플랫폼 API 통합 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── PIKA ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">Pika</span>
+        <span class="tool-tag">영상 생성</span>
+      </div>
+      <p class="tool-desc">Stanford 컴퓨터과학 박사과정을 중퇴한 Demi Guo·Chenlin Meng이 창업. 텍스트·이미지·영상으로 영상을 생성하는 플랫폼. 사용자 친화적 UX와 소셜 기능에 강점.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2023.04</span><span class="tl-text"><strong>Pika Labs 창업</strong> — Stanford 박사과정 중퇴. AI 영상 생성 연구팀에서 출발</span></div>
+      <div class="tl-row"><span class="tl-date">2023.11.28</span><span class="tl-text"><strong>Pika 1.0 공식 런칭</strong> — pika.art 웹앱 오픈. 텍스트→영상, 이미지→영상 생성</span></div>
+      <div class="tl-row"><span class="tl-date">2024.10.01</span><span class="tl-text"><strong>Pika 1.5</strong> — 모션 품질 향상, 영상 일관성 개선</span></div>
+      <div class="tl-row"><span class="tl-date">2024.12.13</span><span class="tl-text"><strong>Pika 2.0</strong> — 대규모 모델 업데이트. 해상도·프롬프트 준수 향상</span></div>
+      <div class="tl-row"><span class="tl-date">2025.02.27</span><span class="tl-text"><strong>Pika 2.2</strong> — 영상 생성 기술 주요 업그레이드</span></div>
+      <div class="tl-row"><span class="tl-date">2026.04</span><span class="tl-text"><strong>PikaStream 1.0</strong> — 실시간 AI 영상 챗 기능 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── FLUX (BLACK FOREST LABS) ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">Flux / Black Forest Labs</span>
+        <span class="tool-tag">이미지 생성 · 오픈소스</span>
+      </div>
+      <p class="tool-desc">Stable Diffusion 원 개발팀이 Stability AI를 떠나 설립한 스튜디오. Flux.1은 이미지 품질·텍스트 렌더링에서 업계 기준이 된 모델. $300M Series B 유치, 기업 및 API 생태계 빠르게 확장.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2024</span><span class="tl-text"><strong>Black Forest Labs 설립</strong> — Robin Rombach 등 Stable Diffusion 핵심 개발팀이 Stability AI 퇴사 후 창업</span></div>
+      <div class="tl-row"><span class="tl-date">2024.08</span><span class="tl-text"><strong>FLUX.1 출시</strong> — FLUX.1 [dev], [schnell], [pro] 세 버전 공개. 텍스트 내 글자 렌더링 88~92% 정확도로 업계 최고</span></div>
+      <div class="tl-row"><span class="tl-date">2024.08</span><span class="tl-text">ComfyUI에 Flux 노드 즉시 통합 — 오픈소스 워크플로 생태계 확산 가속</span></div>
+      <div class="tl-row"><span class="tl-date">2025</span><span class="tl-text">Flux 1.1 Pro·Ultra 출시. Leonardo AI, Replicate, fal.ai 등 주요 플랫폼 API 통합</span></div>
+      <div class="tl-row"><span class="tl-date">2025.12</span><span class="tl-text"><strong>Series B $300M</strong> — 랜드마크급 투자 유치. 포토리얼리즘 표준 모델로 자리매김</span></div>
+      <div class="tl-row"><span class="tl-date">2026</span><span class="tl-text"><strong>Flux 2 Pro</strong> — 포토리얼리즘 업계 기준. Magnific, Higgsfield 등 주요 플랫폼에 탑재 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ── LEONARDO AI → CANVA ── -->
+  <div class="tool">
+    <div class="tool-header">
+      <div class="tool-meta">
+        <span class="tool-name">Leonardo AI → Canva</span>
+        <span class="tool-tag">이미지·영상 생성 · 플랫폼</span>
+      </div>
+      <p class="tool-desc">게임·크리에이티브 에셋 특화 AI 생성 플랫폼으로 성장. 2024년 Canva가 $320M에 인수. 자체 모델 Phoenix 및 Motion 2.0으로 이미지·영상 생성 역량 확장.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-date">2022~2023</span><span class="tl-text">게임 에셋·캐릭터·아이템 특화 이미지 생성 플랫폼으로 성장. Fine-tuning 기능으로 스타일 학습 가능</span></div>
+      <div class="tl-row"><span class="tl-date">2024</span><span class="tl-text"><strong>Canva $320M 인수</strong> — 호주 디자인 플랫폼이 AI 생성 역량 내재화. Leonardo 브랜드 유지하며 독립 운영</span></div>
+      <div class="tl-row"><span class="tl-date">2025 후반</span><span class="tl-text"><strong>Phoenix 모델 출시</strong> — Leonardo 자체 개발 플래그십 이미지 생성 모델</span></div>
+      <div class="tl-row"><span class="tl-date">현재</span><span class="tl-text"><strong>Motion 2.0</strong> 영상 생성, <strong>Flux Elements</strong> 커스텀 모델 학습 제공. Canva 생태계 통합 확대 <span class="tl-badge">현재</span></span></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>© enblc3. Jeong A Mari Lee. All Rights Reserved.</footer>
+
+</body>
+</html>

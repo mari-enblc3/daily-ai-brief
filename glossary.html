@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Brief — Dictionary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:    #faf9f7;
+      --text:  #0d0c0b;
+      --muted: #888;
+      --rule:  #e0ddd9;
+    }
+
+    html { font-size: 14px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; }
+    a:hover { opacity: 0.5; }
+
+    .nav {
+      max-width: 520px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 28px 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13px;
+    }
+    .nav-brand a { text-decoration: none; letter-spacing: 0.01em; }
+
+    .wrap {
+      max-width: 520px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 48px 24px 100px;
+      flex: 1;
+    }
+
+    .tab-nav {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .tab-nav a {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .tab-nav a.active { color: var(--text); }
+    .tab-nav a:hover { opacity: 0.5; }
+
+    .glossary-section { margin-bottom: 52px; }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .glossary-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .glossary-table tr { border-bottom: 1px solid var(--rule); }
+    .glossary-table tr:last-child { border-bottom: none; }
+    .glossary-table td {
+      padding: 10px 0;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+
+    .col-term {
+      width: 46%;
+      padding-right: 20px;
+      color: var(--text);
+      font-style: italic;
+      font-size: 12.5px;
+    }
+    .col-def {
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .rule { border: none; border-top: 1px solid var(--rule); margin: 0 0 52px; }
+
+    footer {
+      max-width: 520px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 18px 24px 32px;
+      border-top: 1px solid var(--rule);
+      font-size: 10px;
+      color: #bbb;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 36px 20px 80px; }
+      .nav { padding: 22px 20px 0; }
+      footer { padding-left: 20px; padding-right: 20px; }
+      .col-term { width: 46%; padding-right: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand"><a href="./index.html">AI Brief</a></div>
+</nav>
+
+<div class="wrap">
+
+  <div class="tab-nav">
+    <a href="./index.html">Archive</a>
+    <a href="./ai-tools.html">AI Tools</a>
+    <a href="./glossary.html" class="active">Dictionary</a>
+  </div>
+
+  <!-- 01 LLM / AI 모델 -->
+  <div class="glossary-section">
+    <div class="section-label">01 — LLM / AI 모델</div>
+    <table class="glossary-table">
+      <tr><td class="col-term">LLM</td><td class="col-def">Large Language Model. 대규모 언어 모델. GPT·Claude·Gemini 등 텍스트 기반 AI의 범주</td></tr>
+      <tr><td class="col-term">Foundation Model</td><td class="col-def">대규모 데이터로 사전 학습된 범용 모델. 특정 작업에 맞게 Fine-tuning의 기반이 됨</td></tr>
+      <tr><td class="col-term">Frontier Model</td><td class="col-def">현재 기술 수준의 최선단에 있는 모델. GPT-4o·Claude Opus·Gemini Ultra 등</td></tr>
+      <tr><td class="col-term">Transformer</td><td class="col-def">현대 AI 모델의 핵심 아키텍처. 문장 내 단어 간 관계를 병렬로 처리하는 구조</td></tr>
+      <tr><td class="col-term">Attention Mechanism</td><td class="col-def">입력 내 중요한 부분에 가중치를 부여하는 방식. 문맥 이해의 핵심</td></tr>
+      <tr><td class="col-term">Mixture of Experts (MoE)</td><td class="col-def">전체 파라미터를 한 번에 쓰지 않고, 상황에 따라 전문화된 하위 네트워크(Expert)만 활성화. 효율적인 대형 모델 구조</td></tr>
+      <tr><td class="col-term">Embedding</td><td class="col-def">텍스트·이미지를 숫자 벡터로 변환한 표현. 의미가 비슷할수록 벡터 거리가 가까움</td></tr>
+      <tr><td class="col-term">Token</td><td class="col-def">AI가 텍스트를 처리하는 최소 단위. 단어 하나가 보통 1~3 토큰</td></tr>
+      <tr><td class="col-term">Context Window</td><td class="col-def">AI가 한 번에 기억·참조 가능한 입력 범위. 길수록 긴 문서도 한 번에 처리 가능</td></tr>
+      <tr><td class="col-term">Temperature</td><td class="col-def">출력 다양성 조절 값. 높을수록 창의적·예측 불가, 낮을수록 안정적·반복적</td></tr>
+      <tr><td class="col-term">Prompt</td><td class="col-def">AI에게 주는 지시문</td></tr>
+      <tr><td class="col-term">System Prompt</td><td class="col-def">AI의 역할·규칙·말투를 설정하는 최상위 지시문. 사용자 입력 이전에 적용</td></tr>
+      <tr><td class="col-term">Prompt Engineering</td><td class="col-def">원하는 결과를 얻기 위해 프롬프트를 구조적으로 설계하는 작업</td></tr>
+      <tr><td class="col-term">Chain-of-Thought</td><td class="col-def">AI가 추론 과정을 단계별로 명시하며 답을 도출하는 방식. 복잡한 문제일수록 효과적</td></tr>
+      <tr><td class="col-term">Zero-shot / Few-shot</td><td class="col-def">예시 없이 / 소수의 예시만으로 작업을 수행하는 능력</td></tr>
+      <tr><td class="col-term">Reasoning Model</td><td class="col-def">답을 내기 전에 내부적으로 추론 단계를 거치는 모델. OpenAI o1·o3, DeepSeek R1 계열</td></tr>
+      <tr><td class="col-term">Hallucination</td><td class="col-def">AI가 사실이 아닌 내용을 그럴듯하게 생성하는 현상</td></tr>
+      <tr><td class="col-term">Grounding</td><td class="col-def">실제 데이터·문서와 연결해 AI 답변의 정확도를 높이는 방식</td></tr>
+      <tr><td class="col-term">RAG</td><td class="col-def">Retrieval-Augmented Generation. 외부 문서를 검색해 참조하면서 생성. 환각 감소에 효과적</td></tr>
+      <tr><td class="col-term">Fine-tuning</td><td class="col-def">기존 모델을 특정 데이터로 추가 학습시켜 전문화하는 작업</td></tr>
+      <tr><td class="col-term">RLHF</td><td class="col-def">Reinforcement Learning from Human Feedback. 인간 피드백으로 모델을 강화 학습. 유해 출력 감소에 활용</td></tr>
+      <tr><td class="col-term">Alignment</td><td class="col-def">AI가 인간의 의도·가치관에 맞게 행동하도록 학습시키는 과정 및 연구 분야</td></tr>
+      <tr><td class="col-term">Distillation</td><td class="col-def">큰 모델(Teacher)의 지식을 작은 모델(Student)에 압축·전달하는 기법. 성능을 유지하며 모델 경량화</td></tr>
+      <tr><td class="col-term">Quantization</td><td class="col-def">모델 가중치의 정밀도를 낮춰 용량·연산을 줄이는 기법. 로컬 실행 가능성을 높임</td></tr>
+      <tr><td class="col-term">Scaling Law</td><td class="col-def">모델 크기·데이터·연산이 증가할수록 성능이 예측 가능하게 향상되는 법칙</td></tr>
+      <tr><td class="col-term">Emergent Behavior</td><td class="col-def">학습하지 않았는데도 모델이 일정 규모를 넘으면 갑자기 나타나는 능력. 번역·수학 추론 등</td></tr>
+      <tr><td class="col-term">Synthetic Data</td><td class="col-def">AI가 생성한 데이터로 다른 AI를 학습시키는 방식. 데이터 부족 문제 해결에 활용</td></tr>
+      <tr><td class="col-term">Tool Use / Function Calling</td><td class="col-def">AI가 외부 도구(검색·계산기·API 등)를 호출해 실제 작업을 수행하는 능력</td></tr>
+      <tr><td class="col-term">Multimodal</td><td class="col-def">텍스트·이미지·음성 등 여러 형태를 동시에 이해하고 처리하는 모델</td></tr>
+      <tr><td class="col-term">Inference</td><td class="col-def">학습된 모델이 실제 결과를 생성하는 과정. 추론 단계. 학습(Training)과 구분</td></tr>
+      <tr><td class="col-term">Benchmark</td><td class="col-def">모델 성능을 표준화된 테스트로 측정하는 기준. MMLU·HumanEval·LMSYS Chatbot Arena 등</td></tr>
+      <tr><td class="col-term">Pre-training / Post-training</td><td class="col-def">사전 학습(대규모 데이터로 기반 능력 구축) vs 사후 학습(지시 따르기·안전성 조정)</td></tr>
+    </table>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- 02 이미지 생성 -->
+  <div class="glossary-section">
+    <div class="section-label">02 — 이미지 생성</div>
+    <table class="glossary-table">
+      <tr><td class="col-term">Diffusion Model</td><td class="col-def">노이즈에서 이미지를 복원하며 생성하는 방식. Midjourney·Stable Diffusion·Flux 계열</td></tr>
+      <tr><td class="col-term">Txt2Img</td><td class="col-def">텍스트만으로 이미지를 생성</td></tr>
+      <tr><td class="col-term">Img2Img</td><td class="col-def">기존 이미지를 기반으로 새 이미지를 생성. 원본 구도·색감을 참조</td></tr>
+      <tr><td class="col-term">Inpainting</td><td class="col-def">이미지의 일부 영역만 선택해 수정·교체</td></tr>
+      <tr><td class="col-term">Outpainting</td><td class="col-def">이미지 바깥 영역을 AI로 확장. Midjourney의 Zoom Out 기능이 대표적</td></tr>
+      <tr><td class="col-term">Upscaling</td><td class="col-def">저해상도 이미지를 AI로 고해상도로 확대. Magnific·Topaz Gigapixel 등</td></tr>
+      <tr><td class="col-term">LoRA</td><td class="col-def">특정 스타일·인물·질감을 소형 추가 학습하는 방식. 모델 전체를 건드리지 않고 적용</td></tr>
+      <tr><td class="col-term">Checkpoint</td><td class="col-def">모델 자체 파일. 특정 학습 시점의 가중치 저장본</td></tr>
+      <tr><td class="col-term">CFG Scale</td><td class="col-def">Classifier-Free Guidance. 프롬프트를 얼마나 강하게 따를지 결정하는 수치. 높을수록 프롬프트 충실, 낮을수록 자유로운 해석</td></tr>
+      <tr><td class="col-term">Seed</td><td class="col-def">생성 결과의 랜덤 초기값. 같은 Seed·프롬프트·설정이면 동일 결과 재현 가능</td></tr>
+      <tr><td class="col-term">Steps (Diffusion Steps)</td><td class="col-def">노이즈 제거를 반복하는 횟수. 많을수록 정교하지만 느려짐. 보통 20~50</td></tr>
+      <tr><td class="col-term">Sampler</td><td class="col-def">노이즈 제거 알고리즘. Euler·DPM++·DDIM 등 종류에 따라 결과물의 느낌이 달라짐</td></tr>
+      <tr><td class="col-term">Denoise Strength</td><td class="col-def">Img2Img에서 원본을 얼마나 변형할지의 강도. 0이면 원본 유지, 1이면 완전 재생성</td></tr>
+      <tr><td class="col-term">VAE</td><td class="col-def">Variational Autoencoder. 이미지를 Latent Space로 압축·복원하는 인코더. 색상·선명도에 영향</td></tr>
+      <tr><td class="col-term">Latent Space</td><td class="col-def">모델 내부의 압축된 시각 정보 공간. 여기서 이미지 조작이 이루어짐</td></tr>
+      <tr><td class="col-term">ControlNet</td><td class="col-def">포즈·선·구도·깊이 등을 참조 이미지로 제어하는 플러그인. 구도 재현에 필수</td></tr>
+      <tr><td class="col-term">IP-Adapter</td><td class="col-def">이미지를 스타일 참조로 활용해 일관된 결과를 내는 방식</td></tr>
+      <tr><td class="col-term">Style Reference (--sref)</td><td class="col-def">Midjourney에서 참조 이미지의 스타일(색감·텍스처·분위기)만 적용하는 파라미터</td></tr>
+      <tr><td class="col-term">Character Reference (--cref)</td><td class="col-def">Midjourney에서 특정 인물·캐릭터의 외형을 다른 씬에 일관되게 적용하는 파라미터</td></tr>
+      <tr><td class="col-term">Regional Prompting</td><td class="col-def">이미지의 특정 영역마다 다른 프롬프트를 적용하는 고급 기법</td></tr>
+      <tr><td class="col-term">Negative Prompt</td><td class="col-def">생성 시 배제할 요소를 명시하는 지시문. "blurry, low quality, watermark" 등</td></tr>
+      <tr><td class="col-term">Flux</td><td class="col-def">Black Forest Labs의 이미지 생성 모델. 텍스트 렌더링·포토리얼리즘에서 현재 업계 기준</td></tr>
+      <tr><td class="col-term">SDXL / SD 3.5</td><td class="col-def">Stability AI의 오픈소스 이미지 생성 모델 시리즈. 로컬 실행 가능</td></tr>
+      <tr><td class="col-term">Style Transfer</td><td class="col-def">한 이미지의 스타일(화풍·질감)을 다른 이미지의 콘텐츠에 입히는 기법</td></tr>
+      <tr><td class="col-term">Aspect Ratio</td><td class="col-def">이미지 가로·세로 비율. 16:9(와이드), 9:16(수직), 1:1(정방형). --ar 파라미터로 설정</td></tr>
+    </table>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- 03 영상·오디오 AI -->
+  <div class="glossary-section">
+    <div class="section-label">03 — 영상·오디오 AI</div>
+    <table class="glossary-table">
+      <tr><td class="col-term">T2V (Text to Video)</td><td class="col-def">텍스트 프롬프트로 영상을 생성. Sora·Runway·Kling 등의 핵심 기능</td></tr>
+      <tr><td class="col-term">I2V (Image to Video)</td><td class="col-def">정지 이미지를 입력받아 영상으로 변환·애니메이션화</td></tr>
+      <tr><td class="col-term">V2V (Video to Video)</td><td class="col-def">기존 영상을 다른 스타일로 변환. Runway Gen-1이 개척한 방식</td></tr>
+      <tr><td class="col-term">Video Diffusion</td><td class="col-def">시간 축을 추가한 확산 모델. 영상 생성 AI의 기반 기술</td></tr>
+      <tr><td class="col-term">Temporal Consistency</td><td class="col-def">영상의 프레임 간 일관성. 인물·사물이 프레임마다 다르게 변하지 않는 안정성</td></tr>
+      <tr><td class="col-term">Motion Brush</td><td class="col-def">특정 영역만 지정해 움직이게 제어하는 기능. 배경 고정·피사체만 움직임</td></tr>
+      <tr><td class="col-term">Frame Interpolation</td><td class="col-def">프레임 사이를 AI로 보간해 부드럽게 만드는 기술. 24fps → 60fps 변환 등</td></tr>
+      <tr><td class="col-term">Camera Motion Control</td><td class="col-def">AI 영상에서 카메라 움직임(Pan·Tilt·Zoom·Orbit·Dolly·Crane)을 지정하는 기능</td></tr>
+      <tr><td class="col-term">Keyframe</td><td class="col-def">애니메이션에서 핵심 장면을 정의하는 프레임. 그 사이는 보간으로 채움</td></tr>
+      <tr><td class="col-term">FPS (Frames Per Second)</td><td class="col-def">초당 프레임 수. 24fps(시네마틱), 30fps(방송), 60fps(게임·유튜브 등)</td></tr>
+      <tr><td class="col-term">Lipsync</td><td class="col-def">음성에 맞게 입 모양을 자동 생성·동기화하는 기술</td></tr>
+      <tr><td class="col-term">TTS (Text-to-Speech)</td><td class="col-def">텍스트를 음성으로 변환. ElevenLabs·OpenAI TTS·Google TTS 등</td></tr>
+      <tr><td class="col-term">Voice Cloning</td><td class="col-def">특정 인물의 목소리를 소량 샘플로 복제해 다른 텍스트를 읽게 하는 기술</td></tr>
+      <tr><td class="col-term">AI Music Generation</td><td class="col-def">텍스트·장르·분위기 설명으로 음악을 생성. Suno·Udio가 대표적</td></tr>
+      <tr><td class="col-term">Sound Design</td><td class="col-def">영상·게임·브랜드에 어울리는 소리를 의도적으로 설계하는 작업</td></tr>
+      <tr><td class="col-term">Foley</td><td class="col-def">발소리·옷 스치는 소리 등 일상 소리를 별도로 녹음해 영상에 삽입하는 작업</td></tr>
+      <tr><td class="col-term">Stem</td><td class="col-def">음악을 악기별로 분리한 트랙. 보컬·드럼·베이스·악기 등 개별 편집 가능</td></tr>
+      <tr><td class="col-term">DAW</td><td class="col-def">Digital Audio Workstation. 음악 제작·편집 소프트웨어. Logic Pro·Ableton·Pro Tools 등</td></tr>
+    </table>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- 04 시네마틱 / 촬영 표현 -->
+  <div class="glossary-section">
+    <div class="section-label">04 — 시네마틱 / 촬영 표현</div>
+    <table class="glossary-table">
+      <tr><td class="col-term">Wide Shot (WS)</td><td class="col-def">인물 전신과 주변 공간이 함께 보이는 넓은 샷. 환경·관계를 설정할 때</td></tr>
+      <tr><td class="col-term">Medium Shot (MS)</td><td class="col-def">허리 위를 담는 샷. 대화 장면에서 가장 일반적으로 사용</td></tr>
+      <tr><td class="col-term">Close-up (CU)</td><td class="col-def">얼굴이나 특정 부위를 가득 채우는 샷. 감정·디테일 강조</td></tr>
+      <tr><td class="col-term">Extreme Close-up (ECU)</td><td class="col-def">눈·입·손가락 등 극도로 좁은 범위를 담는 샷. 강렬한 감정 또는 오브젝트 강조</td></tr>
+      <tr><td class="col-term">Establishing Shot</td><td class="col-def">공간·상황을 먼저 보여주는 장면. 보통 와이드 샷으로 시작</td></tr>
+      <tr><td class="col-term">Over-the-Shoulder (OTS)</td><td class="col-def">한 인물의 어깨 너머로 상대방을 담는 샷. 대화·긴장 관계 표현</td></tr>
+      <tr><td class="col-term">Hero Shot</td><td class="col-def">제품·인물을 가장 임팩트 있게 보여주는 대표 컷</td></tr>
+      <tr><td class="col-term">B-Roll</td><td class="col-def">인터뷰·메인 영상(A-Roll)을 보완하는 컷어웨이 영상. 배경·분위기·디테일 보충</td></tr>
+      <tr><td class="col-term">Dolly In / Out</td><td class="col-def">카메라가 피사체 방향으로 물리적으로 이동. Zoom과 달리 원근감이 변함</td></tr>
+      <tr><td class="col-term">Zoom vs Dolly</td><td class="col-def">Zoom은 렌즈 초점거리 변경(원근감 유지), Dolly는 카메라 이동(원근감 변화). 느낌이 다름</td></tr>
+      <tr><td class="col-term">Pan / Tilt</td><td class="col-def">Pan: 카메라를 좌우로 회전. Tilt: 카메라를 상하로 회전</td></tr>
+      <tr><td class="col-term">Dutch Angle</td><td class="col-def">카메라를 기울여 사선으로 촬영. 불안·긴장·이상함을 시각적으로 표현</td></tr>
+      <tr><td class="col-term">Parallax</td><td class="col-def">전경과 배경의 이동 속도 차이로 생기는 입체감 효과. 정지 이미지에서도 구현 가능</td></tr>
+      <tr><td class="col-term">Depth of Field (DOF)</td><td class="col-def">초점이 맞는 범위. 좁을수록(Shallow DOF) 배경이 흐릿해짐. 피사체 강조에 활용</td></tr>
+      <tr><td class="col-term">Bokeh</td><td class="col-def">아웃포커싱 시 생기는 빛망울 효과. 렌즈 조리개(aperture)와 초점거리에 따라 다름</td></tr>
+      <tr><td class="col-term">Motion Blur</td><td class="col-def">움직임의 잔상 표현. 너무 없으면 뻣뻣해 보이고, 적당하면 자연스러운 역동감</td></tr>
+      <tr><td class="col-term">Speed Ramp</td><td class="col-def">영상 내 속도를 급격히 변화시키는 편집 기법. 슬로우→정상→슬로우 전환</td></tr>
+      <tr><td class="col-term">Match Cut</td><td class="col-def">형태·동작·색상을 맞춰 자연스럽게 연결하는 컷. 2001년 스페이스 오디세이의 뼈→우주선이 대표</td></tr>
+      <tr><td class="col-term">Rack Focus</td><td class="col-def">한 피사체에서 다른 피사체로 초점을 이동. 주목 대상의 전환을 시각적으로 표현</td></tr>
+      <tr><td class="col-term">Color Grading</td><td class="col-def">영상의 색조·밝기·대비를 전반적으로 조정해 분위기를 완성하는 후반 작업</td></tr>
+      <tr><td class="col-term">LUT (Look-Up Table)</td><td class="col-def">색상 변환 프리셋. 특정 영화·톤의 색감을 즉시 적용 가능. .cube 파일 형태</td></tr>
+      <tr><td class="col-term">Aerial / Drone Shot</td><td class="col-def">공중에서 내려다보는 샷. 공간 규모·지형·이동을 드라마틱하게 표현</td></tr>
+      <tr><td class="col-term">Handheld Shot</td><td class="col-def">카메라를 손에 들고 찍어 생기는 흔들림. 현장감·긴박감 연출</td></tr>
+      <tr><td class="col-term">Dynamic Range</td><td class="col-def">가장 밝은 부분과 어두운 부분의 표현 범위. 넓을수록 하이라이트·섀도우 디테일 보존</td></tr>
+    </table>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- 05 디자인 / 브랜딩 -->
+  <div class="glossary-section">
+    <div class="section-label">05 — 디자인 / 브랜딩</div>
+    <table class="glossary-table">
+      <tr><td class="col-term">KV (Key Visual)</td><td class="col-def">캠페인의 핵심 대표 비주얼. 이후 모든 소재의 기준이 됨</td></tr>
+      <tr><td class="col-term">Brand Identity</td><td class="col-def">브랜드의 시각·언어적 정체성. 로고·컬러·타이포·말투를 포함</td></tr>
+      <tr><td class="col-term">Art Direction</td><td class="col-def">비주얼 방향을 총괄 기획·결정하는 역할</td></tr>
+      <tr><td class="col-term">Creative Direction</td><td class="col-def">브랜드·캠페인 전체의 방향성을 설계하는 최상위 크리에이티브 역할</td></tr>
+      <tr><td class="col-term">Visual System</td><td class="col-def">일관된 디자인 규칙 체계. 그리드·여백·컬러·타이포 등의 조합</td></tr>
+      <tr><td class="col-term">Tone & Manner</td><td class="col-def">브랜드의 말투·분위기·감성적 태도</td></tr>
+      <tr><td class="col-term">Worldbuilding</td><td class="col-def">브랜드나 콘텐츠의 세계관을 구축하는 작업</td></tr>
+      <tr><td class="col-term">Narrative</td><td class="col-def">브랜드 또는 콘텐츠의 서사 구조</td></tr>
+      <tr><td class="col-term">Positioning</td><td class="col-def">경쟁 브랜드 대비 자신의 위치를 시장에서 명확히 정의하는 전략</td></tr>
+      <tr><td class="col-term">USP</td><td class="col-def">Unique Selling Proposition. 경쟁자와 차별화되는 핵심 가치. "우리만 할 수 있는 것"</td></tr>
+      <tr><td class="col-term">Visual Hierarchy</td><td class="col-def">시각 요소의 크기·색·위치로 정보의 중요도 순서를 만드는 것. 시선 흐름 설계</td></tr>
+      <tr><td class="col-term">White Space / Negative Space</td><td class="col-def">디자인에서 비워두는 공간. 숨쉬는 여백. 럭셔리·고급 브랜드일수록 적극 활용</td></tr>
+      <tr><td class="col-term">Grid System</td><td class="col-def">페이지를 구조화하는 격자 체계. 일관된 레이아웃의 기반</td></tr>
+      <tr><td class="col-term">Leading</td><td class="col-def">줄 간격 (Line Height). 가독성에 직접 영향을 미치는 타이포그래피 요소</td></tr>
+      <tr><td class="col-term">Kerning</td><td class="col-def">특정 두 글자 사이의 간격 조정. 로고·헤드라인 타이포에서 섬세하게 다름</td></tr>
+      <tr><td class="col-term">Tracking</td><td class="col-def">텍스트 블록 전체의 글자 간격을 균일하게 조정. Kerning은 개별, Tracking은 전체</td></tr>
+      <tr><td class="col-term">Affordance</td><td class="col-def">보자마자 사용 방식을 직관적으로 알게 하는 디자인 요소. 버튼처럼 생긴 것은 클릭한다</td></tr>
+      <tr><td class="col-term">Mental Model</td><td class="col-def">사용자가 시스템이 어떻게 작동할 것이라 예상하는 내면 구조. 이에 맞는 UX 설계 필요</td></tr>
+      <tr><td class="col-term">Moodboard</td><td class="col-def">방향성·분위기를 시각적으로 수집한 레퍼런스 보드. 클라이언트·팀과의 방향 정렬에 유용</td></tr>
+      <tr><td class="col-term">Style Guide</td><td class="col-def">브랜드 디자인 규칙을 문서화한 가이드라인. 컬러코드·폰트·여백 규칙 등 포함</td></tr>
+      <tr><td class="col-term">Hero Image</td><td class="col-def">웹·랜딩페이지 상단을 가득 채우는 대표 이미지. 첫인상과 전환율에 직결</td></tr>
+      <tr><td class="col-term">Above the Fold</td><td class="col-def">스크롤 없이 화면에 처음 보이는 영역. 가장 중요한 정보·CTA를 배치해야 하는 위치</td></tr>
+      <tr><td class="col-term">CTA (Call to Action)</td><td class="col-def">사용자의 특정 행동을 유도하는 요소. "지금 신청", "무료 체험" 등의 버튼·문구</td></tr>
+      <tr><td class="col-term">Social Proof</td><td class="col-def">후기·리뷰·사용자 수·미디어 언급 등 타인의 신뢰를 빌려 설득력을 높이는 요소</td></tr>
+      <tr><td class="col-term">Editorial Design</td><td class="col-def">책·잡지·보고서 등 출판물의 레이아웃·타이포그래피 설계 분야</td></tr>
+    </table>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- 06 마케팅 / 콘텐츠 전략 -->
+  <div class="glossary-section">
+    <div class="section-label">06 — 마케팅 / 콘텐츠 전략</div>
+    <table class="glossary-table">
+      <tr><td class="col-term">Funnel</td><td class="col-def">인지→관심→고려→구매→재구매로 이어지는 고객 여정. 단계별로 다른 콘텐츠 전략 필요</td></tr>
+      <tr><td class="col-term">TOFU / MOFU / BOFU</td><td class="col-def">Top/Middle/Bottom of Funnel. 퍼널 상단(인지)·중단(고려)·하단(전환) 단계별 콘텐츠 구분</td></tr>
+      <tr><td class="col-term">Content Marketing</td><td class="col-def">광고 대신 가치 있는 콘텐츠로 타깃 고객을 유인·유지하는 마케팅 방식</td></tr>
+      <tr><td class="col-term">Organic / Paid</td><td class="col-def">Organic: 광고비 없이 자연 유입(SEO·SNS). Paid: 광고비로 만든 유입(광고·인플루언서)</td></tr>
+      <tr><td class="col-term">SEO</td><td class="col-def">Search Engine Optimization. 검색엔진에 잘 노출되도록 콘텐츠·구조를 최적화하는 작업</td></tr>
+      <tr><td class="col-term">Hook</td><td class="col-def">영상·글의 첫 3초 또는 첫 문장. 시청자/독자를 멈추게 만드는 요소. 알고리즘 성과에 직결</td></tr>
+      <tr><td class="col-term">CTR (Click-Through Rate)</td><td class="col-def">클릭률. 노출 대비 클릭 수의 비율. 콘텐츠·광고 제목·썸네일의 성과 지표</td></tr>
+      <tr><td class="col-term">CVR (Conversion Rate)</td><td class="col-def">전환율. 유입 대비 구매·신청 등 목표 행동을 한 비율</td></tr>
+      <tr><td class="col-term">Impression</td><td class="col-def">콘텐츠가 화면에 노출된 횟수. 클릭·반응 여부와 무관하게 카운트</td></tr>
+      <tr><td class="col-term">Reach</td><td class="col-def">콘텐츠를 본 유니크 사용자 수. Impression과 달리 중복 제거</td></tr>
+      <tr><td class="col-term">Engagement Rate</td><td class="col-def">좋아요·댓글·공유·저장 등 상호작용의 도달 대비 비율. 콘텐츠 질의 척도</td></tr>
+      <tr><td class="col-term">A/B Testing</td><td class="col-def">두 가지 버전을 동시에 테스트해 더 나은 결과를 찾는 방법. 썸네일·헤드카피·가격 등</td></tr>
+      <tr><td class="col-term">Retargeting</td><td class="col-def">한 번 방문했거나 특정 행동을 한 유저에게 다시 광고를 노출하는 방식</td></tr>
+      <tr><td class="col-term">UGC (User Generated Content)</td><td class="col-def">사용자가 직접 만든 콘텐츠. 브랜드 신뢰도 구축과 사회적 증거로 활용</td></tr>
+      <tr><td class="col-term">Influencer Marketing</td><td class="col-def">팔로워가 많거나 특정 분야 영향력이 있는 개인을 통한 마케팅</td></tr>
+      <tr><td class="col-term">Brand Awareness</td><td class="col-def">소비자가 브랜드를 인식하고 기억하는 정도. 성장 초기의 핵심 마케팅 목표</td></tr>
+      <tr><td class="col-term">Community-led Growth</td><td class="col-def">유저 커뮤니티가 자발적으로 제품을 확산시키는 성장 방식. Discord·Reddit·Slack 커뮤니티 등</td></tr>
+      <tr><td class="col-term">Product-led Growth (PLG)</td><td class="col-def">제품 자체가 마케팅과 세일즈를 대신하는 성장 방식. Figma·Notion·Canva가 대표적</td></tr>
+    </table>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- 07 개발 / 시스템 / 자동화 -->
+  <div class="glossary-section">
+    <div class="section-label">07 — 개발 / 시스템 / 자동화</div>
+    <table class="glossary-table">
+      <tr><td class="col-term">API</td><td class="col-def">Application Programming Interface. 서비스끼리 데이터를 주고받는 표준 인터페이스</td></tr>
+      <tr><td class="col-term">Frontend / Backend</td><td class="col-def">Frontend: 사용자가 보는 화면. Backend: 서버·데이터베이스 등 보이지 않는 처리 영역</td></tr>
+      <tr><td class="col-term">Full-stack</td><td class="col-def">Frontend와 Backend 모두 다루는 개발자·기술 스택</td></tr>
+      <tr><td class="col-term">No-code / Low-code</td><td class="col-def">코딩 없이 또는 최소 코딩으로 서비스를 만드는 도구. Webflow·Bubble·Framer 등</td></tr>
+      <tr><td class="col-term">Open Source</td><td class="col-def">소스코드를 공개해 누구나 사용·수정 가능한 프로젝트</td></tr>
+      <tr><td class="col-term">SDK</td><td class="col-def">Software Development Kit. 특정 플랫폼·서비스를 쉽게 연동할 수 있는 개발 도구 묶음</td></tr>
+      <tr><td class="col-term">CLI</td><td class="col-def">Command Line Interface. 텍스트 명령어로 컴퓨터를 제어하는 방식. 터미널/쉘</td></tr>
+      <tr><td class="col-term">Webhook</td><td class="col-def">특정 이벤트가 발생했을 때 자동으로 다른 서비스에 데이터를 전송하는 방식</td></tr>
+      <tr><td class="col-term">JSON</td><td class="col-def">JavaScript Object Notation. API 통신·데이터 교환에 가장 널리 쓰이는 텍스트 형식</td></tr>
+      <tr><td class="col-term">Markdown</td><td class="col-def">간단한 기호로 서식을 지정하는 경량 마크업 언어. **굵게**, # 제목, - 목록 등</td></tr>
+      <tr><td class="col-term">Git</td><td class="col-def">코드 버전 관리 시스템. 변경 이력 추적·협업의 기본. GitHub은 Git 기반 협업 플랫폼</td></tr>
+      <tr><td class="col-term">Node</td><td class="col-def">기능 단위 블록. ComfyUI 등 노드 기반 워크플로에서 시각적으로 연결</td></tr>
+      <tr><td class="col-term">Workflow</td><td class="col-def">작업의 흐름 구조. AI 제작에선 여러 도구를 연결한 파이프라인</td></tr>
+      <tr><td class="col-term">Automation</td><td class="col-def">반복 작업의 자동화. Make(Integromat)·Zapier·n8n 등의 노코드 자동화 도구</td></tr>
+      <tr><td class="col-term">Vector DB</td><td class="col-def">의미 기반 검색을 위한 데이터베이스. RAG 시스템에서 핵심 역할. Pinecone·Weaviate 등</td></tr>
+      <tr><td class="col-term">Docker / Container</td><td class="col-def">애플리케이션과 환경을 패키징해 어디서든 동일하게 실행 가능하게 하는 기술</td></tr>
+      <tr><td class="col-term">Cloud (AWS / GCP / Azure)</td><td class="col-def">인터넷 기반 서버·스토리지·AI 인프라 서비스. Amazon·Google·Microsoft가 3대 공급자</td></tr>
+      <tr><td class="col-term">Deploy</td><td class="col-def">서비스를 서버에 올려 실제로 운영하는 것. '배포'. Vercel·Netlify 등으로 간편화</td></tr>
+      <tr><td class="col-term">Agent</td><td class="col-def">목표를 받으면 스스로 계획하고 단계를 실행하는 AI 시스템</td></tr>
+      <tr><td class="col-term">MCP</td><td class="col-def">Model Context Protocol. AI 모델이 외부 툴·데이터와 연결되는 표준 프로토콜 (Anthropic 제안)</td></tr>
+      <tr><td class="col-term">ComfyUI</td><td class="col-def">노드 기반의 Stable Diffusion 워크플로 툴. 복잡한 AI 파이프라인 시각화에 유리</td></tr>
+      <tr><td class="col-term">Vibe Coding</td><td class="col-def">AI와 대화하며 감각적으로 개발하는 방식. 코드를 직접 쓰지 않고 AI에게 위임</td></tr>
+      <tr><td class="col-term">Scraping</td><td class="col-def">웹에서 정보를 자동으로 수집하는 기술</td></tr>
+    </table>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- 08 비즈니스 지표 -->
+  <div class="glossary-section">
+    <div class="section-label">08 — 비즈니스 지표</div>
+    <table class="glossary-table">
+      <tr><td class="col-term">ARR</td><td class="col-def">Annual Recurring Revenue. 연간 반복 매출. SaaS·구독 서비스의 핵심 성과 지표</td></tr>
+      <tr><td class="col-term">MRR</td><td class="col-def">Monthly Recurring Revenue. 월간 반복 매출. ARR = MRR × 12</td></tr>
+      <tr><td class="col-term">DAU / MAU</td><td class="col-def">Daily / Monthly Active Users. 일·월 활성 사용자 수. 제품 건강도의 기본 지표</td></tr>
+      <tr><td class="col-term">Churn Rate</td><td class="col-def">이탈률. 일정 기간 내 구독을 해지하거나 사용을 중단한 비율. 낮을수록 좋음</td></tr>
+      <tr><td class="col-term">Retention</td><td class="col-def">사용자가 제품을 계속 쓰는 비율. Churn의 반대. D1·D7·D30 리텐션으로 분석</td></tr>
+      <tr><td class="col-term">CAC</td><td class="col-def">Customer Acquisition Cost. 고객 한 명을 유치하는 데 드는 비용</td></tr>
+      <tr><td class="col-term">LTV (또는 CLV)</td><td class="col-def">Customer Lifetime Value. 고객 한 명이 생애 동안 만들어내는 총 매출. LTV/CAC 비율이 3 이상이면 건전한 구조</td></tr>
+      <tr><td class="col-term">Burn Rate</td><td class="col-def">회사가 한 달에 쓰는 자금의 양. 투자금 소진 속도</td></tr>
+      <tr><td class="col-term">Runway</td><td class="col-def">현재 자금으로 버틸 수 있는 기간. 보통 월 단위. 18개월 이상이 안전하다고 봄</td></tr>
+      <tr><td class="col-term">Valuation</td><td class="col-def">기업가치 평가액. 투자 라운드 시 협상으로 결정. Pre-money(투자 전) / Post-money(투자 후) 구분</td></tr>
+      <tr><td class="col-term">GMV</td><td class="col-def">Gross Merchandise Value. 플랫폼에서 거래된 총 금액. 마켓플레이스의 규모를 나타냄</td></tr>
+      <tr><td class="col-term">NPS</td><td class="col-def">Net Promoter Score. "이 서비스를 주변에 추천하겠냐?"의 응답으로 측정하는 고객 충성도 지수</td></tr>
+      <tr><td class="col-term">North Star Metric</td><td class="col-def">팀 전체가 집중하는 핵심 성장 지표 하나. Spotify는 청취 시간, Airbnb는 예약 숙박 수</td></tr>
+      <tr><td class="col-term">Unit Economics</td><td class="col-def">고객 한 명 단위의 수익성. LTV/CAC, 주문당 이익 등. 스케일 전 비즈니스 모델 검증에 필수</td></tr>
+    </table>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- 09 투자 / 스타트업 생태계 -->
+  <div class="glossary-section">
+    <div class="section-label">09 — 투자 / 스타트업 생태계</div>
+    <table class="glossary-table">
+      <tr><td class="col-term">Bootstrapped</td><td class="col-def">외부 투자 없이 자체 수익으로 운영하는 방식. Magnific(Freepik)이 대표적</td></tr>
+      <tr><td class="col-term">Angel Investor</td><td class="col-def">초기 스타트업에 개인 자금을 투자하는 투자자. 멘토 역할을 겸하기도 함</td></tr>
+      <tr><td class="col-term">VC (Venture Capital)</td><td class="col-def">고성장 스타트업에 투자하는 전문 투자 기관. Andreessen Horowitz·Sequoia·Accel 등</td></tr>
+      <tr><td class="col-term">Pre-seed</td><td class="col-def">아이디어·팀 단계의 초기 투자. 보통 수억~수십억 원 수준</td></tr>
+      <tr><td class="col-term">Seed</td><td class="col-def">제품 초기 개발·시장 검증 단계의 투자</td></tr>
+      <tr><td class="col-term">Series A / B / C</td><td class="col-def">제품-시장 적합성 검증 후 본격 성장을 위한 투자 단계. 알파벳이 뒤로 갈수록 규모·검증 수준 높아짐</td></tr>
+      <tr><td class="col-term">Unicorn</td><td class="col-def">기업가치 $10억(약 1조 원) 이상의 비상장 스타트업</td></tr>
+      <tr><td class="col-term">Decacorn</td><td class="col-def">기업가치 $100억 이상의 스타트업. OpenAI·Canva·Stripe 등</td></tr>
+      <tr><td class="col-term">Term Sheet</td><td class="col-def">투자 조건을 명시한 예비 계약서. 밸류에이션·지분율·거버넌스 조건 포함</td></tr>
+      <tr><td class="col-term">Cap Table</td><td class="col-def">Capitalization Table. 회사 지분 구조표. 누가 얼마나 갖고 있는지 한눈에 보여줌</td></tr>
+      <tr><td class="col-term">Dilution</td><td class="col-def">새로운 투자 라운드에서 기존 주주의 지분율이 낮아지는 것</td></tr>
+      <tr><td class="col-term">Exit</td><td class="col-def">투자 회수. IPO(상장) 또는 M&A(인수합병)가 주요 방식</td></tr>
+      <tr><td class="col-term">IPO</td><td class="col-def">Initial Public Offering. 기업 공개 상장. 일반 투자자에게 주식을 판매하는 것</td></tr>
+      <tr><td class="col-term">M&A</td><td class="col-def">Mergers and Acquisitions. 합병 및 인수. 큰 기업이 스타트업을 사들이는 방식</td></tr>
+    </table>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- 10 업계 / 실리콘밸리 언어 -->
+  <div class="glossary-section">
+    <div class="section-label">10 — 업계 / 실리콘밸리 언어</div>
+    <table class="glossary-table">
+      <tr><td class="col-term">AI Native</td><td class="col-def">AI를 핵심 전제로 설계된 서비스·조직. 기존 서비스에 AI를 붙인 것과 구분</td></tr>
+      <tr><td class="col-term">Agentic Workflow</td><td class="col-def">AI가 단계적으로 자율 수행하는 작업 흐름. 인간 개입을 최소화</td></tr>
+      <tr><td class="col-term">Human-in-the-loop</td><td class="col-def">AI 결과물에 인간 검수·판단을 포함시키는 시스템 설계</td></tr>
+      <tr><td class="col-term">Synthetic Media</td><td class="col-def">AI가 생성한 이미지·영상·음성. 실제와 구분이 어려운 수준으로 발전</td></tr>
+      <tr><td class="col-term">AI Pipeline</td><td class="col-def">AI 제작의 전체 흐름. 기획→생성→편집→배포까지의 단계</td></tr>
+      <tr><td class="col-term">Personal AI Stack</td><td class="col-def">개인이 업무에 맞게 구성한 AI 툴 체계</td></tr>
+      <tr><td class="col-term">PMF</td><td class="col-def">Product-Market Fit. 제품이 시장 수요에 딱 맞는 상태. 스케일링 전 반드시 검증해야 할 것</td></tr>
+      <tr><td class="col-term">GTM</td><td class="col-def">Go-to-Market. 제품·서비스를 시장에 출시하는 전략과 실행 계획</td></tr>
+      <tr><td class="col-term">Pivot</td><td class="col-def">사업 방향을 전환하는 것. Instagram은 Burbn이라는 체크인 앱에서 Pivot</td></tr>
+      <tr><td class="col-term">Ship</td><td class="col-def">기능·서비스를 출시·배포하다. "완벽하지 않아도 일단 ship 한다"는 실리콘밸리 철학</td></tr>
+      <tr><td class="col-term">Iterate</td><td class="col-def">빠르게 개선을 반복하다. "빠르게 iteration 돌린다" = 실험→피드백→개선 사이클</td></tr>
+      <tr><td class="col-term">Build in Public</td><td class="col-def">제품 개발 과정을 실시간으로 공개하며 커뮤니티를 만드는 전략</td></tr>
+      <tr><td class="col-term">Moat</td><td class="col-def">경쟁자가 쉽게 따라올 수 없는 경쟁 우위. 데이터·네트워크효과·브랜드 등이 Moat이 됨</td></tr>
+      <tr><td class="col-term">10x</td><td class="col-def">기존 대비 10배 이상의 효율·성능 향상. 점진적 개선(Incremental)이 아닌 도약적 변화</td></tr>
+      <tr><td class="col-term">World Model</td><td class="col-def">AI가 현실 세계의 물리·인과 구조를 내부적으로 모델링하는 개념</td></tr>
+      <tr><td class="col-term">Taste</td><td class="col-def">단순 기술을 넘어선 심미적 판단력. AI 시대에 인간의 핵심 역량으로 재조명</td></tr>
+      <tr><td class="col-term">Generative Design</td><td class="col-def">AI가 제약 조건 내에서 수많은 디자인 후보를 생성하는 방식</td></tr>
+      <tr><td class="col-term">No-collar Worker</td><td class="col-def">AI를 주도적으로 활용해 작업하는 새 유형의 지식 노동자. Magnific이 공식 채택한 표현</td></tr>
+      <tr><td class="col-term">Vibe</td><td class="col-def">분위기·감성·세계관의 총체. 브랜딩에서 논리보다 감각적 어필이 강해지면서 부상한 개념</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<footer>© enblc3. Jeong A Mari Lee. All Rights Reserved.</footer>
+
+</body>
+</html>
