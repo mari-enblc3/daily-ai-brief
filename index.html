@@ -25,11 +25,20 @@
     footer.footer { display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--rule); padding-top:20px; margin-top:36px; flex-wrap:wrap; gap:8px; }
     footer.footer a { color:var(--text); text-decoration:none; font-size:12px; font-weight:500; }
     .footer-copy { font-size:10px; color:#bbb; }
+    .tab-nav { display:flex; gap:20px; margin-bottom:32px; }
+    .tab-nav a { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); text-decoration:none; }
+    .tab-nav a.active { color:var(--text); }
+    .tab-nav a:hover { opacity:.5; }
   </style>
 </head>
 <body>
 <div class="container">
   <nav><a href="#" id="nav-brand-link">AI Brief</a></nav>
+  <div class="tab-nav">
+    <a href="./index.html" class="active">Archive</a>
+    <a href="./ai-tools.html">AI Tools</a>
+    <a href="./glossary.html">Dictionary</a>
+  </div>
   <div class="intro">
     <p class="intro-desc">크리에이터·디자이너를 위한 AI 뉴스 큐레이션. 매일 3가지 핵심 기사 + 영단어·핵심 표현으로 산업과 더불어 글로벌 인재가 되기 위한 영어 공부를 함께 즐겨보세요.</p>
   </div>
