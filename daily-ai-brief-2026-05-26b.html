@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Brief — 2026.05.26</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#faf9f7; --text:#0d0c0b; --muted:#888; --rule:#e0ddd9; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--text); font-family:'Helvetica Neue',Helvetica,'Noto Sans KR',Arial,sans-serif; font-size:14px; line-height:1.7; padding:0 16px; }
+    .container { max-width:520px; margin:0 auto; padding:40px 0 60px; }
+    nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:40px; padding-bottom:16px; border-bottom:1px solid var(--rule); }
+    nav a { text-decoration:none; color:var(--text); font-weight:500; font-size:13px; letter-spacing:.02em; }
+    .nav-archive { color:var(--muted); font-size:11px; }
+    .dateline { font-size:11px; color:var(--muted); margin-bottom:32px; letter-spacing:.03em; }
+    hr.rule { border:none; border-top:1px solid var(--rule); margin:28px 0; }
+    .entry { padding:4px 0; }
+    .entry-num { font-size:11px; color:var(--muted); letter-spacing:.08em; margin-bottom:4px; }
+    .entry-cat { font-size:11px; color:var(--muted); font-style:italic; margin-bottom:8px; }
+    h2.entry-title { font-size:16px; font-weight:500; line-height:1.5; margin-bottom:6px; }
+    .entry-source { font-size:11px; color:var(--muted); margin-bottom:12px; }
+    .entry-source a { color:var(--muted); text-decoration:underline; }
+    .lang-toggle { display:flex; gap:6px; margin-bottom:12px; }
+    .lang-btn { font-size:11px; padding:3px 10px; border:1px solid var(--rule); border-radius:20px; background:transparent; color:var(--muted); cursor:pointer; transition:all .15s; }
+    .lang-btn.active { background:var(--text); color:var(--bg); border-color:var(--text); }
+    .summary-text { font-size:13.5px; line-height:1.75; color:var(--text); display:none; }
+    .summary-text.visible { display:block; }
+    .learn-section { margin-top:16px; padding-top:14px; border-top:1px solid var(--rule); }
+    .learn-label { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+    .learn-table { width:100%; border-collapse:collapse; margin-bottom:14px; }
+    .learn-table th { font-size:10px; color:var(--muted); text-align:left; padding:0 0 6px; font-weight:400; letter-spacing:.05em; border-bottom:1px solid var(--rule); }
+    .learn-table td { font-size:12px; padding:5px 0; border-bottom:1px solid var(--rule); vertical-align:top; }
+    .col-en { font-style:italic; width:45%; padding-right:12px; }
+    .col-kr { color:var(--muted); }
+    .signal-label { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+    .signal-body { font-size:13.5px; line-height:1.8; color:var(--text); }
+    .signal-body strong { font-weight:500; }
+    .sources-label { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+    ul.sources-list { list-style:none; padding:0; }
+    ul.sources-list li { font-size:11px; color:var(--muted); margin-bottom:5px; }
+    ul.sources-list li::before { content:'→  '; color:var(--muted); }
+    ul.sources-list a { color:var(--muted); text-decoration:underline; }
+    footer.footer { display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--rule); padding-top:20px; margin-top:36px; flex-wrap:wrap; gap:8px; }
+    footer.footer a { color:var(--text); text-decoration:none; font-size:12px; font-weight:500; }
+    .footer-date { font-size:11px; color:var(--muted); }
+    .footer-copy { font-size:10px; color:#bbb; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <nav>
+    <a href="./index.html">AI Brief</a>
+    <a href="./index.html" class="nav-archive">archive</a>
+  </nav>
+
+  <div class="dateline">• 2026.05.26 — No.002</div>
+
+  <!-- Entry 01 -->
+  <div class="entry" id="s1">
+    <div class="entry-num">01</div>
+    <div class="entry-cat">AI for Creators / Designers</div>
+    <h2 class="entry-title">X, AI 크리에이터 매칭 플랫폼 'Creator Connect' 출시 — xAI 기술로 브랜드-크리에이터 자동 연결</h2>
+    <div class="entry-source">
+      <a href="https://imfounder.com/science-tech/ai/ai-updates-may-2026/" target="_blank">imFounder — 2026.05</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('art','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('art','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="art-kr">
+      X(구 트위터)가 xAI 기술을 활용한 광고 플랫폼 'Creator Connect'를 출시했습니다. 브랜드가 캠페인 목표를 입력하면, AI가 트렌드·크리에이터 프로필·과거 성과 데이터를 분석해 최적의 파트너 크리에이터를 자동 추천합니다. 기존 MCN(멀티채널네트워크) 방식과 달리 중소 니치 크리에이터도 추천 대상에 포함되어, 팔로워 수보다 콘텐츠 적합도를 우선합니다. 크리에이터 입장에서는 직접 브랜드에 제안서를 보내지 않아도 AI가 맞는 캠페인을 매칭해주는 구조로, 브랜드 협업 진입 장벽이 크게 낮아질 전망입니다. 크리에이터 이코노미의 민주화를 가속화하는 신호로 볼 수 있습니다.
+    </p>
+    <p class="summary-text" id="art-en">
+      X (formerly Twitter) has launched Creator Connect, an AI-powered advertising platform built on xAI technology. Brands input their campaign objectives, and the AI analyzes trends, creator profiles, and historical performance data to automatically recommend ideal creator partners. Unlike traditional MCN models, Creator Connect includes smaller niche creators — prioritizing content relevance over follower count. For creators, this means brand collaboration opportunities surface without having to pitch directly, significantly lowering the barrier to brand partnerships. It signals an acceleration of the democratization of the creator economy.
+    </p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn-table">
+        <thead><tr><th class="col-en">English</th><th class="col-kr">한국어</th></tr></thead>
+        <tbody>
+          <tr><td class="col-en">niche creator</td><td class="col-kr">특정 분야 전문 소규모 크리에이터</td></tr>
+          <tr><td class="col-en">campaign objectives</td><td class="col-kr">캠페인 목표</td></tr>
+          <tr><td class="col-en">content relevance</td><td class="col-kr">콘텐츠 적합도</td></tr>
+          <tr><td class="col-en">democratization</td><td class="col-kr">민주화, 대중화</td></tr>
+          <tr><td class="col-en">creator economy</td><td class="col-kr">크리에이터 이코노미 (창작자 중심 경제)</td></tr>
+        </tbody>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn-table">
+        <thead><tr><th class="col-en">Expression</th><th class="col-kr">의미</th></tr></thead>
+        <tbody>
+          <tr><td class="col-en">built on [technology]</td><td class="col-kr">~기술을 기반으로 만든</td></tr>
+          <tr><td class="col-en">prioritizing A over B</td><td class="col-kr">B보다 A를 우선시하다</td></tr>
+          <tr><td class="col-en">lowering the barrier to</td><td class="col-kr">~에 대한 진입 장벽을 낮추다</td></tr>
+          <tr><td class="col-en">surface without having to</td><td class="col-kr">~하지 않아도 자연스럽게 나타나다</td></tr>
+          <tr><td class="col-en">signals an acceleration of</td><td class="col-kr">~의 가속화를 시사하다</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- Entry 02 -->
+  <div class="entry" id="s2">
+    <div class="entry-num">02</div>
+    <div class="entry-cat">AI Tools / Model Release</div>
+    <h2 class="entry-title">Google Stitch 공개 — 텍스트 한 줄로 UI 레이아웃 실시간 생성하는 AI 디자인 툴</h2>
+    <div class="entry-source">
+      <a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank">Google Blog — 2026.05.19</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('tech','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('tech','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="tech-kr">
+      Google I/O 2026에서 발표된 'Google Stitch'는 자연어 프롬프트만으로 UI 레이아웃을 실시간으로 생성·수정할 수 있는 AI 디자인 툴입니다. 사용자가 원하는 화면 구조를 텍스트로 설명하면 Stitch가 즉시 레이아웃을 시각화하고, 대화 흐름에 따라 디자인을 리플로우(재배치)합니다. 코딩 지식 없이도 앱·웹 화면을 빠르게 프로토타이핑할 수 있어, 디자이너·기획자뿐 아니라 창업자·마케터도 손쉽게 쓸 수 있는 툴로 주목받고 있습니다. Figma 같은 기존 디자인 툴을 완전히 대체하기보다는 아이디어를 빠르게 구체화하는 '초기 단계 협업 도구'로서의 포지셔닝이 눈에 띕니다.
+    </p>
+    <p class="summary-text" id="tech-en">
+      Announced at Google I/O 2026, 'Google Stitch' is an AI design tool that generates and modifies UI layouts in real time using only natural language prompts. Users describe the screen structure they want in text, and Stitch instantly visualizes the layout, reflowing the design as the conversation progresses. Without any coding knowledge, anyone can rapidly prototype app and web screens, making it accessible not just to designers and product managers, but also to founders and marketers. Notably, it positions itself as an "early-stage collaboration tool" for quickly materializing ideas, rather than a full replacement for tools like Figma.
+    </p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn-table">
+        <thead><tr><th class="col-en">English</th><th class="col-kr">한국어</th></tr></thead>
+        <tbody>
+          <tr><td class="col-en">natural language prompt</td><td class="col-kr">자연어 프롬프트 (일상 언어로 입력하는 명령)</td></tr>
+          <tr><td class="col-en">reflow</td><td class="col-kr">리플로우 (레이아웃 요소를 재배치·재조정)</td></tr>
+          <tr><td class="col-en">prototype</td><td class="col-kr">프로토타입, 시제품 (시각화한 초기 버전)</td></tr>
+          <tr><td class="col-en">positioning</td><td class="col-kr">포지셔닝 (제품의 시장 내 위치 설정)</td></tr>
+          <tr><td class="col-en">materializing ideas</td><td class="col-kr">아이디어를 구체화하다</td></tr>
+        </tbody>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn-table">
+        <thead><tr><th class="col-en">Expression</th><th class="col-kr">의미</th></tr></thead>
+        <tbody>
+          <tr><td class="col-en">in real time</td><td class="col-kr">실시간으로</td></tr>
+          <tr><td class="col-en">as the conversation progresses</td><td class="col-kr">대화가 진행될수록</td></tr>
+          <tr><td class="col-en">without any coding knowledge</td><td class="col-kr">코딩 지식 없이도</td></tr>
+          <tr><td class="col-en">accessible not just to A but also B</td><td class="col-kr">A뿐만 아니라 B도 사용할 수 있는</td></tr>
+          <tr><td class="col-en">rather than a full replacement for</td><td class="col-kr">~을 완전히 대체하기보다는</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- Entry 03 -->
+  <div class="entry" id="s3">
+    <div class="entry-num">03</div>
+    <div class="entry-cat">AI Startup / VC / Industry</div>
+    <h2 class="entry-title">Anthropic, 3조 원 규모 펀딩 클로징 임박 — 기업가치 900조 원 돌파 전망</h2>
+    <div class="entry-source">
+      <a href="https://www.bloomberg.com/news/articles/2026-05-22/anthropic-to-close-over-30-billion-round-as-soon-as-next-week" target="_blank">Bloomberg — 2026.05.22</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('biz','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('biz','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="biz-kr">
+      블룸버그 보도에 따르면 Anthropic이 300억 달러(약 41조 원) 이상의 펀딩 라운드를 이르면 이번 주 내 클로징할 예정이며, 기업 가치는 9,000억 달러(약 1,242조 원)를 초과할 것으로 전망됩니다. Sequoia Capital, Dragoneer, Altimeter Capital, Greenoaks Capital이 각각 약 20억 달러씩 공동 리드할 것으로 알려졌습니다. 이번 라운드는 OpenAI의 1,220억 달러 라운드에 이어 AI 역사상 두 번째로 큰 단일 투자 규모입니다. Anthropic은 Claude 시리즈를 통해 기업용 AI 시장에서 빠르게 성장 중이며, 이번 투자는 모델 연구·인프라·글로벌 확장에 쓰일 예정입니다.
+    </p>
+    <p class="summary-text" id="biz-en">
+      According to Bloomberg, Anthropic is set to close a funding round exceeding $30 billion as soon as this week, with its valuation expected to surpass $900 billion. Sequoia Capital, Dragoneer, Altimeter Capital, and Greenoaks Capital are each planning to co-lead with approximately $2 billion investments. This round is the second-largest single investment in AI history, following OpenAI's $122 billion round. Anthropic has been rapidly growing in the enterprise AI market through its Claude series, and the funding will be used for model research, infrastructure, and global expansion.
+    </p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn-table">
+        <thead><tr><th class="col-en">English</th><th class="col-kr">한국어</th></tr></thead>
+        <tbody>
+          <tr><td class="col-en">funding round</td><td class="col-kr">펀딩 라운드 (투자 유치 단계)</td></tr>
+          <tr><td class="col-en">valuation</td><td class="col-kr">기업 가치 평가액</td></tr>
+          <tr><td class="col-en">co-lead</td><td class="col-kr">공동 리드 (여러 투자자가 함께 주도)</td></tr>
+          <tr><td class="col-en">enterprise AI</td><td class="col-kr">기업용 AI</td></tr>
+          <tr><td class="col-en">infrastructure</td><td class="col-kr">인프라 (서버·네트워크 등 기반 시설)</td></tr>
+        </tbody>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn-table">
+        <thead><tr><th class="col-en">Expression</th><th class="col-kr">의미</th></tr></thead>
+        <tbody>
+          <tr><td class="col-en">set to close</td><td class="col-kr">클로징(마무리)될 예정이다</td></tr>
+          <tr><td class="col-en">as soon as this week</td><td class="col-kr">이르면 이번 주 안에</td></tr>
+          <tr><td class="col-en">expected to surpass</td><td class="col-kr">~을 초과할 것으로 예상되다</td></tr>
+          <tr><td class="col-en">rapidly growing in</td><td class="col-kr">~에서 빠르게 성장하고 있다</td></tr>
+          <tr><td class="col-en">will be used for</td><td class="col-kr">~에 사용될 예정이다</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <div class="signal-label">signal</div>
+  <div class="signal-body">
+    오늘 세 소식을 연결하면 하나의 큰 그림이 보입니다. <strong>AI가 크리에이터의 수익 구조, 디자인 워크플로우, 그리고 산업의 자본 흐름을 동시에 재편하고 있다</strong>는 것입니다. X의 Creator Connect는 알고리즘이 크리에이터의 '영업'을 대신하는 시대를 열었고, Google Stitch는 디자인의 첫 단계를 누구나 접근할 수 있는 대화로 바꾸고 있습니다. 그리고 Anthropic의 $30B 라운드는 이 모든 변화의 기저에 <strong>엄청난 규모의 자본과 기술 경쟁이 벌어지고 있음</strong>을 보여줍니다. 크리에이터와 디자이너에게 중요한 질문은 하나입니다: AI가 내 일의 어떤 부분을 자동화해주고, 어떤 부분에서 내 고유한 판단과 감각이 더욱 빛나는가?
+  </div>
+
+  <hr class="rule" />
+
+  <div class="sources-label">sources</div>
+  <ul class="sources-list">
+    <li><a href="https://imfounder.com/science-tech/ai/ai-updates-may-2026/" target="_blank">imFounder — 7 Explosive AI Updates in May 2026</a></li>
+    <li><a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank">Google Blog — 100 things we announced at Google I/O 2026</a></li>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-05-22/anthropic-to-close-over-30-billion-round-as-soon-as-next-week" target="_blank">Bloomberg — Anthropic to Close Over $30 Billion Round (May 22, 2026)</a></li>
+    <li><a href="https://news.crunchbase.com/venture/global-startup-funding-april-2026-anthropic-jeff-bezos-project-prometheus-biggest-deals/" target="_blank">Crunchbase — Billion-Dollar AI Rounds Push April to Third-Highest Month</a></li>
+  </ul>
+
+  <footer class="footer">
+    <a href="./index.html">AI Brief</a>
+    <span class="footer-date">2026.05.26</span>
+    <span class="footer-copy">© enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+  </footer>
+
+</div>
+<script>
+function switchLang(id, lang) {
+  const kr = document.getElementById(id + '-kr');
+  const en = document.getElementById(id + '-en');
+  const entry = kr.closest('.entry');
+  const btns = entry.querySelectorAll('.lang-btn');
+  kr.classList.toggle('visible', lang === 'kr');
+  en.classList.toggle('visible', lang === 'en');
+  btns.forEach(btn => btn.classList.remove('active'));
+  if (lang === 'kr') btns[0].classList.add('active');
+  else btns[1].classList.add('active');
+}
+</script>
+</body>
+</html>
