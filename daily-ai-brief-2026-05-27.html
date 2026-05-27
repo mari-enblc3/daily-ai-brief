@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Brief — 2026.05.27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --text: #0d0c0b;
+      --muted: #888;
+      --rule: #e0ddd9;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 48px;
+    }
+    .nav-brand {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-archive {
+      font-size: 11px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .nav-archive:hover { color: var(--text); }
+
+    /* DATELINE */
+    .dateline {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      letter-spacing: 0.03em;
+    }
+
+    /* RULE */
+    hr.rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 32px 0;
+    }
+
+    /* ENTRY */
+    .entry { margin-bottom: 0; }
+    .entry-num {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .entry-cat {
+      font-size: 11px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+    h2.entry-title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .entry-source {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .entry-source a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+    .entry-source a:hover { color: var(--text); }
+
+    /* LANG TOGGLE */
+    .lang-toggle {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .lang-btn {
+      font-size: 11px;
+      color: var(--muted);
+      background: none;
+      border: 1px solid var(--rule);
+      padding: 2px 8px;
+      border-radius: 2px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .lang-btn.active, .lang-btn:hover {
+      color: var(--text);
+      border-color: var(--text);
+    }
+
+    /* SUMMARY */
+    .summary-text {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--text);
+      display: none;
+    }
+    .summary-text.visible { display: block; }
+
+    /* LEARN SECTION */
+    .learn-section { margin-top: 20px; }
+    .learn-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    table.vocab-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      margin-bottom: 18px;
+    }
+    table.vocab-table td {
+      padding: 5px 0;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    table.vocab-table td:first-child { width: 48%; }
+    .col-en { font-style: italic; color: var(--text); }
+    .col-kr { color: var(--muted); padding-left: 12px; }
+
+    /* SIGNAL */
+    .signal-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .signal-body {
+      font-size: 13.5px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .signal-body strong { font-weight: 500; }
+
+    /* SOURCES */
+    .sources-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    ul.sources-list {
+      list-style: none;
+      font-size: 12px;
+    }
+    ul.sources-list li {
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+    ul.sources-list li::before {
+      content: '→  ';
+      color: var(--muted);
+    }
+    ul.sources-list a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+    ul.sources-list a:hover { color: var(--text); }
+
+    /* FOOTER */
+    footer.footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-top: 1px solid var(--rule);
+      padding-top: 20px;
+      margin-top: 40px;
+    }
+    .footer-brand {
+      font-size: 12px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .footer-brand:hover { opacity: 0.7; }
+    .footer-date {
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .footer-copy {
+      font-size: 10px;
+      color: #bbb;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="./index.html">AI Brief</a>
+    <a class="nav-archive" href="./index.html">archive</a>
+  </nav>
+
+  <div class="dateline">• 2026.05.27 — No.001</div>
+
+  <!-- ENTRY 01 -->
+  <div class="entry" id="s1">
+    <div class="entry-num">01</div>
+    <div class="entry-cat">AI for Creators / Designers</div>
+    <h2 class="entry-title">구글 'Pics' 출시: 텍스트 프롬프트로 누구나 디자이너</h2>
+    <div class="entry-source">
+      <a href="https://techcrunch.com/2026/05/19/ai-design-tools-are-the-next-big-battleground-and-google-is-going-all-in-at-io-2026/" target="_blank">TechCrunch · Aisha Malik · 2026.05.19</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('art','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('art','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="art-kr">
+      구글이 Google I/O 2026에서 AI 디자인 앱 <em>Pics</em>를 공개했습니다. 텍스트 프롬프트만으로 소셜 미디어 그래픽, 초대장, 마케팅 자료 등을 생성할 수 있어 별도의 편집 기술이 필요 없습니다. Nano Banana 2 모델을 기반으로 하며, 생성된 이미지의 특정 요소를 클릭해 구글 문서처럼 댓글로 수정할 수 있는 점이 특징입니다. 캔바(Canva)와 Anthropic의 Claude Design에 직접 도전하는 이 앱은 Google AI Ultra 구독자를 대상으로 올 여름 정식 출시될 예정입니다. AI 디자인 툴이 본격적인 경쟁 격전지로 떠오르고 있습니다.
+    </p>
+    <p class="summary-text" id="art-en">
+      At Google I/O 2026, Google unveiled <em>Pics</em> — an AI-powered design app that lets anyone generate polished visuals using simple text prompts, no editing skills required. Built on the Nano Banana 2 model, Pics creates social media graphics, invitations, and marketing materials on demand. Its standout feature: every generated element is fully editable via Gemini's layer — click any part, leave a comment like in Google Docs, and watch it update. Google is directly challenging Canva and Anthropic's Claude Design with this move. Pics rolls out to Google AI Ultra subscribers this summer, signaling that AI-powered design is fast becoming a core competitive arena.
+    </p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">contender</td><td class="col-kr">경쟁자, 도전자</td></tr>
+        <tr><td class="col-en">accessible</td><td class="col-kr">접근하기 쉬운</td></tr>
+        <tr><td class="col-en">mock-up</td><td class="col-kr">시제품, 목업</td></tr>
+        <tr><td class="col-en">editable</td><td class="col-kr">편집 가능한</td></tr>
+        <tr><td class="col-en">subscriber</td><td class="col-kr">구독자</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">take on ~</td><td class="col-kr">~에 도전하다, ~와 경쟁하다</td></tr>
+        <tr><td class="col-en">roll out to ~</td><td class="col-kr">~에 순차 출시되다</td></tr>
+        <tr><td class="col-en">text prompt</td><td class="col-kr">텍스트 프롬프트</td></tr>
+        <tr><td class="col-en">without needing ~</td><td class="col-kr">~ 없이도</td></tr>
+        <tr><td class="col-en">is powered by ~</td><td class="col-kr">~에 의해 구동되다</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 02 -->
+  <div class="entry" id="s2">
+    <div class="entry-num">02</div>
+    <div class="entry-cat">AI Tools / Model Release</div>
+    <h2 class="entry-title">Gemini Omni: 텍스트·이미지·오디오를 영상으로, 대화하듯</h2>
+    <div class="entry-source">
+      <a href="https://techcrunch.com/2026/05/19/googles-gemini-omni-turns-images-audio-and-text-into-video-and-thats-just-the-start/" target="_blank">TechCrunch · 2026.05.19</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('tech','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('tech','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="tech-kr">
+      구글이 Google I/O 2026에서 차세대 멀티모달 모델 <em>Gemini Omni</em>를 공개했습니다. 텍스트, 이미지, 오디오, 영상을 입력하면 물리 법칙과 세계 지식을 반영한 고품질 영상(약 10초)을 동기화된 오디오와 함께 생성합니다. Google Flow에서 실제 촬영 영상과 AI 생성 콘텐츠를 혼합하며 대화식으로 편집할 수 있고, 장면 전반에 걸쳐 캐릭터 일관성이 크게 향상됐습니다. Gemini Omni Flash는 현재 Google AI Plus·Pro·Ultra 구독자에게 Gemini 앱, Google Flow, YouTube Shorts에서 순차 제공 중입니다.
+    </p>
+    <p class="summary-text" id="tech-en">
+      Google introduced <em>Gemini Omni</em> at Google I/O 2026 — a multimodal model that converts any combination of text, images, audio, and video into ~10-second video clips with synchronized audio. Unlike simple stitching, Omni reasons across all inputs, producing videos that reflect an understanding of physics, culture, and history. In Google Flow, creators can blend real-world footage with AI-generated content and iterate conversationally. A key leap: character consistency is now preserved across all scenes, directly addressing a major pain point for storytellers. Omni Flash is rolling out to Google AI Plus, Pro, and Ultra subscribers via the Gemini app, Google Flow, and YouTube Shorts.
+    </p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">multimodal</td><td class="col-kr">다중 입출력 방식의</td></tr>
+        <tr><td class="col-en">synchronized</td><td class="col-kr">동기화된</td></tr>
+        <tr><td class="col-en">iterate</td><td class="col-kr">반복하여 개선하다</td></tr>
+        <tr><td class="col-en">consistency</td><td class="col-kr">일관성</td></tr>
+        <tr><td class="col-en">immersive</td><td class="col-kr">몰입감 있는</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">turns ~ into ~</td><td class="col-kr">~을 ~으로 변환하다</td></tr>
+        <tr><td class="col-en">blend with ~</td><td class="col-kr">~와 혼합하다</td></tr>
+        <tr><td class="col-en">preserve across ~</td><td class="col-kr">~전반에 걸쳐 보존하다</td></tr>
+        <tr><td class="col-en">rolling out to ~</td><td class="col-kr">~에 순차 출시 중</td></tr>
+        <tr><td class="col-en">from any input</td><td class="col-kr">어떤 입력에서도</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 03 -->
+  <div class="entry" id="s3">
+    <div class="entry-num">03</div>
+    <div class="entry-cat">AI Startup / VC / Industry</div>
+    <h2 class="entry-title">OpenAI-Microsoft 비독점 재편: 클라우드 AI 경쟁, 이제 본격화</h2>
+    <div class="entry-source">
+      <a href="https://radicaldatascience.wordpress.com/2026/05/18/ai-news-briefs-bulletin-board-for-may-2026/" target="_blank">Radical Data Science · AI News Brief · 2026.05</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('biz','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('biz','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="biz-kr">
+      마이크로소프트와 OpenAI가 파트너십을 <em>비독점(non-exclusive)</em> 구조로 전환했습니다. 이제 두 회사 모두 더 넓은 외부 파트너십을 자유롭게 추구할 수 있어, 클라우드 AI 시장의 경쟁이 본격적으로 가속화될 전망입니다. 동시에 OpenAI는 GPT-5.5 Instant를 출시해 사실 정확도와 개인화 기능을 강화했습니다. AI 업계 초창기를 지배했던 독점적 계약들이 하나씩 해소되며, 크리에이터와 기업 모두 더 많은 도구 선택지와 경쟁으로 인한 가격 혜택을 누릴 수 있게 될 것으로 예상됩니다.
+    </p>
+    <p class="summary-text" id="biz-en">
+      Microsoft and OpenAI have restructured their landmark partnership into a non-exclusive arrangement, allowing both companies to pursue broader third-party deals. This marks a major strategic shift from the exclusivity that defined the early AI era. Concurrently, OpenAI released GPT-5.5 Instant, updating ChatGPT's default model with stronger factual accuracy and personalization. Together, these moves signal a maturing market: the walled-garden partnerships of 2023–2025 are giving way to a more open, competitive ecosystem. For creators and businesses, this translates to more tool choices and potentially better pricing as major players compete more openly.
+    </p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">non-exclusive</td><td class="col-kr">비독점의</td></tr>
+        <tr><td class="col-en">arrangement</td><td class="col-kr">협정, 계약 구조</td></tr>
+        <tr><td class="col-en">restructure</td><td class="col-kr">재편하다, 구조를 바꾸다</td></tr>
+        <tr><td class="col-en">ecosystem</td><td class="col-kr">생태계</td></tr>
+        <tr><td class="col-en">maturing</td><td class="col-kr">성숙해지는</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">opens up ~</td><td class="col-kr">~의 가능성을 열다</td></tr>
+        <tr><td class="col-en">give way to ~</td><td class="col-kr">~에 자리를 내주다</td></tr>
+        <tr><td class="col-en">pursue partnerships</td><td class="col-kr">파트너십을 추구하다</td></tr>
+        <tr><td class="col-en">heat up</td><td class="col-kr">경쟁이 치열해지다</td></tr>
+        <tr><td class="col-en">define the industry</td><td class="col-kr">업계를 정의하다</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SIGNAL -->
+  <div class="signal-label">signal</div>
+  <div class="signal-body">
+    이번 주 AI 업계의 핵심 메시지는 단 하나입니다. <strong>AI가 전문가의 영역을 누구나의 영역으로 확장하고 있다는 것</strong>입니다. Google Pics는 디자인 기술 없이도 전문적인 비주얼을 만들게 해주고, Gemini Omni는 영상 제작을 마치 대화처럼 만들었습니다. 이 두 도구가 Canva·Adobe·Runway 같은 기존 크리에이터 툴 생태계 전체를 흔들고 있습니다. 동시에 OpenAI-Microsoft의 비독점 재편은 한 회사가 AI 인프라를 독점하는 시대가 끝났음을 알립니다. <strong>크리에이터에게 지금 이 순간은 선택지가 폭발적으로 늘어나는 동시에, 차별화를 위한 전략적 사고가 그 어느 때보다 중요해지는 시점</strong>입니다.
+  </div>
+
+  <hr class="rule">
+
+  <!-- SOURCES -->
+  <div class="sources-label">sources</div>
+  <ul class="sources-list">
+    <li><a href="https://techcrunch.com/2026/05/19/ai-design-tools-are-the-next-big-battleground-and-google-is-going-all-in-at-io-2026/" target="_blank">TechCrunch — Google just declared itself a contender in AI design at IO 2026</a></li>
+    <li><a href="https://techcrunch.com/2026/05/19/googles-gemini-omni-turns-images-audio-and-text-into-video-and-thats-just-the-start/" target="_blank">TechCrunch — Google's Gemini Omni turns images, audio, and text into video</a></li>
+    <li><a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank">Google Blog — 100 things we announced at Google I/O 2026</a></li>
+    <li><a href="https://decrypt.co/368393/google-unveils-gemini-omni-next-gen-ai-video-builder-simulate-world" target="_blank">Decrypt — Google Unveils Gemini Omni, Next-Gen AI Video Builder</a></li>
+    <li><a href="https://radicaldatascience.wordpress.com/2026/05/18/ai-news-briefs-bulletin-board-for-may-2026/" target="_blank">Radical Data Science — AI News Briefs May 2026</a></li>
+    <li><a href="https://llm-stats.com/llm-updates" target="_blank">LLM Stats — AI Updates Today (May 2026)</a></li>
+  </ul>
+
+  <footer class="footer">
+    <a class="footer-brand" href="./index.html">AI Brief →</a>
+    <span class="footer-date">2026.05.27</span>
+    <span class="footer-copy">© enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+  </footer>
+
+  <script>
+    function switchLang(id, lang) {
+      const kr = document.getElementById(id + '-kr');
+      const en = document.getElementById(id + '-en');
+      const entry = kr.closest('.entry');
+      const btns = entry.querySelectorAll('.lang-btn');
+      kr.classList.toggle('visible', lang === 'kr');
+      en.classList.toggle('visible', lang === 'en');
+      btns.forEach(btn => btn.classList.remove('active'));
+      if (lang === 'kr') btns[0].classList.add('active');
+      else btns[1].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
