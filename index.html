@@ -1,119 +1,103 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Brief</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #faf9f7;
-      --text: #0d0c0b;
-      --muted: #888;
-      --rule: #e0ddd9;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f7;
+    --text: #0d0c0b;
+    --muted: #888;
+    --rule: #e0ddd9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 48px 24px 80px;
+  }
+  .wrap { max-width: 520px; margin: 0 auto; }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    font-size: 13px;
+  }
+  nav a { text-decoration: none; color: var(--text); }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
-      font-size: 14px;
-      line-height: 1.7;
-      max-width: 520px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
+  .intro { margin-bottom: 40px; }
+  .intro-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-weight: 300;
+  }
 
-    /* NAV */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 48px;
-    }
-    .nav-brand {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-    }
-    .nav-brand:hover { opacity: 0.7; }
+  .archive-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+  }
 
-    /* INTRO */
-    .intro {
-      margin-bottom: 48px;
-    }
-    .intro-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
+  .entry-row {
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    transition: opacity 0.15s;
+  }
+  .entry-row:hover { opacity: 0.65; }
+  .entry-row-inner {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .entry-row-date {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-top: 2px;
+    min-width: 90px;
+  }
+  .entry-row-right { flex: 1; }
+  .entry-row-title {
+    font-size: 13.5px;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+  .entry-row-desc {
+    font-size: 11.5px;
+    color: var(--muted);
+  }
 
-    /* ARCHIVE LABEL */
-    .archive-label {
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    /* ENTRY ROW */
-    a.entry-row {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      border-top: 1px solid var(--rule);
-      padding: 16px 0;
-      transition: opacity 0.15s;
-    }
-    a.entry-row:last-child { border-bottom: 1px solid var(--rule); }
-    a.entry-row:hover { opacity: 0.65; }
-
-    .entry-row-inner {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-    .entry-row-date {
-      font-size: 11px;
-      color: var(--muted);
-      white-space: nowrap;
-      padding-top: 2px;
-      min-width: 90px;
-    }
-    .entry-row-right { flex: 1; }
-    .entry-row-title {
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 3px;
-    }
-    .entry-row-desc {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* FOOTER */
-    footer.footer {
-      margin-top: 60px;
-      border-top: 1px solid var(--rule);
-      padding-top: 20px;
-      font-size: 10px;
-      color: #bbb;
-      text-align: center;
-    }
-  </style>
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 10px;
+    color: #bbb;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
 
   <nav>
-    <a class="nav-brand" href="#" id="nav-brand-link">AI Brief</a>
+    <a href="#" id="nav-brand-link">AI Brief</a>
   </nav>
 
   <div class="intro">
@@ -123,45 +107,54 @@
   <div class="archive-label">archive</div>
   <div id="archive"></div>
 
-  <footer class="footer">
-    © enblc3. Jeong A Mari Lee. All Rights Reserved.
-  </footer>
+  <footer>© enblc3. Jeong A Mari Lee. All Rights Reserved.</footer>
 
-  <script>
-    const BRIEFS = [
-      {
-        "year": "2026",
-        "month": "05",
-        "day": "27",
-        "displayDate": "2026.05.27",
-        "title": "Daily AI Brief",
-        "desc": "Google Pics AI 디자인 앱 / Gemini Omni 영상 생성 / OpenAI-MS 비독점 재편",
-        "url": "./daily-ai-brief-2026-05-27.html",
-        "num": "001"
-      }
-    ];
+</div>
 
-    function render() {
-      const container = document.getElementById('archive');
-      BRIEFS.forEach(b => {
-        const a = document.createElement('a');
-        a.href = b.url;
-        a.className = 'entry-row';
-        a.innerHTML = `
-          <div class="entry-row-inner">
-            <span class="entry-row-date">• ${b.displayDate}</span>
-            <div class="entry-row-right">
-              <div class="entry-row-title">${b.title} — No.${b.num}</div>
-              <div class="entry-row-desc">${b.desc}</div>
-            </div>
-          </div>`;
-        container.appendChild(a);
-      });
-    }
+<script>
+const BRIEFS = [
+  {
+    "year": "2026",
+    "month": "05",
+    "day": "28",
+    "displayDate": "2026.05.28",
+    "title": "Daily AI Brief",
+    "desc": "ChatGPT 음성 모드 구형 모델 논란 / Claude Code v2.1.152 보안 패치 / ElevenLabs $5억 조달",
+    "url": "./daily-ai-brief-2026-05-28.html",
+    "num": "002"
+  },
+  {
+    "year": "2026",
+    "month": "05",
+    "day": "27",
+    "displayDate": "2026.05.27",
+    "title": "Daily AI Brief",
+    "desc": "Google Pics AI 디자인 앱 / Gemini Omni 영상 생성 / OpenAI-MS 비독점 재편",
+    "url": "./daily-ai-brief-2026-05-27.html",
+    "num": "001"
+  }
+];
 
-    render();
-    document.getElementById('nav-brand-link').href = BRIEFS[0].url;
-  </script>
+function render() {
+  const container = document.getElementById('archive');
+  BRIEFS.forEach(b => {
+    const a = document.createElement('a');
+    a.href = b.url;
+    a.className = 'entry-row';
+    a.innerHTML = `
+      <div class="entry-row-inner">
+        <span class="entry-row-date">• ${b.displayDate}</span>
+        <div class="entry-row-right">
+          <div class="entry-row-title">${b.title} — No.${b.num}</div>
+          <div class="entry-row-desc">${b.desc}</div>
+        </div>
+      </div>`;
+    container.appendChild(a);
+  });
+}
 
+render();
+document.getElementById('nav-brand-link').href = BRIEFS[0].url;
+</script>
 </body>
 </html>
