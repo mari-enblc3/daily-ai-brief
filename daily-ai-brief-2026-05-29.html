@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Brief — 2026.05.29</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --text: #0d0c0b;
+      --muted: #888;
+      --rule: #e0ddd9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .wrap { max-width: 520px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* Nav */
+    nav { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 40px; }
+    nav a { text-decoration: none; color: var(--text); font-size: 13px; font-weight: 500; letter-spacing: 0.02em; }
+    nav .archive-link { color: var(--muted); font-size: 12px; }
+    nav .archive-link:hover { color: var(--text); }
+
+    /* Dateline */
+    .dateline { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 32px; }
+
+    /* Rule */
+    hr.rule { border: none; border-top: 1px solid var(--rule); margin: 32px 0; }
+
+    /* Entry */
+    .entry { padding: 4px 0; }
+    .entry-num { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 4px; }
+    .entry-cat { font-size: 11px; color: var(--muted); font-style: italic; margin-bottom: 8px; }
+    .entry-title { font-size: 16px; font-weight: 500; line-height: 1.4; margin-bottom: 6px; }
+    .entry-source { font-size: 11px; color: var(--muted); margin-bottom: 14px; }
+    .entry-source a { color: var(--muted); text-decoration: underline; }
+    .entry-source a:hover { color: var(--text); }
+
+    /* Lang toggle */
+    .lang-toggle { display: flex; gap: 6px; margin-bottom: 14px; }
+    .lang-btn {
+      font-size: 11px; padding: 2px 8px;
+      border: 1px solid var(--rule); border-radius: 2px;
+      background: transparent; color: var(--muted);
+      cursor: pointer; font-family: inherit;
+    }
+    .lang-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+    /* Summary */
+    .summary-text { font-size: 13.5px; line-height: 1.75; color: var(--text); display: none; }
+    .summary-text.visible { display: block; }
+
+    /* Learn section */
+    .learn-section { margin-top: 20px; }
+    .learn-label { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+    table.vocab { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+    table.vocab td { font-size: 12px; padding: 4px 0; vertical-align: top; }
+    .col-en { width: 45%; font-style: italic; color: var(--text); padding-right: 12px; }
+    .col-kr { color: var(--muted); }
+
+    /* Signal */
+    .signal-label { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+    .signal-body { font-size: 13.5px; line-height: 1.8; color: var(--text); }
+    .signal-body strong { font-weight: 500; }
+
+    /* Sources */
+    .sources-label { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+    ul.sources-list { list-style: none; padding: 0; }
+    ul.sources-list li { font-size: 11px; margin-bottom: 5px; }
+    ul.sources-list li::before { content: '→  '; color: var(--muted); }
+    ul.sources-list a { color: var(--muted); text-decoration: underline; }
+    ul.sources-list a:hover { color: var(--text); }
+
+    /* Footer */
+    footer.footer {
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid var(--rule);
+      margin-top: 48px; padding-top: 20px;
+      font-size: 11px; color: var(--muted);
+    }
+    footer.footer a { color: var(--muted); text-decoration: none; }
+    footer.footer a:hover { color: var(--text); }
+    .footer-copy { font-size: 10px; color: #bbb; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a href="./index.html">AI Brief</a>
+    <a class="archive-link" href="./index.html">archive</a>
+  </nav>
+
+  <div class="dateline">• 2026.05.29 — No.001</div>
+
+  <!-- Entry 01 -->
+  <div class="entry" id="s1">
+    <div class="entry-num">01</div>
+    <div class="entry-cat">AI for Creators / Designers</div>
+    <h2 class="entry-title">Google I/O 2026: 코딩 없이 나만의 AI 크리에이티브 툴을 직접 만든다</h2>
+    <div class="entry-source">
+      <a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank">Google Blog — 2026.05.20</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('art','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('art','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="art-kr">
+      Google I/O 2026에서 공개된 <strong>Flow Tools</strong>는 코딩 지식 없이 자연어만으로 나만의 AI 크리에이티브 도구를 만들 수 있게 해줍니다. 비디오 이펙트 디자이너, 손그림 애니메이터, 커스텀 셰이더 등 영상·이미지 제작 도구를 직접 설계할 수 있으며, 플로우 뮤직(Flow Music)으로는 Gemini Omni와 대화하듯 뮤직비디오도 제작할 수 있습니다. 기존 AI 툴을 '사용'하는 수준을 넘어, 크리에이터가 직접 AI 워크플로우를 '설계'하는 시대가 열렸습니다.
+    </p>
+    <p class="summary-text" id="art-en">
+      Google unveiled <strong>Flow Tools</strong> at I/O 2026, letting creators build custom AI creative tools using only natural language — no coding required. Users can design video effect generators, hand-drawn animation tools, or custom shaders simply by describing what they need. Paired with Flow Music, which enables conversational music video direction with Gemini Omni, Google is shifting creators from mere users of AI tools to designers of their own AI-powered workflows.
+    </p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="vocab">
+        <tr><td class="col-en">vibe code</td><td class="col-kr">자연어로 코드/툴을 만들다 (직관적 개발)</td></tr>
+        <tr><td class="col-en">custom shader</td><td class="col-kr">커스텀 셰이더 (그래픽 효과 프로그램)</td></tr>
+        <tr><td class="col-en">workflow</td><td class="col-kr">워크플로우 (작업 흐름·프로세스)</td></tr>
+        <tr><td class="col-en">conversational</td><td class="col-kr">대화형의, 대화하듯 이루어지는</td></tr>
+        <tr><td class="col-en">bespoke</td><td class="col-kr">맞춤 제작된, 주문 제작의</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="vocab">
+        <tr><td class="col-en">build custom tools</td><td class="col-kr">커스텀 도구를 직접 만들다</td></tr>
+        <tr><td class="col-en">no coding experience required</td><td class="col-kr">코딩 경험 불필요</td></tr>
+        <tr><td class="col-en">natural language</td><td class="col-kr">자연어 (일상적인 언어)</td></tr>
+        <tr><td class="col-en">work conversationally with</td><td class="col-kr">~와 대화하듯 작업하다</td></tr>
+        <tr><td class="col-en">from using to building</td><td class="col-kr">사용하는 것에서 직접 만드는 것으로</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- Entry 02 -->
+  <div class="entry" id="s2">
+    <div class="entry-num">02</div>
+    <div class="entry-cat">AI Tools / Model Release</div>
+    <h2 class="entry-title">ElevenLabs Music v2: 트랙 중간에 장르를 바꾸는 AI 음악 생성 모델</h2>
+    <div class="entry-source">
+      <a href="https://techcrunch.com/2026/05/27/elevenlabss-new-music-generation-model-can-switch-genres-mid-track/" target="_blank">TechCrunch — 2026.05.27</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('tech','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('tech','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="tech-kr">
+      ElevenLabs가 새로운 AI 음악 생성 모델 <strong>Music v2</strong>를 출시했습니다. 오페라에서 헤비메탈로, 다시 오페라로 — 곡 중간에 장르를 자유롭게 전환할 수 있고, 나머지 트랙은 그대로 유지하면서 특정 구간만 다시 생성하는 '인페인팅(inpainting)' 기능도 탑재됐습니다. 인트로·벌스·코러스를 섹션별로 따로 제작하고 이어붙일 수 있어 작곡 방식이 더욱 정밀해졌으며, 라이선스 데이터 기반으로 상업적 이용도 가능합니다.
+    </p>
+    <p class="summary-text" id="tech-en">
+      ElevenLabs launched <strong>Music v2</strong>, an AI music generation model that can switch genres mid-track — from opera to heavy metal and back, with coherent fast rap in between. A key new feature is section-level inpainting: regenerate just one part of a song without touching the rest. Artists can build a track section by section (intro, verse, chorus) and stitch them together. The model is trained on licensed data and cleared for commercial use, available on ElevenCreative and the new ElevenMusic platform.
+    </p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="vocab">
+        <tr><td class="col-en">inpainting</td><td class="col-kr">인페인팅 (특정 영역만 재생성하는 기법)</td></tr>
+        <tr><td class="col-en">coherence</td><td class="col-kr">일관성, 응집성 (자연스럽게 이어지는 느낌)</td></tr>
+        <tr><td class="col-en">arrangement</td><td class="col-kr">편곡 (악기 구성·구조를 짜는 것)</td></tr>
+        <tr><td class="col-en">genre</td><td class="col-kr">장르 (음악·예술의 종류/분류)</td></tr>
+        <tr><td class="col-en">stitch together</td><td class="col-kr">이어붙이다, 연결하다</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="vocab">
+        <tr><td class="col-en">switch genres mid-track</td><td class="col-kr">트랙 중간에 장르를 전환하다</td></tr>
+        <tr><td class="col-en">regenerate a section</td><td class="col-kr">특정 구간을 다시 생성하다</td></tr>
+        <tr><td class="col-en">without affecting the rest</td><td class="col-kr">나머지 부분에 영향을 주지 않고</td></tr>
+        <tr><td class="col-en">cleared for commercial use</td><td class="col-kr">상업적 사용이 허가된</td></tr>
+        <tr><td class="col-en">section by section</td><td class="col-kr">섹션별로, 부분 부분씩</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- Entry 03 -->
+  <div class="entry" id="s3">
+    <div class="entry-num">03</div>
+    <div class="entry-cat">AI Startup / VC / Industry</div>
+    <h2 class="entry-title">AI 코딩 에이전트 Devin, $1B 투자 유치 — 8개월 만에 기업가치 2.5배</h2>
+    <div class="entry-source">
+      <a href="https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/" target="_blank">TechCrunch — 2026.05.27</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('biz','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('biz','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="biz-kr">
+      자율 AI 소프트웨어 엔지니어 'Devin'을 만든 스타트업 <strong>Cognition</strong>이 기업가치 $25B(약 34조 원)에 $1B(약 1.4조 원) 투자를 유치했습니다. 8개월 만에 기업가치가 2.5배 이상 뛰었고, 연간 반복 매출(ARR)은 $492M을 돌파했습니다. Mercedes-Benz, NASA, Goldman Sachs 등 대형 기업을 고객으로 확보하며, 빅테크 모델 메이커들과 경쟁하는 독립 AI 코딩 에이전트 스타트업의 생존 가능성을 입증했습니다.
+    </p>
+    <p class="summary-text" id="biz-en">
+      <strong>Cognition</strong>, makers of autonomous AI software engineer Devin, raised $1 billion at a $25 billion pre-money valuation — more than doubling its valuation in just eight months. The round was led by Lux Capital and General Catalyst. Cognition hit $492 million in annualized revenue run rate, with enterprise usage growing 50% month over month. Clients include Mercedes-Benz, NASA, and Goldman Sachs, demonstrating that independent AI coding startups can carve out durable ground even as foundation model companies like Anthropic (Claude Code) and OpenAI (Codex) push into the same market.
+    </p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="vocab">
+        <tr><td class="col-en">pre-money valuation</td><td class="col-kr">투자 전 기업가치 (투자금 반영 전)</td></tr>
+        <tr><td class="col-en">annualized revenue run rate</td><td class="col-kr">연간 반복 매출 (ARR, 현재 매출 기준 연간 추산)</td></tr>
+        <tr><td class="col-en">lead investor</td><td class="col-kr">리드 투자자 (투자를 주도하는 핵심 투자자)</td></tr>
+        <tr><td class="col-en">enterprise</td><td class="col-kr">대기업·기업 고객 (B2B 맥락)</td></tr>
+        <tr><td class="col-en">acqui-hire</td><td class="col-kr">인재 확보 목적의 기업 인수</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="vocab">
+        <tr><td class="col-en">more than doubled its valuation</td><td class="col-kr">기업가치가 두 배 이상 뛰었다</td></tr>
+        <tr><td class="col-en">month over month</td><td class="col-kr">전월 대비 (매달 비교)</td></tr>
+        <tr><td class="col-en">vote of confidence</td><td class="col-kr">신뢰의 표시, 강한 지지 신호</td></tr>
+        <tr><td class="col-en">carve out durable ground</td><td class="col-kr">지속 가능한 영역을 확보하다</td></tr>
+        <tr><td class="col-en">push into the same market</td><td class="col-kr">동일 시장에 진출하다</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- Signal -->
+  <div class="signal-label">signal</div>
+  <div class="signal-body">
+    이번 주 AI 씬을 관통하는 흐름은 하나입니다 — 크리에이터가 AI의 '사용자'에서 '설계자'로 이동하고 있다는 것입니다. Google Flow Tools는 코딩 없이 자신만의 AI 툴을 빚을 수 있게 했고, ElevenLabs Music v2는 음악을 '생성'하는 것을 넘어 구간별로 '편집'할 수 있는 DAW에 가깝게 진화했습니다. Cognition의 $1B 투자는 이 모든 창작 도구들이 결국 엔터프라이즈 수준의 자동화 인프라와 연결된다는 것을 보여줍니다. <strong>AI가 크리에이터를 대체하는 게 아니라, 크리에이터의 손에 더 강력한 레버를 쥐여주는 방향으로 흘러가고 있습니다.</strong> 이 흐름을 지금 읽고 있는 여러분이 가장 유리한 위치에 있습니다.
+  </div>
+
+  <hr class="rule" />
+
+  <!-- Sources -->
+  <div class="sources-label">sources</div>
+  <ul class="sources-list">
+    <li><a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank">100 things we announced at Google I/O 2026 — Google Blog</a></li>
+    <li><a href="https://techcrunch.com/2026/05/27/elevenlabss-new-music-generation-model-can-switch-genres-mid-track/" target="_blank">ElevenLabs's new music generation model can switch genres mid-track — TechCrunch</a></li>
+    <li><a href="https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/" target="_blank">AI coding startup Cognition raises $1B at $25B pre-money valuation — TechCrunch</a></li>
+    <li><a href="https://elevenlabs.io/blog/introducing-music-v2" target="_blank">Introducing Music v2 — ElevenLabs Blog</a></li>
+  </ul>
+
+  <footer class="footer">
+    <a href="./index.html">AI Brief</a>
+    <span>2026.05.29</span>
+    <span class="footer-copy">© enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+  </footer>
+
+</div>
+
+<script>
+function switchLang(id, lang) {
+  const kr = document.getElementById(id + '-kr');
+  const en = document.getElementById(id + '-en');
+  const entry = kr.closest('.entry');
+  const btns = entry.querySelectorAll('.lang-btn');
+  kr.classList.toggle('visible', lang === 'kr');
+  en.classList.toggle('visible', lang === 'en');
+  btns.forEach(btn => btn.classList.remove('active'));
+  if (lang === 'kr') btns[0].classList.add('active');
+  else btns[1].classList.add('active');
+}
+</script>
+</body>
+</html>
