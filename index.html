@@ -1,62 +1,109 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Brief</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #faf9f7;
-      --text: #0d0c0b;
-      --muted: #888;
-      --rule: #e0ddd9;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-    .wrap { max-width: 520px; margin: 0 auto; padding: 48px 24px 80px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f7;
+    --text: #0d0c0b;
+    --muted: #888;
+    --rule: #e0ddd9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 40px 20px 60px;
+  }
+  .wrap { max-width: 520px; margin: 0 auto; }
 
-    nav { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 40px; }
-    nav a { text-decoration: none; color: var(--text); font-size: 13px; font-weight: 500; letter-spacing: 0.02em; }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 36px;
+  }
+  nav a { text-decoration: none; color: var(--text); font-size: 13px; font-weight: 500; letter-spacing: 0.02em; }
 
-    .intro { margin-bottom: 36px; }
-    .intro-desc { font-size: 13px; color: var(--muted); line-height: 1.8; }
+  .intro { margin-bottom: 36px; }
+  .intro-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
 
-    .archive-label { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .archive-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+  }
 
-    #archive { display: flex; flex-direction: column; gap: 0; }
+  #archive { display: flex; flex-direction: column; gap: 0; }
 
-    a.entry-row {
-      display: block; text-decoration: none; color: var(--text);
-      border-top: 1px solid var(--rule);
-      padding: 16px 0;
-      transition: background 0.1s;
-    }
-    a.entry-row:last-child { border-bottom: 1px solid var(--rule); }
-    a.entry-row:hover { background: rgba(0,0,0,0.015); }
+  a.entry-row {
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+    transition: background 0.1s;
+  }
+  a.entry-row:hover { background: #f3f2f0; }
 
-    .entry-row-inner { display: flex; align-items: baseline; gap: 16px; }
-    .entry-row-date { font-size: 11px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
-    .entry-row-right { flex: 1; min-width: 0; }
-    .entry-row-title { font-size: 13.5px; font-weight: 500; margin-bottom: 3px; }
-    .entry-row-desc { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+  .entry-row-inner {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .entry-row-date {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-top: 2px;
+    min-width: 90px;
+  }
+  .entry-row-right { flex: 1; }
+  .entry-row-title {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+  .entry-row-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
 
-    footer {
-      margin-top: 48px;
-      padding-top: 20px;
-      border-top: 1px solid var(--rule);
-      font-size: 10px;
-      color: #bbb;
-      text-align: center;
-    }
-  </style>
+  footer.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    margin-top: 32px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  footer.footer a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .copyright {
+    font-size: 10px;
+    color: #bbb;
+  }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -72,12 +119,25 @@
   <div class="archive-label">archive</div>
   <div id="archive"></div>
 
-  <footer>© enblc3. Jeong A Mari Lee. All Rights Reserved.</footer>
+  <footer class="footer">
+    <a href="#">AI Brief</a>
+    <span class="copyright">© enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+  </footer>
 
 </div>
 
 <script>
 const BRIEFS = [
+  {
+    "year": "2026",
+    "month": "05",
+    "day": "30",
+    "displayDate": "2026.05.30",
+    "title": "Daily AI Brief",
+    "desc": "LumeFlow AI GPT Image 2 통합 영상 자동화 / YouTube AI 영상 자동 라벨링 / Anthropic Opus 4.8 Dynamic Workflows",
+    "url": "./daily-ai-brief-2026-05-30.html",
+    "num": "002"
+  },
   {
     "year": "2026",
     "month": "05",
