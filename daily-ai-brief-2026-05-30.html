@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Brief — 2026.05.30</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f7;
+    --text: #0d0c0b;
+    --muted: #888;
+    --rule: #e0ddd9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 40px 20px 60px;
+  }
+  .wrap { max-width: 520px; margin: 0 auto; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 36px;
+  }
+  nav a { text-decoration: none; color: var(--text); font-size: 13px; font-weight: 500; letter-spacing: 0.02em; }
+  nav .archive-link { color: var(--muted); font-size: 12px; }
+
+  .dateline {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 32px;
+  }
+
+  hr.rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 28px 0;
+  }
+
+  .entry { margin-bottom: 4px; }
+  .entry-num {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .entry-cat {
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  h2.entry-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.45;
+    margin-bottom: 6px;
+  }
+  .entry-source {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .entry-source a {
+    color: var(--muted);
+    text-decoration: underline;
+  }
+
+  .lang-toggle {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .lang-btn {
+    font-size: 11px;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--rule);
+    padding: 2px 10px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .lang-btn.active {
+    color: var(--text);
+    border-color: var(--text);
+  }
+
+  .summary-text {
+    font-size: 13.5px;
+    line-height: 1.75;
+    display: none;
+  }
+  .summary-text.visible { display: block; }
+
+  .learn-section {
+    margin-top: 18px;
+  }
+  .learn-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  table.vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  table.vocab-table td {
+    padding: 4px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.vocab-table td.col-en {
+    font-style: italic;
+    width: 50%;
+    padding-right: 12px;
+  }
+  table.vocab-table td.col-kr {
+    color: var(--muted);
+  }
+
+  .signal-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .signal-body {
+    font-size: 13.5px;
+    line-height: 1.8;
+  }
+  .signal-body strong { font-weight: 500; }
+
+  .sources-list {
+    list-style: none;
+    font-size: 12px;
+  }
+  .sources-list li {
+    margin-bottom: 5px;
+    color: var(--muted);
+  }
+  .sources-list li::before {
+    content: '→  ';
+  }
+  .sources-list a {
+    color: var(--muted);
+    text-decoration: underline;
+  }
+
+  footer.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    margin-top: 32px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  footer.footer a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .copyright {
+    font-size: 10px;
+    color: #bbb;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a href="./index.html">AI Brief</a>
+    <a href="./index.html" class="archive-link">archive</a>
+  </nav>
+
+  <div class="dateline">• 2026.05.30 — No.002</div>
+
+  <!-- ENTRY 01 -->
+  <div class="entry" id="s1">
+    <div class="entry-num">01</div>
+    <div class="entry-cat">AI for Creators</div>
+    <h2 class="entry-title">LumeFlow AI, GPT Image 2 통합으로 AI 영상 제작 파이프라인 혁신</h2>
+    <div class="entry-source">
+      <a href="https://www.send2press.com/wire/lumeflow-ai-revolutionizes-video-production-pipeline-with-gpt-image-2-and-ai-agent-skill/" target="_blank">Send2Press Newswire — May 29, 2026</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('art','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('art','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="art-kr">
+      LumeFlow AI가 GPT Image 2를 AI 스토리보드 툴에 통합해 AI 영화 제작자들이 오랫동안 겪어온 프레임 간 캐릭터 일관성 문제를 해결했습니다. 새로운 기술은 촬영 각도·조명 조건·화면 비율을 변경해도 캐릭터 외모가 동일하게 유지되어 프리프로덕션 타임라인을 최대 70% 단축시킵니다. 또한 AI 에이전트가 텍스트 스크립트를 자동으로 프롬프트 시퀀스로 분해하고 병렬 렌더링 큐를 관리하는 자율 배치 생성 기능(Skill API)도 함께 출시됐습니다. Claude Code 같은 AI 에이전트와 연동해 대규모 영상 콘텐츠를 자동화할 수 있습니다.
+    </p>
+    <p class="summary-text" id="art-en">
+      LumeFlow AI has integrated GPT Image 2 into its AI storyboard tool, solving a long-standing pain point for AI filmmakers: character inconsistency across frames. The upgrade maintains pixel-perfect character features, clothing, and environments across the full generation lifecycle, shrinking pre-production timelines by up to 70%. Alongside this, the company launched autonomous AI Agent workflows via its Skill API — enabling AI agents like Claude Code to automatically break scripts into prompt sequences and manage parallel rendering queues for batch content creation at scale.
+    </p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">integration</td><td class="col-kr">통합</td></tr>
+        <tr><td class="col-en">consistency</td><td class="col-kr">일관성</td></tr>
+        <tr><td class="col-en">storyboard</td><td class="col-kr">스토리보드</td></tr>
+        <tr><td class="col-en">autonomous</td><td class="col-kr">자율적인</td></tr>
+        <tr><td class="col-en">pipeline</td><td class="col-kr">파이프라인</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">pre-production timeline</td><td class="col-kr">프리프로덕션 타임라인</td></tr>
+        <tr><td class="col-en">batch content automation</td><td class="col-kr">일괄 콘텐츠 자동화</td></tr>
+        <tr><td class="col-en">pixel-perfect</td><td class="col-kr">픽셀 완벽한</td></tr>
+        <tr><td class="col-en">parallel rendering queue</td><td class="col-kr">병렬 렌더링 큐</td></tr>
+        <tr><td class="col-en">workflow automation</td><td class="col-kr">워크플로우 자동화</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 02 -->
+  <div class="entry" id="s2">
+    <div class="entry-num">02</div>
+    <div class="entry-cat">AI Tools / Platform</div>
+    <h2 class="entry-title">유튜브, AI 생성 영상 자동 감지·라벨링 시스템 전면 도입</h2>
+    <div class="entry-source">
+      <a href="https://techcrunch.com/2026/05/27/youtube-will-now-automatically-label-ai-videos/" target="_blank">TechCrunch — May 27, 2026</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('tech','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('tech','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="tech-kr">
+      유튜브가 5월 27일 크리에이터가 AI 사용 여부를 공개하지 않더라도 플랫폼이 자체 신호를 통해 사실적 AI 생성 콘텐츠를 감지해 자동으로 라벨을 부착한다고 발표했습니다. 장편 영상에서는 라벨이 플레이어 바로 아래에, Shorts에서는 영상 오버레이로 표시되어 훨씬 눈에 띄게 됩니다. 유튜브 자체 AI 툴(Veo, Dream Screen)이나 C2PA 메타데이터가 포함된 콘텐츠는 영구 라벨이 부착됩니다. 수익화 및 알고리즘 추천에는 영향이 없으며, 잘못 분류된 경우 YouTube Studio에서 수정 가능합니다.
+    </p>
+    <p class="summary-text" id="tech-en">
+      YouTube announced on May 27 that it will now automatically apply AI labels to videos using significant photorealistic AI — even if creators fail to disclose it themselves. Labels become far more prominent: appearing directly below the video player for long-form content, and as overlays on YouTube Shorts. Videos created with YouTube's own AI tools (Veo, Dream Screen) or containing C2PA metadata will receive permanent labels. Notably, YouTube clarified that AI labels will not affect monetization or recommendation algorithms, and creators can contest misidentifications via YouTube Studio.
+    </p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">disclosure</td><td class="col-kr">공개, 신고</td></tr>
+        <tr><td class="col-en">photorealistic</td><td class="col-kr">실사적인</td></tr>
+        <tr><td class="col-en">prominent</td><td class="col-kr">눈에 띄는</td></tr>
+        <tr><td class="col-en">metadata</td><td class="col-kr">메타데이터</td></tr>
+        <tr><td class="col-en">automated</td><td class="col-kr">자동화된</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">automatic detection</td><td class="col-kr">자동 감지</td></tr>
+        <tr><td class="col-en">AI labeling system</td><td class="col-kr">AI 라벨링 시스템</td></tr>
+        <tr><td class="col-en">photorealistic content</td><td class="col-kr">실사적 콘텐츠</td></tr>
+        <tr><td class="col-en">disclosure policy</td><td class="col-kr">공개 정책</td></tr>
+        <tr><td class="col-en">recommendation algorithm</td><td class="col-kr">추천 알고리즘</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 03 -->
+  <div class="entry" id="s3">
+    <div class="entry-num">03</div>
+    <div class="entry-cat">AI Model Release</div>
+    <h2 class="entry-title">Anthropic, Opus 4.8 출시 — 수백 개 서브에이전트 동시 조율 'Dynamic Workflows' 공개</h2>
+    <div class="entry-source">
+      <a href="https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/" target="_blank">TechCrunch — May 28, 2026</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('biz','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('biz','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="biz-kr">
+      Anthropic이 5월 28일 가장 진보된 공개 모델인 Opus 4.8을 출시했습니다. Opus 4.7 출시 단 41일 만입니다. 이번 모델은 불확실한 부분을 더 명확히 표시하고 근거 없는 주장을 줄이는 신뢰성 개선에 집중했습니다. 함께 공개된 'Dynamic Workflows'(리서치 프리뷰)는 하나의 복잡한 작업에서 수백 개의 AI 서브에이전트를 병렬로 조율할 수 있습니다. Claude Code와 결합하면 수십만 줄의 코드베이스 마이그레이션을 시작부터 테스트 검증 완료까지 자율적으로 처리할 수 있다고 Anthropic은 밝혔습니다.
+    </p>
+    <p class="summary-text" id="biz-en">
+      Anthropic released Opus 4.8 on May 28 — its most advanced publicly available model — arriving just 41 days after Opus 4.7. The model emphasizes reliability: early testers report it flags its own uncertainty more readily and makes fewer unsupported claims. Alongside the model, Anthropic launched Dynamic Workflows (research preview), enabling a single Opus instance to coordinate hundreds of parallel AI subagents on complex tasks. Paired with Claude Code, Anthropic says it can now run large-scale codebase migrations end-to-end, from kickoff to a finished, test-verified merge.
+    </p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">frontier model</td><td class="col-kr">최전선 모델</td></tr>
+        <tr><td class="col-en">uncertainty</td><td class="col-kr">불확실성</td></tr>
+        <tr><td class="col-en">subagent</td><td class="col-kr">서브에이전트</td></tr>
+        <tr><td class="col-en">migration</td><td class="col-kr">마이그레이션, 이전</td></tr>
+        <tr><td class="col-en">parallel</td><td class="col-kr">병렬의</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="vocab-table">
+        <tr><td class="col-en">research preview</td><td class="col-kr">리서치 프리뷰</td></tr>
+        <tr><td class="col-en">dynamic workflows</td><td class="col-kr">동적 워크플로우</td></tr>
+        <tr><td class="col-en">codebase migration</td><td class="col-kr">코드베이스 마이그레이션</td></tr>
+        <tr><td class="col-en">end-to-end</td><td class="col-kr">처음부터 끝까지</td></tr>
+        <tr><td class="col-en">test-verified merge</td><td class="col-kr">테스트 검증 병합</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SIGNAL -->
+  <div class="signal-label">signal</div>
+  <div class="signal-body">
+    이번 주 세 소식은 하나의 흐름으로 연결됩니다. LumeFlow AI가 에이전트 자동화로 영상 제작 파이프라인을 혁신하는 동안, 유튜브는 AI 생성 콘텐츠를 플랫폼 차원에서 자동 추적하기 시작했습니다. 그리고 이 모든 흐름의 기반이 되는 Anthropic Opus 4.8은 수백 개의 서브에이전트를 동시 조율하는 <strong>Dynamic Workflows</strong>를 선보였습니다. <strong>AI가 제작 도구에서 제작 파이프라인 자체로 진화</strong>하고 있으며, 플랫폼들은 이미 AI 생성물을 자동 감지하는 인프라를 구축 중입니다. 크리에이터에게 이 변화가 의미하는 것은 단 하나—AI 에이전트를 '사용'하는 수준에서 <strong>'설계'하는 수준으로 역량을 높여야 할 시기</strong>가 빠르게 다가오고 있다는 것입니다.
+  </div>
+
+  <hr class="rule">
+
+  <!-- SOURCES -->
+  <ul class="sources-list">
+    <li><a href="https://www.send2press.com/wire/lumeflow-ai-revolutionizes-video-production-pipeline-with-gpt-image-2-and-ai-agent-skill/" target="_blank">LumeFlow AI Revolutionizes Video Production Pipeline with GPT Image 2 and AI Agent Skill — Send2Press, May 29, 2026</a></li>
+    <li><a href="https://techcrunch.com/2026/05/27/youtube-will-now-automatically-label-ai-videos/" target="_blank">YouTube will now automatically label AI videos — TechCrunch, May 27, 2026</a></li>
+    <li><a href="https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/" target="_blank">Anthropic releases Opus 4.8 with new Dynamic Workflow tool — TechCrunch, May 28, 2026</a></li>
+    <li><a href="https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/" target="_blank">Improving AI labels for viewers and creators — YouTube Blog, May 2026</a></li>
+    <li><a href="https://www.neuralbuddies.com/p/ai-news-recap-may-29-2026" target="_blank">AI News Recap: May 29, 2026 — NeuralBuddies</a></li>
+  </ul>
+
+  <footer class="footer">
+    <a href="./index.html">AI Brief</a>
+    <span>2026.05.30</span>
+    <span class="copyright">© enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+  </footer>
+
+</div>
+
+<script>
+function switchLang(id, lang) {
+  const kr = document.getElementById(id + '-kr');
+  const en = document.getElementById(id + '-en');
+  const entry = kr.closest('.entry');
+  const btns = entry.querySelectorAll('.lang-btn');
+  kr.classList.toggle('visible', lang === 'kr');
+  en.classList.toggle('visible', lang === 'en');
+  btns.forEach(btn => btn.classList.remove('active'));
+  if (lang === 'kr') btns[0].classList.add('active');
+  else btns[1].classList.add('active');
+}
+</script>
+</body>
+</html>
