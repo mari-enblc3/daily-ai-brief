@@ -7,117 +7,90 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --bg:#faf9f7; --text:#0d0c0b; --muted:#888; --rule:#e0ddd9; }
-  html { font-size: 14px; }
+  :root {
+    --bg: #faf9f7;
+    --text: #0d0c0b;
+    --muted: #888;
+    --rule: #e0ddd9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: var(--bg); color: var(--text);
+    background: var(--bg);
+    color: var(--text);
     font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
-    font-weight: 400; line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh; display: flex; flex-direction: column;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 48px 24px 80px;
   }
-  a { color: inherit; }
-  a:hover { opacity: 0.5; }
-  .nav {
-    max-width: 520px; margin: 0 auto; width: 100%;
-    padding: 28px 24px 0;
-    display: flex; justify-content: space-between; align-items: baseline;
-    font-size: 13px;
+  .wrap { max-width: 520px; margin: 0 auto; }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
   }
-  .nav-brand a { text-decoration: none; letter-spacing: 0.01em; }
-  .wrap { max-width: 520px; margin: 0 auto; width: 100%; padding: 48px 24px 100px; flex: 1; }
-  .tab-nav { display: flex; gap: 20px; margin-bottom: 48px; }
-  .tab-nav a {
-    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted); text-decoration: none;
+  nav a { text-decoration: none; color: var(--text); font-size: 13px; letter-spacing: .03em; }
+  .intro { margin-bottom: 36px; }
+  .intro-desc { font-size: 13px; color: var(--muted); line-height: 1.8; }
+  .archive-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
   }
-  .tab-nav a.active { color: var(--text); }
-  .tab-nav a:hover { opacity: 0.5; }
-  .intro-desc { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 40px; }
-  #archive { display: flex; flex-direction: column; }
+  #archive { display: flex; flex-direction: column; gap: 0; }
   a.entry-row {
-    text-decoration: none; color: var(--text); display: block;
-    border-top: 1px solid var(--rule); padding: 14px 0; transition: opacity 0.1s;
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    transition: opacity .15s;
   }
-  a.entry-row:last-child { border-bottom: 1px solid var(--rule); }
-  a.entry-row:hover { opacity: 0.5; }
+  a.entry-row:hover { opacity: .65; }
   .entry-row-inner { display: flex; gap: 16px; align-items: flex-start; }
-  .entry-row-date { font-size: 11px; color: var(--muted); white-space: nowrap; padding-top: 2px; min-width: 90px; }
+  .entry-row-date { font-size: 11px; color: var(--muted); white-space: nowrap; padding-top: 2px; min-width: 88px; }
   .entry-row-right { flex: 1; }
-  .entry-row-title { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
-  .entry-row-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
-  footer.footer {
-    max-width: 520px; margin: 0 auto; width: 100%;
-    padding: 20px 24px 40px; border-top: 1px solid var(--rule);
-    font-size: 10px; color: #bbb;
+  .entry-row-title { font-size: 13.5px; font-weight: 500; margin-bottom: 3px; }
+  .entry-row-desc { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+  footer {
+    margin-top: 48px;
+    font-size: 10px;
+    color: #bbb;
+    text-align: center;
   }
 </style>
 </head>
 <body>
-
-  <nav class="nav">
-    <div class="nav-brand"><a id="nav-brand-link" href="#">AI Brief</a></div>
+<div class="wrap">
+  <nav>
+    <a href="#" id="nav-brand-link">AI Brief</a>
   </nav>
 
-  <div class="wrap">
-    <div class="tab-nav">
-      <a href="./index.html" class="active">Archive</a>
-      <a href="./ai-tools.html">AI Tools</a>
-      <a href="./glossary.html">Dictionary</a>
-    </div>
-
+  <div class="intro">
     <p class="intro-desc">크리에이터·디자이너를 위한 AI 뉴스 큐레이션. 매일 3가지 핵심 기사 + 영단어·핵심 표현으로 산업과 더불어 글로벌 인재가 되기 위한 영어 공부를 함께 즐겨보세요.</p>
-
-    <div id="archive"></div>
   </div>
 
-  <footer class="footer">
-    © enblc3. Jeong A Mari Lee. All Rights Reserved.
-  </footer>
+  <div class="archive-label">archive</div>
+  <div id="archive"></div>
+
+  <footer>© enblc3. Jeong A Mari Lee. All Rights Reserved.</footer>
+</div>
 
 <script>
 const BRIEFS = [
-  {
-    "year":"2026","month":"06","day":"01","displayDate":"2026.06.01","title":"Daily AI Brief",
-    "desc":"Google Flow 통합 워크스페이스 / GitHub Copilot AI Credits 전환 / Claude Mythos 취약점 2.3만 개 발견",
-    "url":"./daily-ai-brief-2026-06-01.html","num":"008"
-  },
-  {
-    "year":"2026","month":"05","day":"31","displayDate":"2026.05.31","title":"Daily AI Brief",
-    "desc":"Adobe Firefly AI 어시스턴트 공개 베타 / Google Gemini Spark 미국 출시 / Anthropic 서울·밀라노 동시 오픈",
-    "url":"./daily-ai-brief-2026-05-31.html","num":"007"
-  },
-  {
-    "year":"2026","month":"05","day":"30","displayDate":"2026.05.30","title":"Daily AI Brief",
-    "desc":"LumeFlow AI GPT Image 2 통합 영상 자동화 / YouTube AI 영상 자동 라벨링 / Anthropic Opus 4.8 Dynamic Workflows",
-    "url":"./daily-ai-brief-2026-05-30.html","num":"006"
-  },
-  {
-    "year":"2026","month":"05","day":"29","displayDate":"2026.05.29","title":"Daily AI Brief",
-    "desc":"Google Flow Tools로 나만의 AI 툴 제작 / ElevenLabs Music v2 장르 전환 모델 / Devin $1B 투자 유치",
-    "url":"./daily-ai-brief-2026-05-29.html","num":"005"
-  },
-  {
-    "year":"2026","month":"05","day":"28","displayDate":"2026.05.28","title":"Daily AI Brief",
-    "desc":"ChatGPT 음성 모드 구형 모델 논란 / Claude Code v2.1.152 업데이트 / ElevenLabs 시리즈 D $5억 달러",
-    "url":"./daily-ai-brief-2026-05-28.html","num":"004"
-  },
-  {
-    "year":"2026","month":"05","day":"27","displayDate":"2026.05.27","title":"Daily AI Brief",
-    "desc":"Google Pics 출시 텍스트로 디자인 / Gemini Omni 멀티모달 영상 생성 / OpenAI-Microsoft 비독점 재편",
-    "url":"./daily-ai-brief-2026-05-27.html","num":"003"
-  },
-  {
-    "year":"2026","month":"05","day":"26","displayDate":"2026.05.26","title":"Daily AI Brief",
-    "desc":"X Creator Connect AI 브랜드 매칭 / Google Stitch UI 자동 생성 디자인 툴 / Anthropic 900조 펀딩 임박",
-    "url":"./daily-ai-brief-2026-05-26b.html","num":"002"
-  },
-  {
-    "year":"2026","month":"05","day":"25","displayDate":"2026.05.25","title":"Daily AI Brief",
-    "desc":"Krea 2 크리에이터용 파운데이션 모델 공개 / Google I/O 2026 Gemini 3.5 Flash / 2026 Q1 VC AI 80% 흡수",
-    "url":"./daily-ai-brief-2026-05-25.html","num":"001"
-  }
+  {"year":"2026","month":"06","day":"03","displayDate":"2026.06.03","title":"Daily AI Brief","desc":"Microsoft MAI 이미지·음성 모델 상업화 개방 / Foundry Local 온디바이스 AI 정식 출시 / Anthropic IPO 서류 제출 $965B","url":"./daily-ai-brief-2026-06-03.html","num":"009"},
+  {"year":"2026","month":"06","day":"01","displayDate":"2026.06.01","title":"Daily AI Brief","desc":"Google Flow 통합 워크스페이스 / GitHub Copilot AI Credits 전환 / Claude Mythos 취약점 2.3만 개 발견","url":"./daily-ai-brief-2026-06-01.html","num":"008"},
+  {"year":"2026","month":"05","day":"31","displayDate":"2026.05.31","title":"Daily AI Brief","desc":"Adobe Firefly AI 어시스턴트 공개 베타 / Google Gemini Spark 미국 출시 / Anthropic 서울·밀라노 동시 오픈","url":"./daily-ai-brief-2026-05-31.html","num":"007"},
+  {"year":"2026","month":"05","day":"30","displayDate":"2026.05.30","title":"Daily AI Brief","desc":"LumeFlow AI GPT Image 2 통합 영상 자동화 / YouTube AI 영상 자동 라벨링 / Anthropic Opus 4.8 Dynamic Workflows","url":"./daily-ai-brief-2026-05-30.html","num":"006"},
+  {"year":"2026","month":"05","day":"29","displayDate":"2026.05.29","title":"Daily AI Brief","desc":"Google Flow Tools로 나만의 AI 툴 제작 / ElevenLabs Music v2 장르 전환 모델 / Devin $1B 투자 유치","url":"./daily-ai-brief-2026-05-29.html","num":"005"},
+  {"year":"2026","month":"05","day":"28","displayDate":"2026.05.28","title":"Daily AI Brief","desc":"ChatGPT 음성 모드 구형 모델 논란 / Claude Code v2.1.152 업데이트 / ElevenLabs 시리즈 D $5억 달러","url":"./daily-ai-brief-2026-05-28.html","num":"004"},
+  {"year":"2026","month":"05","day":"27","displayDate":"2026.05.27","title":"Daily AI Brief","desc":"Google Pics 출시 텍스트로 디자인 / Gemini Omni 멀티모달 영상 생성 / OpenAI-Microsoft 비독점 재편","url":"./daily-ai-brief-2026-05-27.html","num":"003"},
+  {"year":"2026","month":"05","day":"26","displayDate":"2026.05.26","title":"Daily AI Brief","desc":"X Creator Connect AI 브랜드 매칭 / Google Stitch UI 자동 생성 디자인 툴 / Anthropic 900조 펀딩 임박","url":"./daily-ai-brief-2026-05-26b.html","num":"002"},
+  {"year":"2026","month":"05","day":"25","displayDate":"2026.05.25","title":"Daily AI Brief","desc":"Krea 2 크리에이터용 파운데이션 모델 공개 / Google I/O 2026 Gemini 3.5 Flash / 2026 Q1 VC AI 80% 흡수","url":"./daily-ai-brief-2026-05-25.html","num":"001"}
 ];
 
 function render() {
