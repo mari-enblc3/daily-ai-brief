@@ -1,53 +1,120 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Brief</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#faf9f7;
-  --text:#0d0c0b;
-  --muted:#888;
-  --rule:#e0ddd9;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Helvetica Neue',Helvetica,'Noto Sans KR',Arial,sans-serif;
-  font-weight:300;
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:520px;margin:0 auto;padding:38px 24px 60px;}
-nav{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:22px;}
-nav .brand{font-size:15px;font-weight:500;letter-spacing:.04em;color:var(--text);text-decoration:none;}
-.intro{padding:24px 0 6px;}
-.intro-desc{font-size:13px;font-weight:300;line-height:1.85;color:#555;}
-.archive-label{font-size:10px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;margin:30px 0 6px;}
-#archive{display:flex;flex-direction:column;}
-.entry-row{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--rule);padding:16px 0;transition:opacity .15s;}
-.entry-row:hover{opacity:.55;}
-.entry-row-inner{display:flex;gap:14px;align-items:baseline;}
-.entry-row-date{font-size:11px;color:var(--muted);letter-spacing:.05em;white-space:nowrap;min-width:78px;}
-.entry-row-right{flex:1;}
-.entry-row-title{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px;}
-.entry-row-desc{font-size:12px;font-weight:300;line-height:1.6;color:var(--muted);}
-.footer{border-top:1px solid var(--rule);margin-top:34px;padding-top:18px;}
-.footer .f-copy{font-size:10px;color:#bbb;}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Brief</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --text: #0d0c0b;
+      --muted: #888;
+      --rule: #e0ddd9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      padding: 0 16px;
+    }
+
+    .container {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 40px 0 60px;
+    }
+
+    /* Nav */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--rule);
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Intro */
+    .intro { margin-bottom: 8px; }
+    .intro-desc {
+      font-size: 13px;
+      line-height: 1.85;
+      color: #555;
+    }
+
+    /* Archive */
+    .archive-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 32px 0 6px;
+    }
+    #archive { display: flex; flex-direction: column; }
+    .entry-row {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-top: 1px solid var(--rule);
+      padding: 16px 0;
+      transition: opacity 0.15s;
+    }
+    .entry-row:hover { opacity: 0.55; }
+    .entry-row-inner { display: flex; gap: 14px; align-items: baseline; }
+    .entry-row-date {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      min-width: 78px;
+    }
+    .entry-row-right { flex: 1; }
+    .entry-row-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .entry-row-desc {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer.footer {
+      border-top: 1px solid var(--rule);
+      margin-top: 36px;
+      padding-top: 20px;
+    }
+    .footer-copy {
+      font-size: 10px;
+      color: #bbb;
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
+<div class="container">
 
+  <!-- Nav -->
   <nav>
-    <a class="brand" id="nav-brand-link" href="#">AI Brief</a>
+    <a id="nav-brand-link" href="#">AI Brief</a>
   </nav>
 
+  <!-- Intro -->
   <div class="intro">
     <p class="intro-desc">크리에이터·디자이너를 위한 AI 뉴스 큐레이션. 매일 3가지 핵심 기사 + 영단어·핵심 표현으로 산업과 더불어 글로벌 인재가 되기 위한 영어 공부를 함께 즐겨보세요.</p>
   </div>
@@ -56,7 +123,7 @@ nav .brand{font-size:15px;font-weight:500;letter-spacing:.04em;color:var(--text)
   <div id="archive"></div>
 
   <footer class="footer">
-    <span class="f-copy">&copy; enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+    <span class="footer-copy">© enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
   </footer>
 
 </div>
@@ -84,7 +151,7 @@ function render() {
     a.className = 'entry-row';
     a.innerHTML = `
       <div class="entry-row-inner">
-        <span class="entry-row-date">&bull; ${b.displayDate}</span>
+        <span class="entry-row-date">• ${b.displayDate}</span>
         <div class="entry-row-right">
           <div class="entry-row-title">${b.title} — No.${b.num}</div>
           <div class="entry-row-desc">${b.desc}</div>
