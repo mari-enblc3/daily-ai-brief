@@ -8,76 +8,59 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#faf9f7;
-    --text:#0d0c0b;
-    --muted:#888;
-    --rule:#e0ddd9;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
-    font-weight:300;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-    padding:0 24px;
-  }
-  .wrap{max-width:520px;margin:0 auto;padding:40px 0 60px;}
-
-  nav{
-    display:flex;justify-content:space-between;align-items:baseline;
-    padding-bottom:18px;border-bottom:1px solid var(--rule);
-  }
-  nav .brand{font-size:15px;font-weight:500;letter-spacing:.02em;color:var(--text);text-decoration:none;}
-  nav .archive{font-size:12px;color:var(--muted);text-decoration:none;}
-
-  .dateline{font-size:12px;color:var(--muted);margin:22px 0 30px;letter-spacing:.03em;}
-
-  hr.rule{border:none;border-top:1px solid var(--rule);margin:34px 0;}
-
-  .entry-num{font-size:12px;color:var(--muted);letter-spacing:.1em;}
-  .entry-cat{font-size:12px;font-style:italic;color:var(--muted);margin-top:4px;}
-  .entry-title{font-size:16px;font-weight:500;line-height:1.5;margin:8px 0 10px;}
-  .entry-source{font-size:11px;color:var(--muted);margin-bottom:14px;}
-  .entry-source a{color:var(--muted);text-decoration:underline;}
-
-  .lang-toggle{display:flex;gap:8px;margin-bottom:12px;}
-  .lang-btn{
-    font-family:inherit;font-size:11px;font-weight:400;
-    background:none;border:1px solid var(--rule);color:var(--muted);
-    padding:3px 10px;border-radius:2px;cursor:pointer;transition:all .15s;
-  }
-  .lang-btn.active{border-color:var(--text);color:var(--text);}
-
-  .summary-text{display:none;font-size:14px;font-weight:300;line-height:1.75;}
-  .summary-text.visible{display:block;}
-
-  .learn-section{margin-top:18px;}
-  .learn-label{font-size:11px;font-style:italic;color:var(--muted);margin:14px 0 6px;letter-spacing:.04em;}
-  table.learn{width:100%;border-collapse:collapse;font-size:12.5px;}
-  table.learn td{padding:5px 0;border-bottom:1px solid var(--rule);vertical-align:top;}
-  td.col-en{font-style:italic;width:46%;}
-  td.col-kr{color:var(--muted);}
-
-  .signal-label{font-size:11px;font-style:italic;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;}
-  .signal-body{font-size:14px;font-weight:300;line-height:1.8;}
-  .signal-body strong{font-weight:500;}
-
-  .sources-label{font-size:11px;font-style:italic;color:var(--muted);letter-spacing:.06em;margin-bottom:10px;}
-  ul.sources-list{list-style:none;}
-  ul.sources-list li{font-size:11.5px;color:var(--muted);margin-bottom:7px;line-height:1.5;}
-  ul.sources-list li::before{content:'→  ';color:var(--muted);}
-  ul.sources-list li a{color:var(--muted);text-decoration:underline;word-break:break-all;}
-
-  footer.footer{
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
-    margin-top:40px;padding-top:18px;border-top:1px solid var(--rule);
-  }
-  footer.footer a{font-size:12px;color:var(--text);text-decoration:none;font-weight:500;}
-  footer.footer .date{font-size:11px;color:var(--muted);}
-  footer.footer .copy{font-size:10px;color:#bbb;width:100%;}
+:root{
+  --bg:#faf9f7;
+  --text:#0d0c0b;
+  --muted:#888;
+  --rule:#e0ddd9;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Helvetica Neue',Helvetica,'Noto Sans KR',Arial,sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:520px;margin:0 auto;padding:38px 24px 60px;}
+nav{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:22px;}
+nav .brand{font-size:15px;font-weight:500;letter-spacing:.04em;color:var(--text);text-decoration:none;}
+nav .archive-link{font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:.05em;}
+.dateline{font-size:12px;color:var(--muted);letter-spacing:.06em;padding:6px 0 4px;}
+hr.rule{border:none;border-top:1px solid var(--rule);margin:26px 0;}
+.entry-num{font-size:11px;color:var(--muted);letter-spacing:.12em;font-weight:400;}
+.entry-cat{font-size:11px;color:var(--muted);font-style:italic;letter-spacing:.04em;margin-top:2px;}
+.entry-title{font-size:16px;font-weight:500;line-height:1.5;margin:8px 0 8px;}
+.entry-source{font-size:11px;color:var(--muted);margin-bottom:14px;}
+.entry-source a{color:var(--muted);text-decoration:underline;}
+.lang-toggle{display:flex;gap:6px;margin-bottom:12px;}
+.lang-btn{
+  font-family:inherit;font-size:10px;letter-spacing:.05em;
+  background:none;border:1px solid var(--rule);color:var(--muted);
+  padding:3px 9px;border-radius:11px;cursor:pointer;transition:all .15s;
+}
+.lang-btn.active{background:var(--text);border-color:var(--text);color:var(--bg);}
+.summary-text{display:none;font-size:13.5px;font-weight:300;line-height:1.78;color:#2b2a28;}
+.summary-text.visible{display:block;}
+.learn-section{margin-top:18px;border-top:1px dotted var(--rule);padding-top:14px;}
+.learn-label{font-size:10px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+table.learn{width:100%;border-collapse:collapse;margin-bottom:14px;}
+table.learn td{padding:4px 0;font-size:12px;vertical-align:top;border-bottom:1px solid var(--rule);}
+.col-en{font-style:italic;color:var(--text);width:42%;padding-right:12px;}
+.col-kr{color:var(--muted);}
+.signal-label{font-size:10px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+.signal-body{font-size:13.5px;font-weight:300;line-height:1.8;color:#2b2a28;}
+.signal-body strong{font-weight:500;color:var(--text);}
+.sources-label{font-size:10px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+ul.sources-list{list-style:none;}
+ul.sources-list li{font-size:11.5px;color:var(--muted);padding:3px 0;line-height:1.5;}
+ul.sources-list li::before{content:'\2192  ';color:var(--muted);}
+ul.sources-list a{color:var(--muted);text-decoration:underline;word-break:break-all;}
+.footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:1px solid var(--rule);margin-top:30px;padding-top:18px;}
+.footer a{font-size:12px;color:var(--text);text-decoration:none;font-weight:500;}
+.footer .f-date{font-size:11px;color:var(--muted);}
+.footer .f-copy{font-size:10px;color:#bbb;width:100%;}
 </style>
 </head>
 <body>
@@ -85,24 +68,25 @@
 
   <nav>
     <a class="brand" href="./index.html">AI Brief</a>
-    <a class="archive" href="./index.html">archive</a>
+    <a class="archive-link" href="./index.html">archive</a>
   </nav>
 
-  <div class="dateline">• 2026.06.05 — No.011</div>
+  <div class="dateline">&bull; 2026.06.05 — No.011</div>
+
+  <hr class="rule">
 
   <!-- ENTRY 01 -->
   <div class="entry" id="s1">
     <div class="entry-num">01</div>
     <div class="entry-cat">AI Startup / VC / Industry</div>
     <h2 class="entry-title">로봇 파운데이션 모델 스타트업 Generalist AI, 4억 달러 유치하며 기업가치 20억 달러</h2>
-    <div class="entry-source">Bloomberg · <a href="https://www.bloomberg.com/news/articles/2026-06-04/nvidia-backed-robotics-startup-generalist-ai-valued-at-2-billion" target="_blank">2026.06.04</a></div>
+    <div class="entry-source">Bloomberg · 2026.06.04 · <a href="https://www.bloomberg.com/news/articles/2026-06-04/nvidia-backed-robotics-startup-generalist-ai-valued-at-2-billion" target="_blank">원문</a></div>
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="switchLang('art','kr')">한국어</button>
       <button class="lang-btn" onclick="switchLang('art','en')">English</button>
     </div>
     <p class="summary-text visible" id="art-kr">로봇용 파운데이션 모델을 만드는 스타트업 Generalist AI가 6월 4일 4억 달러를 유치하며 기업가치 20억 달러를 인정받았다. Radical Ventures가 라운드를 주도했고, Nvidia·8VC·Union Square Ventures·Hanabi Capital이 참여했다. 회사는 로봇이 점점 더 복잡한 작업을 수행하도록 돕는 정교한 AI 모델 개발에 자금을 투입할 계획이다. 디지털 화면을 넘어 현실 세계에서 작동하는 '피지컬 AI(physical AI)'가 2026년 투자의 새로운 최전선으로 떠오르고 있음을 보여주는 신호다.</p>
     <p class="summary-text" id="art-en">Generalist AI, a startup building foundation models for robots, raised $400 million on June 4, valuing it at $2 billion. Radical Ventures led the round, with Nvidia, 8VC, Union Square Ventures and Hanabi Capital participating. The company plans to invest the capital in more sophisticated AI models that help robots handle increasingly complex tasks. It is a sign that "physical AI" — which operates in the real world beyond digital screens — is emerging as a new investment frontier in 2026.</p>
-
     <div class="learn-section">
       <div class="learn-label">vocabulary</div>
       <table class="learn">
@@ -130,14 +114,13 @@
     <div class="entry-num">02</div>
     <div class="entry-cat">AI Industry / Infrastructure</div>
     <h2 class="entry-title">SpaceX, 사상 최대 750억 달러 IPO 추진 — AI 연산·Starlink에 투입</h2>
-    <div class="entry-source">Bloomberg · <a href="https://www.bloomberg.com/news/articles/2026-05-21/spacex-ipo-ai-plans-starlink-growth-and-risks" target="_blank">2026.06.04 (보도 기준)</a></div>
+    <div class="entry-source">Bloomberg · 2026.06.04 보도 · <a href="https://www.bloomberg.com/news/articles/2026-05-21/spacex-ipo-ai-plans-starlink-growth-and-risks" target="_blank">원문</a></div>
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="switchLang('tech','kr')">한국어</button>
       <button class="lang-btn" onclick="switchLang('tech','en')">English</button>
     </div>
     <p class="summary-text visible" id="tech-kr">SpaceX가 사상 최대 규모인 약 750억 달러 기업공개(IPO)를 추진한다. 주당 135달러에 6월 12일 나스닥에서 'SPCX' 티커로 거래를 시작하며, 기업가치는 최소 1조 8천억 달러에 이른다. 조달 자금은 AI 개발, 발사 서비스, Starlink 위성망 확장에 투입된다. 특히 재사용 로켓과 대규모 위성 제조 역량을 활용해 '궤도 AI 데이터센터' 같은 대규모 AI 연산 인프라를 구축하겠다는 구상이다. xAI 합병 이후 AI 사업이 성장 동력의 핵심으로 부상했다.</p>
     <p class="summary-text" id="tech-en">SpaceX is pursuing a record initial public offering of about $75 billion. It will begin trading on the Nasdaq under the ticker "SPCX" on June 12 at $135 per share, at a valuation of at least $1.8 trillion. Proceeds will go toward AI development, launch services and expansion of the Starlink satellite network. In particular, it aims to use its reusable rockets and large-scale satellite manufacturing to build massive AI compute infrastructure, including "orbital AI data centers." After merging with xAI, the AI business has become central to its growth story.</p>
-
     <div class="learn-section">
       <div class="learn-label">vocabulary</div>
       <table class="learn">
@@ -165,14 +148,13 @@
     <div class="entry-num">03</div>
     <div class="entry-cat">AI for Creators / Designers</div>
     <h2 class="entry-title">구글 SynthID 워터마크, OpenAI·ElevenLabs·Kakao로 확산 — AI 콘텐츠 출처 표기 표준화</h2>
-    <div class="entry-source">Google Blog · OpenAI · <a href="https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/" target="_blank">2026.05~06 (롤아웃 진행)</a></div>
+    <div class="entry-source">Google Blog / OpenAI · 2026.05~06 롤아웃 · <a href="https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/" target="_blank">원문</a></div>
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="switchLang('biz','kr')">한국어</button>
       <button class="lang-btn" onclick="switchLang('biz','en')">English</button>
     </div>
-    <p class="summary-text visible" id="biz-kr">구글의 보이지 않는 워터마크 기술 'SynthID'가 OpenAI·ElevenLabs·Kakao로 확산되며 AI 콘텐츠 출처 표기가 업계 표준으로 자리잡고 있다. OpenAI는 ChatGPT·Codex·API로 생성한 모든 이미지에 SynthID 워터마크와 C2PA 콘텐츠 자격증명을 함께 부여하고, ElevenLabs는 오디오에, Kakao는 이미지에 적용한다. 이 워터마크는 자르기·압축·색보정 같은 편집을 거쳐도 남으며, 검증 기능은 구글 검색·크롬·Gemini 앱에 통합된다. 크리에이터·디자이너에게는 자신의 AI 산출물이 추적 가능해진다는 의미다. (※ Google I/O 2026에서 처음 공개된 이후 6월까지 도입이 이어지고 있는 사안)</p>
+    <p class="summary-text visible" id="biz-kr">구글의 보이지 않는 워터마크 기술 'SynthID'가 OpenAI·ElevenLabs·Kakao로 확산되며 AI 콘텐츠 출처 표기가 업계 표준으로 자리잡고 있다. OpenAI는 ChatGPT·Codex·API로 생성한 모든 이미지에 SynthID 워터마크와 C2PA 콘텐츠 자격증명을 함께 부여하고, ElevenLabs는 오디오에, Kakao는 이미지에 적용한다. 이 워터마크는 자르기·압축·색보정 같은 편집을 거쳐도 남으며, 검증 기능은 구글 검색·크롬·Gemini 앱에 통합된다. 크리에이터·디자이너에게는 자신의 AI 산출물이 추적 가능해진다는 의미다. (※ Google I/O 2026에서 처음 공개된 뒤 6월까지 도입이 이어지는 사안)</p>
     <p class="summary-text" id="biz-en">Google's imperceptible watermarking technology "SynthID" is spreading to OpenAI, ElevenLabs and Kakao, making AI content provenance an industry standard. OpenAI will attach both a SynthID watermark and a C2PA Content Credential to every image generated by ChatGPT, Codex and its API; ElevenLabs applies it to audio and Kakao to images. The watermark survives edits such as cropping, compression and color adjustment, and verification is built into Google Search, Chrome and the Gemini app. For creators and designers, it means their AI outputs become traceable. (Note: first unveiled at Google I/O 2026, with adoption continuing through June.)</p>
-
     <div class="learn-section">
       <div class="learn-label">vocabulary</div>
       <table class="learn">
@@ -198,7 +180,7 @@
   <!-- SIGNAL -->
   <div class="signal">
     <div class="signal-label">signal</div>
-    <div class="signal-body">오늘의 세 소식은 AI 투자가 <strong>'화면 밖 세계'</strong>로 확장되고 있음을 보여준다. Generalist AI의 20억 달러 베팅은 로봇과 현실세계를 다루는 <strong>피지컬 AI</strong>로, SpaceX의 750억 달러 IPO는 <strong>궤도 데이터센터급 연산 인프라</strong>로 자본이 흐르고 있음을 알린다. 동시에 SynthID·C2PA의 확산은 그 인프라 위에서 쏟아질 AI 콘텐츠에 <strong>출처와 책임</strong>을 부여하려는 움직임이다. 크리에이터·디자이너에게 이는 두 가지 과제를 던진다: 더 강력해지는 생성 도구를 적극 활용하되, 자신의 AI 산출물이 <strong>추적 가능해진 환경</strong>에서 진위와 권리를 어떻게 증명할지 미리 준비하는 것이다.</div>
+    <div class="signal-body">오늘의 세 소식은 AI 투자가 <strong>'화면 밖 세계'</strong>로 확장되고 있음을 보여준다. Generalist AI의 20억 달러 베팅은 로봇과 현실세계를 다루는 <strong>피지컬 AI</strong>로, SpaceX의 750억 달러 IPO는 <strong>궤도 데이터센터급 연산 인프라</strong>로 자본이 흐르고 있음을 알린다. 동시에 SynthID·C2PA의 확산은 그 인프라 위에서 쏟아질 AI 콘텐츠에 <strong>출처와 책임</strong>을 부여하려는 움직임이다. 크리에이터·디자이너에게 이는 두 가지 과제를 던진다 — 더 강력해지는 생성 도구를 적극 활용하되, 자신의 AI 산출물이 <strong>추적 가능해진 환경</strong>에서 진위와 권리를 어떻게 증명할지 미리 준비하는 것이다.</div>
   </div>
 
   <hr class="rule">
@@ -218,8 +200,8 @@
 
   <footer class="footer">
     <a href="./index.html">AI Brief</a>
-    <span class="date">2026.06.05</span>
-    <span class="copy">© enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+    <span class="f-date">2026.06.05</span>
+    <span class="f-copy">&copy; enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
   </footer>
 
 </div>
