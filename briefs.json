@@ -1,6 +1,66 @@
 [
   {
     "year": "2026",
+    "month": "06",
+    "day": "05",
+    "displayDate": "2026.06.05",
+    "title": "Daily AI Brief",
+    "desc": "로봇 파운데이션 모델 Generalist AI 4억 달러·20억 달러 가치 / SpaceX 사상 최대 750억 달러 IPO로 AI 연산·Starlink 투자 / 구글 SynthID 워터마크 OpenAI·ElevenLabs·Kakao 확산",
+    "url": "./daily-ai-brief-2026-06-05.html",
+    "num": "012"
+  },
+  {
+    "year": "2026",
+    "month": "06",
+    "day": "04",
+    "displayDate": "2026.06.04",
+    "title": "Daily AI Brief",
+    "desc": "스코세이지 Black Forest Labs 합류·차기작 스토리보드에 Flux / MS 자체 추론·코딩 모델 MAI-Thinking-1·MAI-Code-1-Flash 공개 / Suno 54억 달러 가치에 4억 달러 유치",
+    "url": "./daily-ai-brief-2026-06-04.html",
+    "num": "011"
+  },
+  {
+    "year": "2026",
+    "month": "06",
+    "day": "03",
+    "displayDate": "2026.06.03",
+    "title": "Daily AI Brief",
+    "desc": "Microsoft MAI-Image-2.5 이미지 편집 + PowerPoint 탑재 / Anthropic API 과금 6월 15일 분리 / DeepSeek 74억 달러 첫 외부 투자",
+    "url": "./daily-ai-brief-2026-06-03.html",
+    "num": "010"
+  },
+  {
+    "year": "2026",
+    "month": "06",
+    "day": "02",
+    "displayDate": "2026.06.02",
+    "title": "Daily AI Brief",
+    "desc": "MS Build 2026, 자체 생성모델 MAI-Voice·Image·Transcribe 상용 공개 / 자체 코딩모델 Project Polaris로 GitHub Copilot의 GPT-4 대체 / Anthropic 프런티어 AI 랩 최초 IPO 신청",
+    "url": "./daily-ai-brief-2026-06-02.html",
+    "num": "009"
+  },
+  {
+    "year": "2026",
+    "month": "06",
+    "day": "01",
+    "displayDate": "2026.06.01",
+    "title": "Daily AI Brief",
+    "desc": "Google Flow 통합 워크스페이스 / GitHub Copilot AI Credits 전환 / Claude Mythos 취약점 2.3만 개 발견",
+    "url": "./daily-ai-brief-2026-06-01.html",
+    "num": "008"
+  },
+  {
+    "year": "2026",
+    "month": "05",
+    "day": "31",
+    "displayDate": "2026.05.31",
+    "title": "Daily AI Brief",
+    "desc": "Adobe Firefly AI 어시스턴트 공개 베타 / Google Gemini Spark 미국 출시 / Anthropic 서울·밀라노 동시 오픈",
+    "url": "./daily-ai-brief-2026-05-31.html",
+    "num": "007"
+  },
+  {
+    "year": "2026",
     "month": "05",
     "day": "30",
     "displayDate": "2026.05.30",
@@ -15,7 +75,7 @@
     "day": "29",
     "displayDate": "2026.05.29",
     "title": "Daily AI Brief",
-    "desc": "Google I/O AI 크리에이티브 툴 직접 제작 / ElevenLabs Music v2 장르 전환 모델 / AI 코딩 에이전트 Devin $1B 투자",
+    "desc": "Google Flow Tools로 나만의 AI 툴 제작 / ElevenLabs Music v2 장르 전환 모델 / Devin $1B 투자 유치",
     "url": "./daily-ai-brief-2026-05-29.html",
     "num": "005"
   },
@@ -25,7 +85,7 @@
     "day": "28",
     "displayDate": "2026.05.28",
     "title": "Daily AI Brief",
-    "desc": "ChatGPT 음성 모드 구형 모델 운용 논란 / Claude Code v2.1.152 업데이트 / ElevenLabs 시리즈 D $5억 달러",
+    "desc": "ChatGPT 음성 모드 구형 모델 논란 / Claude Code v2.1.152 업데이트 / ElevenLabs 시리즈 D $5억 달러",
     "url": "./daily-ai-brief-2026-05-28.html",
     "num": "004"
   },
@@ -35,7 +95,7 @@
     "day": "27",
     "displayDate": "2026.05.27",
     "title": "Daily AI Brief",
-    "desc": "구글 Pics 텍스트 프롬프트 디자인 툴 / Gemini Omni 이미지·오디오→영상 생성 / OpenAI-Microsoft 비독점 재편",
+    "desc": "Google Pics 출시 텍스트로 디자인 / Gemini Omni 멀티모달 영상 생성 / OpenAI-Microsoft 비독점 재편",
     "url": "./daily-ai-brief-2026-05-27.html",
     "num": "003"
   },
@@ -45,7 +105,7 @@
     "day": "26",
     "displayDate": "2026.05.26",
     "title": "Daily AI Brief",
-    "desc": "X Creator Connect AI 크리에이터 매칭 / Google Stitch 실시간 AI UI 디자인 툴 / Anthropic $30B 펀딩 클로징 임박",
+    "desc": "X Creator Connect AI 브랜드 매칭 / Google Stitch UI 자동 생성 디자인 툴 / Anthropic 900조 펀딩 임박",
     "url": "./daily-ai-brief-2026-05-26b.html",
     "num": "002"
   },
@@ -55,7 +115,7 @@
     "day": "25",
     "displayDate": "2026.05.25",
     "title": "Daily AI Brief",
-    "desc": "Krea 2 자체 파운데이션 모델 첫 공개 / Google Gemini 3.5 Flash 공개 (I/O 2026) / Q1 AI VC 투자 $2,420억 역대 최고",
+    "desc": "Krea 2 크리에이터용 파운데이션 모델 공개 / Google I/O 2026 Gemini 3.5 Flash / 2026 Q1 VC AI 80% 흡수",
     "url": "./daily-ai-brief-2026-05-25.html",
     "num": "001"
   }
