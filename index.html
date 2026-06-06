@@ -30,7 +30,6 @@
       padding: 40px 0 60px;
     }
 
-    /* Nav */
     nav {
       display: flex;
       justify-content: space-between;
@@ -47,88 +46,83 @@
       letter-spacing: 0.02em;
     }
 
-    /* Intro */
-    .intro { margin-bottom: 8px; }
+    .intro {
+      margin-bottom: 36px;
+    }
     .intro-desc {
       font-size: 13px;
-      line-height: 1.85;
-      color: #555;
+      line-height: 1.8;
+      color: var(--muted);
     }
 
-    /* Archive */
     .archive-label {
       font-size: 10px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
-      margin: 32px 0 6px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--rule);
     }
-    #archive { display: flex; flex-direction: column; }
+
     .entry-row {
       display: block;
       text-decoration: none;
-      color: inherit;
-      border-top: 1px solid var(--rule);
+      color: var(--text);
       padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
       transition: opacity 0.15s;
     }
     .entry-row:hover { opacity: 0.55; }
-    .entry-row-inner { display: flex; gap: 14px; align-items: baseline; }
+
+    .entry-row-inner {
+      display: flex;
+      gap: 14px;
+      align-items: baseline;
+    }
     .entry-row-date {
       font-size: 11px;
       color: var(--muted);
-      letter-spacing: 0.03em;
       white-space: nowrap;
-      min-width: 78px;
+      letter-spacing: 0.03em;
+      flex-shrink: 0;
     }
     .entry-row-right { flex: 1; }
     .entry-row-title {
       font-size: 14px;
       font-weight: 500;
-      color: var(--text);
       margin-bottom: 4px;
     }
     .entry-row-desc {
       font-size: 12px;
-      line-height: 1.6;
       color: var(--muted);
+      line-height: 1.65;
     }
 
-    /* Footer */
     footer.footer {
       border-top: 1px solid var(--rule);
-      margin-top: 36px;
       padding-top: 20px;
+      margin-top: 36px;
     }
     .footer-copy {
       font-size: 10px;
       color: #bbb;
     }
-    .tab-nav { display:flex; gap:20px; margin-bottom:32px; }
-    .tab-nav a { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); text-decoration:none; }
-    .tab-nav a.active { color:var(--text); }
-    .tab-nav a:hover { opacity:.5; }
   </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- Nav -->
   <nav>
     <a id="nav-brand-link" href="#">AI Brief</a>
   </nav>
-  <div class="tab-nav">
-    <a href="./index.html" class="active">Archive</a>
-    <a href="./ai-tools.html">AI Tools</a>
-    <a href="./glossary.html">Dictionary</a>
-  </div>
 
-  <!-- Intro -->
   <div class="intro">
     <p class="intro-desc">크리에이터·디자이너를 위한 AI 뉴스 큐레이션. 매일 3가지 핵심 기사 + 영단어·핵심 표현으로 산업과 더불어 글로벌 인재가 되기 위한 영어 공부를 함께 즐겨보세요.</p>
   </div>
 
   <div class="archive-label">archive</div>
+
   <div id="archive"></div>
 
   <footer class="footer">
@@ -139,6 +133,7 @@
 
 <script>
 const BRIEFS = [
+  { "year": "2026", "month": "06", "day": "06", "displayDate": "2026.06.06", "title": "Daily AI Brief", "desc": "오픈 웨이트 이미지 모델 Ideogram 4 텍스트·레이아웃 제어 / NVIDIA RTX Spark 개인용 AI PC·Adobe Photoshop·Premiere 재설계 / Suno 4억·Supabase 5억 달러 메가라운드 봇물", "url": "./daily-ai-brief-2026-06-06.html", "num": "013" },
   { "year": "2026", "month": "06", "day": "05", "displayDate": "2026.06.05", "title": "Daily AI Brief", "desc": "로봇 파운데이션 모델 Generalist AI 4억 달러·20억 달러 가치 / SpaceX 사상 최대 750억 달러 IPO로 AI 연산·Starlink 투자 / 구글 SynthID 워터마크 OpenAI·ElevenLabs·Kakao 확산", "url": "./daily-ai-brief-2026-06-05.html", "num": "012" },
   { "year": "2026", "month": "06", "day": "04", "displayDate": "2026.06.04", "title": "Daily AI Brief", "desc": "스코세이지 Black Forest Labs 합류·차기작 스토리보드에 Flux / MS 자체 추론·코딩 모델 MAI-Thinking-1·MAI-Code-1-Flash 공개 / Suno 54억 달러 가치에 4억 달러 유치", "url": "./daily-ai-brief-2026-06-04.html", "num": "011" },
   { "year": "2026", "month": "06", "day": "03", "displayDate": "2026.06.03", "title": "Daily AI Brief", "desc": "Microsoft MAI-Image-2.5 이미지 편집 + PowerPoint 탑재 / Anthropic API 과금 6월 15일 분리 / DeepSeek 74억 달러 첫 외부 투자", "url": "./daily-ai-brief-2026-06-03.html", "num": "010" },
