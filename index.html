@@ -24,10 +24,14 @@
     -webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:520px;margin:0 auto;padding:40px 24px 60px;}
-  nav{position:sticky;top:0;z-index:50;background:var(--bg);display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 14px;border-bottom:1px solid var(--rule);}
+  nav{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:18px;border-bottom:1px solid var(--rule);}
   nav .brand{font-size:15px;font-weight:500;text-decoration:none;color:var(--text);letter-spacing:.02em;}
-  nav .archive{font-size:12px;text-decoration:none;color:var(--muted);}
-  .intro{margin:26px 0 30px;}
+  /* ── TAB NAV ── */
+  .tab-nav{display:flex;gap:20px;margin:22px 0 30px;}
+  .tab-nav a{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;}
+  .tab-nav a.active{color:var(--text);}
+  .tab-nav a:hover{opacity:.5;}
+  .intro{margin:0 0 30px;}
   .intro-desc{font-size:14px;font-weight:300;color:#555;}
   .archive-label{font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:lowercase;margin-bottom:6px;}
   .entry-row{display:block;text-decoration:none;color:inherit;border-bottom:1px solid var(--rule);padding:18px 0;transition:opacity .15s;}
@@ -46,8 +50,13 @@
 
   <nav>
     <a class="brand" id="nav-brand-link" href="#">AI Brief</a>
-    <a class="archive" href="#">archive</a>
   </nav>
+
+  <div class="tab-nav">
+    <a href="./index.html" class="active">Archive</a>
+    <a href="./ai-tools.html">AI Tools</a>
+    <a href="./glossary.html">Dictionary</a>
+  </div>
 
   <div class="intro">
     <p class="intro-desc">크리에이터·디자이너를 위한 AI 뉴스 큐레이션. 매일 3가지 핵심 기사 + 영단어·핵심 표현으로 산업과 더불어 글로벌 인재가 되기 위한 영어 공부를 함께 즐겨보세요.</p>
