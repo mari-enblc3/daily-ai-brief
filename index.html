@@ -24,8 +24,9 @@
     -webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:520px;margin:0 auto;padding:40px 24px 60px;}
-  nav{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:18px;border-bottom:1px solid var(--rule);}
+  nav{position:sticky;top:0;z-index:50;background:var(--bg);display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 14px;border-bottom:1px solid var(--rule);}
   nav .brand{font-size:15px;font-weight:500;text-decoration:none;color:var(--text);letter-spacing:.02em;}
+  nav .archive{font-size:12px;text-decoration:none;color:var(--muted);}
   .intro{margin:26px 0 30px;}
   .intro-desc{font-size:14px;font-weight:300;color:#555;}
   .archive-label{font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:lowercase;margin-bottom:6px;}
@@ -45,6 +46,7 @@
 
   <nav>
     <a class="brand" id="nav-brand-link" href="#">AI Brief</a>
+    <a class="archive" href="#">archive</a>
   </nav>
 
   <div class="intro">
