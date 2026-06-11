@@ -8,65 +8,55 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#faf9f7;
-    --text:#0d0c0b;
-    --muted:#888;
-    --rule:#e0ddd9;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    background:var(--bg);
-    color:var(--text);
+  :root { --bg:#faf9f7; --text:#0d0c0b; --muted:#888; --rule:#e0ddd9; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:var(--bg); color:var(--text);
     font-family:'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
-    font-weight:400;
-    line-height:1.7;
+    font-weight:400; line-height:1.7;
+    max-width:520px; margin:0 auto; padding:40px 24px 64px;
     -webkit-font-smoothing:antialiased;
-    padding:0 24px;
   }
-  .wrap{max-width:520px;margin:0 auto;}
-  nav{padding:32px 0 0;}
-  nav .brand{font-size:15px;font-weight:500;letter-spacing:.02em;text-decoration:none;color:var(--text);}
-  .intro{margin:20px 0 36px;}
-  .intro-desc{font-size:13px;line-height:1.85;color:#555;}
-  .archive-label{font-size:10px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px;}
-  .entry-row{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--rule);padding:16px 0;}
-  .entry-row:last-child{border-bottom:1px solid var(--rule);}
-  .entry-row-inner{display:flex;gap:14px;align-items:baseline;}
-  .entry-row-date{font-size:11px;color:var(--muted);white-space:nowrap;min-width:74px;}
-  .entry-row-right{flex:1;}
-  .entry-row-title{font-size:14px;font-weight:500;margin-bottom:3px;}
-  .entry-row-desc{font-size:12px;color:#777;line-height:1.6;}
-  footer.footer{
-    border-top:1px solid var(--rule);
-    margin:40px 0 0;
-    padding:18px 0 48px;
-  }
-  footer.footer .copy{font-size:10px;color:#bbb;}
+  nav { display:flex; justify-content:space-between; align-items:baseline;
+        padding-bottom:24px; border-bottom:1px solid var(--rule); }
+  nav .brand { font-size:15px; font-weight:500; letter-spacing:.02em;
+               text-decoration:none; color:var(--text); }
+  .intro { margin:24px 0 8px; }
+  .intro-desc { font-size:13px; font-weight:300; color:#555; line-height:1.8; }
+  .archive-label { font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+                   color:var(--muted); margin:30px 0 6px; }
+  #archive { display:flex; flex-direction:column; }
+  a.entry-row { text-decoration:none; color:inherit;
+                padding:18px 0; border-bottom:1px solid var(--rule);
+                transition:opacity .15s; }
+  a.entry-row:hover { opacity:.6; }
+  .entry-row-inner { display:flex; gap:14px; align-items:baseline; }
+  .entry-row-date { font-size:12px; color:var(--muted); white-space:nowrap;
+                    letter-spacing:.03em; min-width:78px; }
+  .entry-row-title { font-size:14px; font-weight:500; margin-bottom:5px; }
+  .entry-row-desc { font-size:12px; font-weight:300; color:#666; line-height:1.6; }
+  footer { margin-top:40px; padding-top:18px; border-top:1px solid var(--rule);
+           font-size:10px; color:#bbb; text-align:center; }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <nav>
-    <a class="brand" id="nav-brand-link" href="#">AI Brief</a>
-  </nav>
+<nav>
+  <a class="brand" id="nav-brand-link" href="#">AI Brief</a>
+</nav>
 
-  <div class="intro">
-    <p class="intro-desc">크리에이터·디자이너를 위한 AI 뉴스 큐레이션. 매일 3가지 핵심 기사 + 영단어·핵심 표현으로 산업과 더불어 글로벌 인재가 되기 위한 영어 공부를 함께 즐겨보세요.</p>
-  </div>
-
-  <div class="archive-label">archive</div>
-  <div id="archive"></div>
-
-  <footer class="footer">
-    <span class="copy">© enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
-  </footer>
-
+<div class="intro">
+  <p class="intro-desc">크리에이터·디자이너를 위한 AI 뉴스 큐레이션. 매일 3가지 핵심 기사 + 영단어·핵심 표현으로 산업과 더불어 글로벌 인재가 되기 위한 영어 공부를 함께 즐겨보세요.</p>
 </div>
+
+<div class="archive-label">archive</div>
+<div id="archive"></div>
+
+<footer>© enblc3. Jeong A Mari Lee. All Rights Reserved.</footer>
 
 <script>
 const BRIEFS = [
+  {"year":"2026","month":"06","day":"11","displayDate":"2026.06.11","title":"Daily AI Brief","desc":"오픈AI, 'AI 여론조작' 중국 연계 계정 무더기 차단·생성 콘텐츠 신뢰 부각 / 오픈AI 모델·Codex, 오라클 클라우드 약정으로 바로 사용 / 메타 8천 명 감원·7천 명 AI 조직 재배치, 설비투자 최대 1,450억 달러","url":"./daily-ai-brief-2026-06-11.html","num":"018"},
   {"year":"2026","month":"06","day":"10","displayDate":"2026.06.10","title":"Daily AI Brief","desc":"메타 AI 고객지원 허점에 인스타그램 계정 2만 개 탈취·크리에이터 보안 비상 / 오픈AI 8,520억 달러 기업가치 IPO 비밀 신청 / 중국 2,950억 달러 전국 AI 데이터센터망 추진","url":"./daily-ai-brief-2026-06-10.html","num":"017"},
   {"year":"2026","month":"06","day":"09","displayDate":"2026.06.09","title":"Daily AI Brief","desc":"애플 WWDC 2026 Gemini Siri·사진 AI 편집·모델 선택권 공개 / 6월 프런티어 모델 러시 Gemini 3.5 Pro·Claude Sonnet 4.8 임박 / CDT 'AI 다크 패턴' 37개 적발 EU AI법 압박","url":"./daily-ai-brief-2026-06-09.html","num":"016"},
   {"year":"2026","month":"06","day":"08","displayDate":"2026.06.08","title":"Daily AI Brief","desc":"OpenAI '채팅은 끝났다' ChatGPT 슈퍼앱 재설계·Canva 통합 / Perplexity 'Search as Code' AI가 직접 검색 코드 작성 / SpaceX 사상 최대 750억 달러 IPO 로드쇼 6월 8일 개시","url":"./daily-ai-brief-2026-06-08.html","num":"015"},
@@ -107,5 +97,6 @@ function render() {
 render();
 document.getElementById('nav-brand-link').href = BRIEFS[0].url;
 </script>
+
 </body>
 </html>
