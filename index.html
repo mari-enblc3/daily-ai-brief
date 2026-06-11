@@ -8,72 +8,85 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#faf9f7; --text:#0d0c0b; --muted:#888; --rule:#e0ddd9; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    background:var(--bg); color:var(--text);
-    font-family:'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
-    font-weight:400; line-height:1.7;
-    max-width:520px; margin:0 auto; padding:40px 24px 64px;
+  :root{
+    --bg:#faf9f7;
+    --text:#0d0c0b;
+    --muted:#888;
+    --rule:#e0ddd9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Helvetica Neue',Helvetica,'Noto Sans KR',Arial,sans-serif;
+    font-weight:400;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  nav { display:flex; justify-content:space-between; align-items:baseline;
-        padding-bottom:24px; border-bottom:1px solid var(--rule); }
-  nav .brand { font-size:15px; font-weight:500; letter-spacing:.02em;
-               text-decoration:none; color:var(--text); }
-  .intro { margin:24px 0 8px; }
-  .intro-desc { font-size:13px; font-weight:300; color:#555; line-height:1.8; }
-  .archive-label { font-size:10px; letter-spacing:.2em; text-transform:uppercase;
-                   color:var(--muted); margin:30px 0 6px; }
-  #archive { display:flex; flex-direction:column; }
-  a.entry-row { text-decoration:none; color:inherit;
-                padding:18px 0; border-bottom:1px solid var(--rule);
-                transition:opacity .15s; }
-  a.entry-row:hover { opacity:.6; }
-  .entry-row-inner { display:flex; gap:14px; align-items:baseline; }
-  .entry-row-date { font-size:12px; color:var(--muted); white-space:nowrap;
-                    letter-spacing:.03em; min-width:78px; }
-  .entry-row-title { font-size:14px; font-weight:500; margin-bottom:5px; }
-  .entry-row-desc { font-size:12px; font-weight:300; color:#666; line-height:1.6; }
-  footer { margin-top:40px; padding-top:18px; border-top:1px solid var(--rule);
-           font-size:10px; color:#bbb; text-align:center; }
+  .wrap{max-width:520px;margin:0 auto;padding:40px 24px 60px;}
+  nav{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding-bottom:18px;border-bottom:1px solid var(--rule);
+  }
+  nav .brand{font-size:15px;font-weight:500;letter-spacing:.02em;color:var(--text);text-decoration:none;}
+  .intro{margin:26px 0 10px;}
+  .intro-desc{font-size:13px;color:var(--muted);line-height:1.8;}
+  .archive-label{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin:34px 0 8px;}
+  #archive{display:flex;flex-direction:column;}
+  a.entry-row{
+    display:block;text-decoration:none;color:inherit;
+    padding:18px 0;border-bottom:1px solid var(--rule);
+  }
+  a.entry-row:hover .entry-row-title{text-decoration:underline;}
+  .entry-row-inner{display:flex;gap:14px;align-items:baseline;}
+  .entry-row-date{font-size:12px;color:var(--muted);white-space:nowrap;min-width:84px;}
+  .entry-row-right{flex:1;}
+  .entry-row-title{font-size:14px;font-weight:500;margin-bottom:4px;}
+  .entry-row-desc{font-size:12px;color:var(--muted);line-height:1.6;}
+  footer{
+    margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);
+    font-size:10px;color:#bbb;text-align:center;
+  }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<nav>
-  <a class="brand" id="nav-brand-link" href="#">AI Brief</a>
-</nav>
+  <nav>
+    <a class="brand" id="nav-brand-link" href="#">AI Brief</a>
+  </nav>
 
-<div class="intro">
-  <p class="intro-desc">크리에이터·디자이너를 위한 AI 뉴스 큐레이션. 매일 3가지 핵심 기사 + 영단어·핵심 표현으로 산업과 더불어 글로벌 인재가 되기 위한 영어 공부를 함께 즐겨보세요.</p>
+  <div class="intro">
+    <p class="intro-desc">크리에이터·디자이너를 위한 AI 뉴스 큐레이션. 매일 3가지 핵심 기사 + 영단어·핵심 표현으로 산업과 더불어 글로벌 인재가 되기 위한 영어 공부를 함께 즐겨보세요.</p>
+  </div>
+
+  <div class="archive-label">archive</div>
+  <div id="archive"></div>
+
+  <footer>© enblc3. Jeong A Mari Lee. All Rights Reserved.</footer>
+
 </div>
-
-<div class="archive-label">archive</div>
-<div id="archive"></div>
-
-<footer>© enblc3. Jeong A Mari Lee. All Rights Reserved.</footer>
 
 <script>
 const BRIEFS = [
-  {"year":"2026","month":"06","day":"11","displayDate":"2026.06.11","title":"Daily AI Brief","desc":"오픈AI, 'AI 여론조작' 중국 연계 계정 무더기 차단·생성 콘텐츠 신뢰 부각 / 오픈AI 모델·Codex, 오라클 클라우드 약정으로 바로 사용 / 메타 8천 명 감원·7천 명 AI 조직 재배치, 설비투자 최대 1,450억 달러","url":"./daily-ai-brief-2026-06-11.html","num":"018"},
-  {"year":"2026","month":"06","day":"10","displayDate":"2026.06.10","title":"Daily AI Brief","desc":"메타 AI 고객지원 허점에 인스타그램 계정 2만 개 탈취·크리에이터 보안 비상 / 오픈AI 8,520억 달러 기업가치 IPO 비밀 신청 / 중국 2,950억 달러 전국 AI 데이터센터망 추진","url":"./daily-ai-brief-2026-06-10.html","num":"017"},
-  {"year":"2026","month":"06","day":"09","displayDate":"2026.06.09","title":"Daily AI Brief","desc":"애플 WWDC 2026 Gemini Siri·사진 AI 편집·모델 선택권 공개 / 6월 프런티어 모델 러시 Gemini 3.5 Pro·Claude Sonnet 4.8 임박 / CDT 'AI 다크 패턴' 37개 적발 EU AI법 압박","url":"./daily-ai-brief-2026-06-09.html","num":"016"},
-  {"year":"2026","month":"06","day":"08","displayDate":"2026.06.08","title":"Daily AI Brief","desc":"OpenAI '채팅은 끝났다' ChatGPT 슈퍼앱 재설계·Canva 통합 / Perplexity 'Search as Code' AI가 직접 검색 코드 작성 / SpaceX 사상 최대 750억 달러 IPO 로드쇼 6월 8일 개시","url":"./daily-ai-brief-2026-06-08.html","num":"015"},
-  {"year":"2026","month":"06","day":"07","displayDate":"2026.06.07","title":"Daily AI Brief","desc":"ChatGPT 자동 기억 메모리 'Dreaming V3' 배포 / 알리바바 Qwen 3.7 Max 절반 값 프런티어급 성능 / NYT CEO 'AI 무단 학습' 저작권 논쟁 재점화","url":"./daily-ai-brief-2026-06-07.html","num":"014"},
-  {"year":"2026","month":"06","day":"06","displayDate":"2026.06.06","title":"Daily AI Brief","desc":"오픈 웨이트 이미지 모델 Ideogram 4 텍스트·레이아웃 제어 / NVIDIA RTX Spark 개인용 AI PC·Adobe Photoshop·Premiere 재설계 / Suno 4억·Supabase 5억 달러 메가라운드 봇물","url":"./daily-ai-brief-2026-06-06.html","num":"013"},
-  {"year":"2026","month":"06","day":"05","displayDate":"2026.06.05","title":"Daily AI Brief","desc":"로봇 파운데이션 모델 Generalist AI 4억 달러·20억 달러 가치 / SpaceX 사상 최대 750억 달러 IPO로 AI 연산·Starlink 투자 / 구글 SynthID 워터마크 OpenAI·ElevenLabs·Kakao 확산","url":"./daily-ai-brief-2026-06-05.html","num":"012"},
-  {"year":"2026","month":"06","day":"04","displayDate":"2026.06.04","title":"Daily AI Brief","desc":"스코세이지 Black Forest Labs 합류·차기작 스토리보드에 Flux / MS 자체 추론·코딩 모델 MAI-Thinking-1·MAI-Code-1-Flash 공개 / Suno 54억 달러 가치에 4억 달러 유치","url":"./daily-ai-brief-2026-06-04.html","num":"011"},
-  {"year":"2026","month":"06","day":"03","displayDate":"2026.06.03","title":"Daily AI Brief","desc":"Microsoft MAI-Image-2.5 이미지 편집 + PowerPoint 탑재 / Anthropic API 과금 6월 15일 분리 / DeepSeek 74억 달러 첫 외부 투자","url":"./daily-ai-brief-2026-06-03.html","num":"010"},
-  {"year":"2026","month":"06","day":"02","displayDate":"2026.06.02","title":"Daily AI Brief","desc":"MS Build 2026, 자체 생성모델 MAI-Voice·Image·Transcribe 상용 공개 / 자체 코딩모델 Project Polaris로 GitHub Copilot의 GPT-4 대체 / Anthropic 프런티어 AI 랩 최초 IPO 신청","url":"./daily-ai-brief-2026-06-02.html","num":"009"},
-  {"year":"2026","month":"06","day":"01","displayDate":"2026.06.01","title":"Daily AI Brief","desc":"Google Flow 통합 워크스페이스 / GitHub Copilot AI Credits 전환 / Claude Mythos 취약점 2.3만 개 발견","url":"./daily-ai-brief-2026-06-01.html","num":"008"},
-  {"year":"2026","month":"05","day":"31","displayDate":"2026.05.31","title":"Daily AI Brief","desc":"Adobe Firefly AI 어시스턴트 공개 베타 / Google Gemini Spark 미국 출시 / Anthropic 서울·밀라노 동시 오픈","url":"./daily-ai-brief-2026-05-31.html","num":"007"},
-  {"year":"2026","month":"05","day":"30","displayDate":"2026.05.30","title":"Daily AI Brief","desc":"LumeFlow AI GPT Image 2 통합 영상 자동화 / YouTube AI 영상 자동 라벨링 / Anthropic Opus 4.8 Dynamic Workflows","url":"./daily-ai-brief-2026-05-30.html","num":"006"},
-  {"year":"2026","month":"05","day":"29","displayDate":"2026.05.29","title":"Daily AI Brief","desc":"Google Flow Tools로 나만의 AI 툴 제작 / ElevenLabs Music v2 장르 전환 모델 / Devin $1B 투자 유치","url":"./daily-ai-brief-2026-05-29.html","num":"005"},
-  {"year":"2026","month":"05","day":"28","displayDate":"2026.05.28","title":"Daily AI Brief","desc":"ChatGPT 음성 모드 구형 모델 논란 / Claude Code v2.1.152 업데이트 / ElevenLabs 시리즈 D $5억 달러","url":"./daily-ai-brief-2026-05-28.html","num":"004"},
-  {"year":"2026","month":"05","day":"27","displayDate":"2026.05.27","title":"Daily AI Brief","desc":"Google Pics 출시 텍스트로 디자인 / Gemini Omni 멀티모달 영상 생성 / OpenAI-Microsoft 비독점 재편","url":"./daily-ai-brief-2026-05-27.html","num":"003"},
-  {"year":"2026","month":"05","day":"26","displayDate":"2026.05.26","title":"Daily AI Brief","desc":"X Creator Connect AI 브랜드 매칭 / Google Stitch UI 자동 생성 디자인 툴 / Anthropic 900조 펀딩 임박","url":"./daily-ai-brief-2026-05-26b.html","num":"002"},
-  {"year":"2026","month":"05","day":"25","displayDate":"2026.05.25","title":"Daily AI Brief","desc":"Krea 2 크리에이터용 파운데이션 모델 공개 / Google I/O 2026 Gemini 3.5 Flash / 2026 Q1 VC AI 80% 흡수","url":"./daily-ai-brief-2026-05-25.html","num":"001"}
+  { "year":"2026","month":"06","day":"11","displayDate":"2026.06.11","title":"Daily AI Brief","desc":"오픈AI, 'AI 여론조작' 중국 연계 계정 무더기 차단·생성 콘텐츠 신뢰 부각 / 오픈AI 모델·Codex, 오라클 클라우드 약정으로 바로 사용 / 메타 8천 명 감원·7천 명 AI 조직 재배치, 설비투자 최대 1,450억 달러","url":"./daily-ai-brief-2026-06-11.html","num":"018" },
+  { "year":"2026","month":"06","day":"10","displayDate":"2026.06.10","title":"Daily AI Brief","desc":"메타 AI 고객지원 허점에 인스타그램 계정 2만 개 탈취·크리에이터 보안 비상 / 오픈AI 8,520억 달러 기업가치 IPO 비밀 신청 / 중국 2,950억 달러 전국 AI 데이터센터망 추진","url":"./daily-ai-brief-2026-06-10.html","num":"017" },
+  { "year":"2026","month":"06","day":"09","displayDate":"2026.06.09","title":"Daily AI Brief","desc":"애플 WWDC 2026 Gemini Siri·사진 AI 편집·모델 선택권 공개 / 6월 프런티어 모델 러시 Gemini 3.5 Pro·Claude Sonnet 4.8 임박 / CDT 'AI 다크 패턴' 37개 적발 EU AI법 압박","url":"./daily-ai-brief-2026-06-09.html","num":"016" },
+  { "year":"2026","month":"06","day":"08","displayDate":"2026.06.08","title":"Daily AI Brief","desc":"OpenAI '채팅은 끝났다' ChatGPT 슈퍼앱 재설계·Canva 통합 / Perplexity 'Search as Code' AI가 직접 검색 코드 작성 / SpaceX 사상 최대 750억 달러 IPO 로드쇼 6월 8일 개시","url":"./daily-ai-brief-2026-06-08.html","num":"015" },
+  { "year":"2026","month":"06","day":"07","displayDate":"2026.06.07","title":"Daily AI Brief","desc":"ChatGPT 자동 기억 메모리 'Dreaming V3' 배포 / 알리바바 Qwen 3.7 Max 절반 값 프런티어급 성능 / NYT CEO 'AI 무단 학습' 저작권 논쟁 재점화","url":"./daily-ai-brief-2026-06-07.html","num":"014" },
+  { "year":"2026","month":"06","day":"06","displayDate":"2026.06.06","title":"Daily AI Brief","desc":"오픈 웨이트 이미지 모델 Ideogram 4 텍스트·레이아웃 제어 / NVIDIA RTX Spark 개인용 AI PC·Adobe Photoshop·Premiere 재설계 / Suno 4억·Supabase 5억 달러 메가라운드 봇물","url":"./daily-ai-brief-2026-06-06.html","num":"013" },
+  { "year":"2026","month":"06","day":"05","displayDate":"2026.06.05","title":"Daily AI Brief","desc":"로봇 파운데이션 모델 Generalist AI 4억 달러·20억 달러 가치 / SpaceX 사상 최대 750억 달러 IPO로 AI 연산·Starlink 투자 / 구글 SynthID 워터마크 OpenAI·ElevenLabs·Kakao 확산","url":"./daily-ai-brief-2026-06-05.html","num":"012" },
+  { "year":"2026","month":"06","day":"04","displayDate":"2026.06.04","title":"Daily AI Brief","desc":"스코세이지 Black Forest Labs 합류·차기작 스토리보드에 Flux / MS 자체 추론·코딩 모델 MAI-Thinking-1·MAI-Code-1-Flash 공개 / Suno 54억 달러 가치에 4억 달러 유치","url":"./daily-ai-brief-2026-06-04.html","num":"011" },
+  { "year":"2026","month":"06","day":"03","displayDate":"2026.06.03","title":"Daily AI Brief","desc":"Microsoft MAI-Image-2.5 이미지 편집 + PowerPoint 탑재 / Anthropic API 과금 6월 15일 분리 / DeepSeek 74억 달러 첫 외부 투자","url":"./daily-ai-brief-2026-06-03.html","num":"010" },
+  { "year":"2026","month":"06","day":"02","displayDate":"2026.06.02","title":"Daily AI Brief","desc":"MS Build 2026, 자체 생성모델 MAI-Voice·Image·Transcribe 상용 공개 / 자체 코딩모델 Project Polaris로 GitHub Copilot의 GPT-4 대체 / Anthropic 프런티어 AI 랩 최초 IPO 신청","url":"./daily-ai-brief-2026-06-02.html","num":"009" },
+  { "year":"2026","month":"06","day":"01","displayDate":"2026.06.01","title":"Daily AI Brief","desc":"Google Flow 통합 워크스페이스 / GitHub Copilot AI Credits 전환 / Claude Mythos 취약점 2.3만 개 발견","url":"./daily-ai-brief-2026-06-01.html","num":"008" },
+  { "year":"2026","month":"05","day":"31","displayDate":"2026.05.31","title":"Daily AI Brief","desc":"Adobe Firefly AI 어시스턴트 공개 베타 / Google Gemini Spark 미국 출시 / Anthropic 서울·밀라노 동시 오픈","url":"./daily-ai-brief-2026-05-31.html","num":"007" },
+  { "year":"2026","month":"05","day":"30","displayDate":"2026.05.30","title":"Daily AI Brief","desc":"LumeFlow AI GPT Image 2 통합 영상 자동화 / YouTube AI 영상 자동 라벨링 / Anthropic Opus 4.8 Dynamic Workflows","url":"./daily-ai-brief-2026-05-30.html","num":"006" },
+  { "year":"2026","month":"05","day":"29","displayDate":"2026.05.29","title":"Daily AI Brief","desc":"Google Flow Tools로 나만의 AI 툴 제작 / ElevenLabs Music v2 장르 전환 모델 / Devin $1B 투자 유치","url":"./daily-ai-brief-2026-05-29.html","num":"005" },
+  { "year":"2026","month":"05","day":"28","displayDate":"2026.05.28","title":"Daily AI Brief","desc":"ChatGPT 음성 모드 구형 모델 논란 / Claude Code v2.1.152 업데이트 / ElevenLabs 시리즈 D $5억 달러","url":"./daily-ai-brief-2026-05-28.html","num":"004" },
+  { "year":"2026","month":"05","day":"27","displayDate":"2026.05.27","title":"Daily AI Brief","desc":"Google Pics 출시 텍스트로 디자인 / Gemini Omni 멀티모달 영상 생성 / OpenAI-Microsoft 비독점 재편","url":"./daily-ai-brief-2026-05-27.html","num":"003" },
+  { "year":"2026","month":"05","day":"26","displayDate":"2026.05.26","title":"Daily AI Brief","desc":"X Creator Connect AI 브랜드 매칭 / Google Stitch UI 자동 생성 디자인 툴 / Anthropic 900조 펀딩 임박","url":"./daily-ai-brief-2026-05-26b.html","num":"002" },
+  { "year":"2026","month":"05","day":"25","displayDate":"2026.05.25","title":"Daily AI Brief","desc":"Krea 2 크리에이터용 파운데이션 모델 공개 / Google I/O 2026 Gemini 3.5 Flash / 2026 Q1 VC AI 80% 흡수","url":"./daily-ai-brief-2026-05-25.html","num":"001" }
 ];
 
 function render() {
@@ -97,6 +110,5 @@ function render() {
 render();
 document.getElementById('nav-brand-link').href = BRIEFS[0].url;
 </script>
-
 </body>
 </html>
