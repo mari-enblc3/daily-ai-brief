@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Brief — 2026.06.12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f7;
+    --text: #0d0c0b;
+    --muted: #888;
+    --rule: #e0ddd9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 20px;
+  }
+  .wrap { max-width: 520px; margin: 0 auto; padding: 36px 0 60px; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--text);
+  }
+  nav .brand { font-size: 18px; font-weight: 500; letter-spacing: -0.2px; color: var(--text); text-decoration: none; }
+  nav .archive-link { font-size: 12px; color: var(--muted); text-decoration: none; }
+
+  .dateline { font-size: 11px; color: var(--muted); letter-spacing: 0.5px; margin: 16px 0 30px; }
+
+  hr.rule { border: 0; border-top: 1px solid var(--rule); margin: 30px 0; }
+
+  .entry-num { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .entry-cat { font-size: 12px; font-style: italic; color: var(--muted); margin-top: 2px; }
+  .entry-title { font-size: 16px; font-weight: 500; line-height: 1.45; margin: 8px 0 8px; letter-spacing: -0.2px; }
+  .entry-source { font-size: 11px; margin-bottom: 14px; }
+  .entry-source a { color: var(--muted); text-decoration: underline; }
+
+  .lang-toggle { display: flex; gap: 6px; margin-bottom: 12px; }
+  .lang-btn {
+    font-family: inherit;
+    font-size: 11px;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 3px 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .lang-btn.active { color: var(--bg); background: var(--text); border-color: var(--text); }
+
+  .summary-text { display: none; font-size: 14px; font-weight: 300; color: var(--text); }
+  .summary-text.visible { display: block; }
+
+  .learn-section { margin-top: 18px; }
+  .learn-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin: 14px 0 6px; }
+  table.learn { width: 100%; border-collapse: collapse; }
+  table.learn td { padding: 4px 0; font-size: 13px; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  td.col-en { font-style: italic; width: 45%; padding-right: 12px; }
+  td.col-kr { color: var(--muted); }
+
+  .signal-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); margin-bottom: 10px; }
+  .signal-body { font-size: 14px; font-weight: 300; }
+  .signal-body strong { font-weight: 500; }
+
+  .sources-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  ul.sources-list { list-style: none; }
+  ul.sources-list li { font-size: 12px; margin-bottom: 7px; padding-left: 4px; }
+  ul.sources-list li::before { content: '\2192  '; color: var(--muted); }
+  ul.sources-list li a { color: var(--muted); text-decoration: underline; word-break: break-all; }
+
+  footer.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid var(--text);
+    margin-top: 40px;
+    padding-top: 16px;
+  }
+  footer.footer a { font-size: 13px; font-weight: 500; color: var(--text); text-decoration: none; }
+  footer.footer .f-date { font-size: 11px; color: var(--muted); }
+  footer.footer .copyright { font-size: 10px; color: #bbb; width: 100%; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="brand" href="./index.html">AI Brief</a>
+    <a class="archive-link" href="./index.html">archive</a>
+  </nav>
+
+  <div class="dateline">&bull; 2026.06.12 &mdash; No.019</div>
+
+  <!-- ENTRY 01 -->
+  <div class="entry" id="s1">
+    <div class="entry-num">01</div>
+    <div class="entry-cat">AI Startup / VC / Industry</div>
+    <h2 class="entry-title">스페이스X, 사상 최대 IPO 나스닥 데뷔 &mdash; AI 자본 시장의 풍향계</h2>
+    <div class="entry-source"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-11-2026" target="_blank" rel="noopener">Build Fast with AI &middot; 2026.06.11</a></div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('art','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('art','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="art-kr">스페이스X가 6월 12일 나스닥에서 티커 SPCX로 거래를 시작했다. 공모가는 주당 135달러로 고정됐고, 약 750억 달러를 조달해 기업가치는 1조 7,700억 달러에 이른다. 이는 2019년 사우디 아람코 상장을 넘어선 역사상 최대 규모의 IPO다. 골드만삭스가 주관한 21개 은행 신디케이트는 공모 물량의 30%를 로빈후드·피델리티·찰스슈왑을 통해 개인 투자자에게 배정했는데, 초대형 IPO치고는 이례적으로 높은 비중이다. AI 업계에 이 데뷔가 중요한 이유는 풍향계이기 때문이다. 조달 자금이 AI 연산 인프라와 스타링크 확장에 투입되며, 비밀리에 상장 신청을 마친 오픈AI(약 8,520억 달러)와 앤트로픽(약 9,650억 달러)의 상장을 앞서 가늠하게 한다.</p>
+    <p class="summary-text" id="art-en">SpaceX began trading on Nasdaq under the ticker SPCX on June 12, pricing its IPO at a fixed $135 per share. The roughly $75 billion raise values the company near $1.77 trillion, making it the largest IPO in recorded history, surpassing Saudi Aramco's 2019 listing. Goldman Sachs led a 21-bank syndicate, with an unusually high 30% of the float allocated to retail investors via Robinhood, Fidelity, and Charles Schwab. For the AI world, the debut is a bellwether: proceeds are earmarked for AI compute and Starlink expansion, and the listing front-runs the confidentially filed IPOs of OpenAI (~$852B) and Anthropic (~$965B).</p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn">
+        <tr><td class="col-en">ticker</td><td class="col-kr">(증시) 종목 약호</td></tr>
+        <tr><td class="col-en">syndicate</td><td class="col-kr">(인수) 신디케이트, 컨소시엄</td></tr>
+        <tr><td class="col-en">allocate</td><td class="col-kr">배정하다, 할당하다</td></tr>
+        <tr><td class="col-en">valuation</td><td class="col-kr">기업가치 평가</td></tr>
+        <tr><td class="col-en">bellwether</td><td class="col-kr">선행 지표, 풍향계</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn">
+        <tr><td class="col-en">price its IPO at</td><td class="col-kr">공모가를 ~로 책정하다</td></tr>
+        <tr><td class="col-en">the largest in recorded history</td><td class="col-kr">기록상 최대 규모의</td></tr>
+        <tr><td class="col-en">allocated to retail investors</td><td class="col-kr">개인 투자자에게 배정된</td></tr>
+        <tr><td class="col-en">earmarked for</td><td class="col-kr">~에 쓰도록 배정된</td></tr>
+        <tr><td class="col-en">front-run the listing</td><td class="col-kr">상장을 앞서 가늠하다</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 02 -->
+  <div class="entry" id="s2">
+    <div class="entry-num">02</div>
+    <div class="entry-cat">AI Startup / VC / Industry</div>
+    <h2 class="entry-title">베이조스의 '프로메테우스', 120억 달러 조달 &mdash; 물리적 AI로 무게추 이동</h2>
+    <div class="entry-source"><a href="https://www.pymnts.com/news/investment-tracker/2026/jeff-bezos-raises-12-billion-for-ai-engineering-startup-prometheus/" target="_blank" rel="noopener">PYMNTS &middot; 2026.06.11</a></div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('tech','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('tech','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="tech-kr">6월 11일, AI 스타트업 프로메테우스가 120억 달러 규모의 시리즈 B를 발표하며 기업가치 410억 달러를 인정받았다. 아마존 창업자 제프 베이조스와 전 구글 임원 비크람 바지가 공동 창업한 회사다. 지난해 11월에야 출범한 프로메테우스는 엔지니어가 물리적 제품을 설계하고 제조하도록 돕는 AI 도구를 개발하며, 자동차·항공우주·컴퓨팅 영역을 아우른다. 베이조스는 이번 라운드를 주로 더 많은 연산 자원을 확보하기 위해 진행했다고 밝혔다. 이 거래는 올해 최대 규모 중 하나로, 투자 심리가 소프트웨어를 넘어 제조와 하드웨어를 건드리는 '물리적 AI'로 옮겨가고 있음을 보여준다.</p>
+    <p class="summary-text" id="tech-en">On June 11, AI startup Prometheus &mdash; co-founded by Amazon's Jeff Bezos and former Google executive Vikram Bajaj &mdash; announced a $12 billion Series B that values the company at $41 billion. Launched only in November, Prometheus builds AI tools that help engineers design and manufacture physical products, spanning automotive, aerospace, and computing. Bezos said the round was raised largely to secure more compute. The deal is one of the year's biggest and signals investor appetite shifting toward "physical AI" that touches manufacturing and hardware, not just software.</p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn">
+        <tr><td class="col-en">co-founder</td><td class="col-kr">공동 창업자</td></tr>
+        <tr><td class="col-en">manufacture</td><td class="col-kr">제조하다</td></tr>
+        <tr><td class="col-en">compute</td><td class="col-kr">(명사) 연산 자원</td></tr>
+        <tr><td class="col-en">appetite</td><td class="col-kr">(투자) 욕구, 심리</td></tr>
+        <tr><td class="col-en">aerospace</td><td class="col-kr">항공우주</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn">
+        <tr><td class="col-en">co-founded by</td><td class="col-kr">~가 공동 창업한</td></tr>
+        <tr><td class="col-en">values the company at</td><td class="col-kr">기업가치를 ~로 평가하다</td></tr>
+        <tr><td class="col-en">raised largely to secure</td><td class="col-kr">주로 ~를 확보하려 조달한</td></tr>
+        <tr><td class="col-en">investor appetite shifting toward</td><td class="col-kr">투자 심리가 ~로 옮겨가는</td></tr>
+        <tr><td class="col-en">not just software</td><td class="col-kr">소프트웨어에 그치지 않고</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 03 -->
+  <div class="entry" id="s3">
+    <div class="entry-num">03</div>
+    <div class="entry-cat">AI for Creators / Designers</div>
+    <h2 class="entry-title">어도비 파이어플라이, 30개+ 모델 허브로 &mdash; 제미나이까지 손잡다</h2>
+    <div class="entry-source"><a href="https://aimagazine.com/ai-applications/adobe-adds-models-from-openai-google-to-firefly-ai-platform" target="_blank" rel="noopener">AI Magazine &middot; Adobe</a></div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('biz','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('biz','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="biz-kr">어도비가 파이어플라이를 '멀티모델 창작 허브'로 바꾸고 있다. 이제 크리에이터는 한 앱 안에서 업계 전역의 30개 넘는 모델을 골라 쓸 수 있다. 구글의 나노 바나나 2와 Veo 3.1, 런웨이 Gen-4.5, 클링 2.5 터보, 그리고 어도비 자체 파이어플라이 이미지 모델 5가 포함된다. 어도비는 구글과의 협업도 확장해 'Adobe for creativity' 커넥터를 제미나이 안에서 쓸 수 있게 했다. 사용자가 평범한 말로 결과물을 묘사하면, 어도비의 전문가급 이미지·디자인·영상 도구가 여러 단계의 작업을 알아서 조율한다. 이를 묶어주는 파이어플라이 AI 어시스턴트는 단 한 번의 대화형 프롬프트로 포토샵·프리미어·일러스트레이터·라이트룸·익스프레스를 가로지르는 복잡한 워크플로를 실행한다.</p>
+    <p class="summary-text" id="biz-en">Adobe is turning Firefly into a multi-model creative hub: creators can now work with 30+ models from across the industry inside one app, including Google's Nano Banana 2 and Veo 3.1, Runway's Gen-4.5, Kling 2.5 Turbo, and Adobe's own Firefly Image Model 5. Adobe is also expanding its partnership with Google so the "Adobe for creativity" connector works inside Gemini &mdash; letting users describe an outcome in plain language while Adobe's pro-grade imaging, design, and video tools handle the multi-step orchestration. The Firefly AI Assistant ties it together, executing complex workflows across Photoshop, Premiere, Illustrator, Lightroom, and Express from a single conversational prompt.</p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn">
+        <tr><td class="col-en">hub</td><td class="col-kr">중심지, 허브</td></tr>
+        <tr><td class="col-en">orchestration</td><td class="col-kr">(작업) 조율, 통합 실행</td></tr>
+        <tr><td class="col-en">workflow</td><td class="col-kr">작업 흐름</td></tr>
+        <tr><td class="col-en">connector</td><td class="col-kr">커넥터, 연결 도구</td></tr>
+        <tr><td class="col-en">conversational</td><td class="col-kr">대화형의</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn">
+        <tr><td class="col-en">multi-model creative hub</td><td class="col-kr">멀티모델 창작 허브</td></tr>
+        <tr><td class="col-en">work with ... inside one app</td><td class="col-kr">한 앱 안에서 ~를 사용하다</td></tr>
+        <tr><td class="col-en">in plain language</td><td class="col-kr">평범한 말로, 쉬운 말로</td></tr>
+        <tr><td class="col-en">handle the orchestration</td><td class="col-kr">조율을 알아서 처리하다</td></tr>
+        <tr><td class="col-en">tie it together</td><td class="col-kr">하나로 묶어주다</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SIGNAL -->
+  <div class="signal">
+    <div class="signal-label">signal</div>
+    <div class="signal-body">오늘의 흐름은 한 문장으로 압축된다: <strong>자본은 AI로 몰리고, 그 자본은 다시 창작 도구를 재편한다.</strong> 스페이스X의 사상 최대 IPO와 베이조스의 120억 달러 라운드는 AI 인프라와 연산으로 향하는 돈의 규모를 보여주며, 곧 상장할 오픈AI·앤트로픽이 그 뒤를 잇는다. 이 자본이 닿는 끝단이 바로 어도비 파이어플라이 같은 <strong>멀티모델 허브</strong>로, 크리에이터는 이제 한 앱에서 30개 넘는 모델을 골라 쓴다. 크리에이터에게 진짜 변화는 '어떤 모델이 최고냐'가 아니라 <strong>'어떤 오케스트레이션이 내 워크플로에 맞느냐'로 경쟁의 축이 옮겨갔다</strong>는 점이다. 다만 놓치기 쉬운 반대편 관점도 있다 &mdash; 거대 자본과 단일 허브로의 집중은 편리한 만큼, 도구·가격·이용약관의 통제권이 소수 플랫폼에 쏠리는 리스크를 함께 키운다.</div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SOURCES -->
+  <div class="sources">
+    <div class="sources-label">sources</div>
+    <ul class="sources-list">
+      <li><a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-11-2026" target="_blank" rel="noopener">Build Fast with AI &mdash; AI News June 11, 2026 (SpaceX IPO pricing)</a></li>
+      <li><a href="https://theaitrack.com/ai-news-june-2026-in-depth-and-concise/" target="_blank" rel="noopener">The AI Track &mdash; AI News June 2026 (SpaceX IPO detail)</a></li>
+      <li><a href="https://www.pymnts.com/news/investment-tracker/2026/jeff-bezos-raises-12-billion-for-ai-engineering-startup-prometheus/" target="_blank" rel="noopener">PYMNTS &mdash; Jeff Bezos Raises $12B for AI Startup Prometheus</a></li>
+      <li><a href="https://aimagazine.com/ai-applications/adobe-adds-models-from-openai-google-to-firefly-ai-platform" target="_blank" rel="noopener">AI Magazine &mdash; Adobe Revamps Firefly With Models From OpenAI and Google</a></li>
+      <li><a href="https://blog.adobe.com/en/publish/2026/03/19/adobe-firefly-expands-video-image-creation-with-new-ai-capabilities-custom-models" target="_blank" rel="noopener">Adobe Blog &mdash; Firefly Expands Video & Image Creation</a></li>
+    </ul>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="./index.html">AI Brief</a>
+    <span class="f-date">2026.06.12</span>
+    <span class="copyright">&copy; enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+  </footer>
+
+</div>
+
+<script>
+function switchLang(id, lang) {
+  const kr = document.getElementById(id + '-kr');
+  const en = document.getElementById(id + '-en');
+  const entry = kr.closest('.entry');
+  const btns = entry.querySelectorAll('.lang-btn');
+  kr.classList.toggle('visible', lang === 'kr');
+  en.classList.toggle('visible', lang === 'en');
+  btns.forEach(btn => btn.classList.remove('active'));
+  if (lang === 'kr') btns[0].classList.add('active');
+  else btns[1].classList.add('active');
+}
+</script>
+</body>
+</html>
