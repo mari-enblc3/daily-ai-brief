@@ -192,7 +192,11 @@
     }
     footer.footer a { color: var(--muted); text-decoration: none; }
     .footer-copy { font-size: 10px; color: #bbb; }
-  </style>
+  
+  /* canonical learn-section restore */
+  .learn-label{font-style:normal;text-transform:uppercase;letter-spacing:.1em;font-size:10px;color:var(--muted);}
+  .learn thead th,.learn-table thead th,.vocab thead th,.vocab-table thead th{font-size:10px;color:var(--muted);text-align:left;font-weight:400;letter-spacing:.05em;padding:0 0 6px;border-bottom:1px solid var(--rule);}
+</style>
 </head>
 <body>
   <div class="wrap">
@@ -228,6 +232,7 @@
       <div class="learn-section">
         <div class="learn-label">vocabulary</div>
         <table class="learn-table">
+        <thead><tr><th class="col-en">English</th><th class="col-kr">한국어</th></tr></thead>
           <tr><td class="col-en">unified</td><td class="col-kr">통합된</td></tr>
           <tr><td class="col-en">workspace</td><td class="col-kr">작업 공간</td></tr>
           <tr><td class="col-en">animate</td><td class="col-kr">생동감 있게 만들다, 애니메이션화하다</td></tr>
@@ -236,6 +241,7 @@
         </table>
         <div class="learn-label">key phrases</div>
         <table class="learn-table">
+        <thead><tr><th class="col-en">Expression</th><th class="col-kr">의미</th></tr></thead>
           <tr><td class="col-en">in one interface</td><td class="col-kr">하나의 인터페이스 안에서</td></tr>
           <tr><td class="col-en">unified workspace</td><td class="col-kr">통합 작업 공간</td></tr>
           <tr><td class="col-en">immediate access</td><td class="col-kr">즉시 이용 가능</td></tr>
@@ -269,6 +275,7 @@
       <div class="learn-section">
         <div class="learn-label">vocabulary</div>
         <table class="learn-table">
+        <thead><tr><th class="col-en">English</th><th class="col-kr">한국어</th></tr></thead>
           <tr><td class="col-en">metered</td><td class="col-kr">사용량이 측정되는, 계량식</td></tr>
           <tr><td class="col-en">billing</td><td class="col-kr">청구, 요금 결제</td></tr>
           <tr><td class="col-en">allotment</td><td class="col-kr">할당량</td></tr>
@@ -277,6 +284,7 @@
         </table>
         <div class="learn-label">key phrases</div>
         <table class="learn-table">
+        <thead><tr><th class="col-en">Expression</th><th class="col-kr">의미</th></tr></thead>
           <tr><td class="col-en">usage-based billing</td><td class="col-kr">사용량 기반 청구</td></tr>
           <tr><td class="col-en">flat-rate pricing</td><td class="col-kr">정액제 요금</td></tr>
           <tr><td class="col-en">auto-migrate</td><td class="col-kr">자동으로 이전되다</td></tr>
@@ -310,6 +318,7 @@
       <div class="learn-section">
         <div class="learn-label">vocabulary</div>
         <table class="learn-table">
+        <thead><tr><th class="col-en">English</th><th class="col-kr">한국어</th></tr></thead>
           <tr><td class="col-en">vulnerability</td><td class="col-kr">취약점, 보안 결함</td></tr>
           <tr><td class="col-en">severity</td><td class="col-kr">심각도</td></tr>
           <tr><td class="col-en">exploit</td><td class="col-kr">취약점 악용 코드, 공격 코드</td></tr>
@@ -318,6 +327,7 @@
         </table>
         <div class="learn-label">key phrases</div>
         <table class="learn-table">
+        <thead><tr><th class="col-en">Expression</th><th class="col-kr">의미</th></tr></thead>
           <tr><td class="col-en">true positive</td><td class="col-kr">실제로 유효한 탐지 결과</td></tr>
           <tr><td class="col-en">open-source software</td><td class="col-kr">오픈소스 소프트웨어</td></tr>
           <tr><td class="col-en">forge certificates</td><td class="col-kr">인증서를 위조하다</td></tr>
