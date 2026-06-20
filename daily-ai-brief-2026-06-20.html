@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Brief — 2026.06.20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#faf9f7; --text:#0d0c0b; --muted:#888; --rule:#e0ddd9; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
+    font-weight:300; line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{ max-width:520px; margin:0 auto; padding:40px 24px 64px; }
+  nav{ display:flex; justify-content:space-between; align-items:baseline; padding-bottom:24px; }
+  nav .brand{ font-size:15px; font-weight:500; letter-spacing:.02em; color:var(--text); text-decoration:none; }
+  nav .archive{ font-size:12px; color:var(--muted); text-decoration:none; }
+  .dateline{ font-size:12px; color:var(--muted); letter-spacing:.04em; margin-bottom:32px; }
+  hr.rule{ border:none; border-top:1px solid var(--rule); margin:36px 0; }
+  .entry-num{ font-size:12px; color:var(--muted); letter-spacing:.08em; }
+  .entry-cat{ font-style:italic; color:var(--muted); font-size:12px; margin-top:4px; }
+  h2.entry-title{ font-size:16px; font-weight:500; line-height:1.5; margin-top:8px; }
+  .entry-source{ font-size:11px; color:var(--muted); margin-top:8px; }
+  .entry-source a{ color:var(--muted); text-decoration:underline; }
+  .lang-toggle{ margin:16px 0 10px; display:flex; gap:6px; }
+  .lang-btn{
+    font-family:inherit; font-size:11px; padding:3px 12px; border:1px solid var(--rule);
+    background:transparent; color:var(--muted); cursor:pointer; border-radius:2px; letter-spacing:.02em;
+  }
+  .lang-btn.active{ background:var(--text); color:var(--bg); border-color:var(--text); }
+  .summary-text{ display:none; font-size:14px; font-weight:300; line-height:1.75; margin-top:6px; }
+  .summary-text.visible{ display:block; }
+  .learn-section{ margin-top:22px; }
+  .learn-label{ font-size:11px; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin:18px 0 8px; }
+  table.learn{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.learn td{ padding:5px 0; border-bottom:1px solid var(--rule); vertical-align:top; }
+  td.col-en{ font-style:italic; width:48%; padding-right:12px; }
+  td.col-kr{ color:var(--muted); width:52%; }
+  .signal-label{ font-size:11px; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px; }
+  .signal-body{ font-size:14px; line-height:1.8; }
+  .signal-body strong{ font-weight:500; }
+  .sources-label{ font-size:11px; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; }
+  ul.sources-list{ list-style:none; font-size:12px; }
+  ul.sources-list li{ position:relative; padding-left:20px; margin-bottom:7px; line-height:1.5; }
+  ul.sources-list li::before{ content:'\2192  '; position:absolute; left:0; color:var(--muted); }
+  ul.sources-list a{ color:var(--muted); text-decoration:underline; word-break:break-word; }
+  footer.footer{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;
+    border-top:1px solid var(--rule); margin-top:44px; padding-top:18px;
+  }
+  footer.footer a{ font-size:13px; font-weight:500; color:var(--text); text-decoration:none; }
+  footer.footer .f-date{ font-size:12px; color:var(--muted); }
+  footer.footer .f-copy{ font-size:10px; color:#bbb; width:100%; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="brand" href="./index.html">AI Brief</a>
+    <a class="archive" href="./index.html">archive</a>
+  </nav>
+
+  <div class="dateline">&bull; 2026.06.20 — No.023</div>
+
+  <!-- ENTRY 01 -->
+  <div class="entry" id="s1">
+    <div class="entry-num">01</div>
+    <div class="entry-cat">AI for Creators / Designers</div>
+    <h2 class="entry-title">xAI '그록 이매진 비디오 1.5' 전면 배포 — 이미지→영상 1위, 네이티브 오디오에 분당 4.2달러</h2>
+    <div class="entry-source">the-decoder / xAI, <a href="https://the-decoder.com/xai-updates-grok-imagine-to-1-5-with-image-to-video-generation-at-720p-resolution/">2026.06</a> · 이번 주 웹·iOS·안드로이드 전면 배포</div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('art','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('art','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="art-kr">xAI의 이미지→영상 모델 '그록 이매진 비디오 1.5'가 이번 주 웹과 iOS·안드로이드 앱에 전면 배포되고 Imagine API도 공개됐다. 정지 이미지를 넣으면 사실적인 움직임·물리 시뮬레이션과 함께 자동 생성된 오디오까지 입혀 720p·24fps, 6~15초 클립을 만든다. 독립 평가지표인 'Image-to-Video Arena' 리더보드에서 1.0 대비 약 52 Elo 점프로 1위에 올랐고, 시드댄스 2.0·구글 Veo를 앞섰다고 xAI는 밝혔다. 'Fast' 모드는 6초 720p 영상을 약 25초에 뽑아내(이전 40초+) 속도를 끌어올렸다. 가격은 분당 약 4.2달러로, 오픈AI 소라 2의 분당 30달러와 큰 격차를 둔 공격적 책정이다. 다만 720p·짧은 길이라는 제약은 남아 있어, 고해상도·장척 작업보다 빠른 콘셉트 테스트와 SNS용 짧은 영상 제작에 먼저 들어맞는다. 크리에이터 입장에서는 '이미지 한 장 → 소리까지 붙은 짧은 영상'을 저비용으로 반복 시도할 수 있는 선택지가 늘어난 셈이다.</p>
+    <p class="summary-text" id="art-en">xAI's image-to-video model, Grok Imagine Video 1.5, rolled out widely this week across the web and the iOS and Android apps, with access through the Imagine API. Feed it a still image and it brings the frame to life with realistic motion and physics plus automatically generated audio, producing 720p clips at 24fps running 6 to 15 seconds. On the independent Image-to-Video Arena leaderboard it jumped roughly 52 Elo over version 1.0 to claim the top spot, ahead of Seedance 2.0 and Google Veo, per xAI. A "Fast" mode renders a 6-second 720p clip in about 25 seconds, down from 40-plus. Pricing is aggressive at about $4.20 per minute versus $30 per minute for OpenAI's Sora 2. The trade-offs are real — 720p and short durations — so it fits fast concept tests and short social clips better than high-resolution or long-form work. For creators, it adds a low-cost option to iterate on "one image to a short clip with sound."</p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn">
+        <tr><td class="col-en">image-to-video</td><td class="col-kr">이미지를 영상으로 변환하는</td></tr>
+        <tr><td class="col-en">native audio</td><td class="col-kr">네이티브 오디오 (영상과 함께 자동 생성되는 소리)</td></tr>
+        <tr><td class="col-en">leaderboard</td><td class="col-kr">리더보드, 순위표</td></tr>
+        <tr><td class="col-en">resolution</td><td class="col-kr">해상도</td></tr>
+        <tr><td class="col-en">render</td><td class="col-kr">렌더링하다, (영상을) 만들어 출력하다</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn">
+        <tr><td class="col-en">bring a still image to life</td><td class="col-kr">정지 이미지에 생명을 불어넣다</td></tr>
+        <tr><td class="col-en">top of the leaderboard</td><td class="col-kr">리더보드 1위에 오르다</td></tr>
+        <tr><td class="col-en">aggressive pricing</td><td class="col-kr">공격적인 가격 책정</td></tr>
+        <tr><td class="col-en">fits short social clips</td><td class="col-kr">짧은 SNS 영상에 알맞다</td></tr>
+        <tr><td class="col-en">iterate at low cost</td><td class="col-kr">낮은 비용으로 반복 시도하다</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 02 -->
+  <div class="entry" id="s2">
+    <div class="entry-num">02</div>
+    <div class="entry-cat">AI Tools / AI Safety</div>
+    <h2 class="entry-title">코넬텍 'WARP' — 단 13단어로 AI 딥리서치 검색을 가짜 추천으로 유도하다</h2>
+    <div class="entry-source">Tom's Guide / Cornell Tech (arXiv preprint), <a href="https://www.tomsguide.com/ai/a-13-word-reddit-comment-can-trick-ai-search-into-recommending-scams-researchers-find">2026.06.18</a></div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('tech','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('tech','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="tech-kr">코넬텍 연구진(Tingwei Zhang·Harold Triedman·Vitaly Shmatikov)이 'WARP(Web Agent Retrieval Poisoning)'라는 공격을 공개했다. 레딧 댓글 같은 일반 웹페이지에 홍보성 문구 약 13단어만 끼워 넣으면, AI '딥리서치' 검색 도구가 그 내용을 신뢰할 만한 정보처럼 흡수해 실재하지 않는 가게·앱을 추천하도록 유도할 수 있다는 것이다. 단어를 덧붙였을 때 성공률은 38~51%, 여러 스레드에 분산하면 62%까지 올랐다. 딥리서치 에이전트가 끌어오는 페이지의 17~23%가 레딧·위키피디아·쿼라·유튜브 같은 '누구나 편집 가능한' 사용자 생성 콘텐츠라는 점이 약점이다. <strong>다만 중요한 단서</strong>: 전체 공격이 끝까지 실증된 대상은 오픈소스 에이전트 3종(STORM·Co-STORM·OmniThink)이며, ChatGPT 딥리서치·제미나이 같은 상용 도구는 '사용자 생성 콘텐츠를 얼마나 인용하는지'를 측정했을 뿐 직접 오염이 입증된 것은 아니다(오픈AI 딥리서치 인용 비중 약 0.4%, 제미나이 약 12%). 연구는 실제 인터넷이 아닌 샌드박스에서 수행됐다. 핵심 메시지는 분명하다 — AI 검색은 '아는' 게 아니라 '읽는' 것이며, 그 답은 읽은 페이지만큼만 믿을 수 있다.</p>
+    <p class="summary-text" id="tech-en">Researchers at Cornell Tech (Tingwei Zhang, Harold Triedman, Vitaly Shmatikov) disclosed an attack they call WARP (Web Agent Retrieval Poisoning). Slipping roughly 13 promotional words into an ordinary web page such as a Reddit comment can lead AI "deep research" search tools to absorb the text as if trustworthy and recommend businesses or apps that do not exist. Appending the words succeeded 38 to 51 percent of the time, rising to 62 percent when spread across several threads. The weak point: 17 to 23 percent of the pages these agents pull come from user-generated sites like Reddit, Wikipedia, Quora, and YouTube — the easiest to edit. <strong>An important caveat</strong>: the full end-to-end attack was demonstrated only against three open-source agents (STORM, Co-STORM, OmniThink); for commercial tools like ChatGPT Deep Research and Gemini the researchers measured how often each cites user-generated content rather than proving direct poisoning (OpenAI Deep Research at about 0.4 percent of citations, Gemini about 12 percent). The work was run in sandboxes, not the live internet. The message is clear — AI search reads, it does not know, and its answer is only as trustworthy as the pages it retrieves.</p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn">
+        <tr><td class="col-en">poisoning</td><td class="col-kr">(데이터·검색) 오염 공격</td></tr>
+        <tr><td class="col-en">retrieval</td><td class="col-kr">검색·추출 (답하기 전 자료를 끌어오는 단계)</td></tr>
+        <tr><td class="col-en">user-generated content</td><td class="col-kr">사용자 생성 콘텐츠 (UGC)</td></tr>
+        <tr><td class="col-en">citation</td><td class="col-kr">인용, 출처 표기</td></tr>
+        <tr><td class="col-en">sandbox</td><td class="col-kr">샌드박스 (격리된 실험 환경)</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn">
+        <tr><td class="col-en">as trustworthy as the pages it retrieves</td><td class="col-kr">끌어온 페이지만큼만 신뢰할 수 있는</td></tr>
+        <tr><td class="col-en">it reads, it does not know</td><td class="col-kr">아는 게 아니라 읽는 것이다</td></tr>
+        <tr><td class="col-en">treat suggestions as leads, not verdicts</td><td class="col-kr">제안을 결론이 아니라 단서로 다뤄라</td></tr>
+        <tr><td class="col-en">an important caveat</td><td class="col-kr">중요한 단서·유의점</td></tr>
+        <tr><td class="col-en">cross-check before you trust it</td><td class="col-kr">믿기 전에 교차 검증하라</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 03 -->
+  <div class="entry" id="s3">
+    <div class="entry-num">03</div>
+    <div class="entry-cat">AI Startup / Industry</div>
+    <h2 class="entry-title">앤트로픽 서울 오피스 개소 — 네이버·삼성·LG 클로드 대규모 도입, SKT가 'Fable 5 차단' 방아쇠로</h2>
+    <div class="entry-source">Korea JoongAng Daily / Anthropic, <a href="https://www.koreajoongangdaily.com/business/anthropic-confident-of-reenabling-mythos-fable-5-access-in-coming-days-executive/12727522">2026.06.18</a></div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('biz','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('biz','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="biz-kr">앤트로픽이 6월 17~18일 여의도 콘래드 호텔에서 서울 오피스를 공식 개소했다(도쿄·벵갈루루에 이은 아태 세 번째 거점). 같은 날 발표된 한국 기업 도입은 아태 사상 최대 규모다 — 네이버가 전체 엔지니어링 조직에 '클로드 코드'를 배포했고, 넥슨은 라이브 게임 개발에, 삼성SDS는 삼성전자 전반에 '클로드 코워크·코드'를, LG CNS는 LG그룹 전반에 클로드를 도입한다. 한화솔루션은 AWS 베드록으로, 채널코퍼레이션은 23만+ 사업자가 쓰는 '채널톡'에 클로드를 적용한다. 과학기술정보통신부와 MOU도 체결해 한국어 모델 안전성 평가(한국 AI안전연구소)와 KAIST·고려대·연세대·POSTECH 등 연구자 약 60명 클로드 지원을 약속했다. 다만 이 행사는 'Fable 5·Mythos 5' 수출통제 차단의 그늘에서 열렸다 — WIRED·워싱턴포스트 보도로 앤트로픽 1억 달러 투자사인 SK텔레콤이 차단의 1차 방아쇠였음이 드러났고, SKT는 "중국과 어떤 연계도 없다"고 강하게 부인했다. 크리스 시아우리 인터내셔널 총괄은 "며칠 내 모델이 다시 가용해질 것으로 매우 확신한다"고 밝혔다.</p>
+    <p class="summary-text" id="biz-en">Anthropic formally opened its Seoul office on June 17-18 at the Conrad Hotel in Yeouido — its third Asia-Pacific base after Tokyo and Bengaluru. The Korean enterprise wave announced the same day is its largest in the region: NAVER deployed Claude Code across its entire engineering organization, Nexon for live-service game development, Samsung SDS is rolling out Claude Cowork and Code across Samsung Electronics, and LG CNS is deploying Claude across LG Group. Hanwha Solutions adopts it via AWS Bedrock, and Channel Corp brings Claude to Channel Talk, used by 230,000+ businesses. Anthropic also signed an MOU with Korea's Ministry of Science and ICT, committing to Korean-language model safety evaluations (with the Korea AI Safety Institute) and Claude access for about 60 researchers at KAIST, Korea, Yonsei, and POSTECH. Yet the event unfolded under the shadow of the Fable 5 and Mythos 5 export-control shutdown — WIRED and The Washington Post revealed that SK Telecom, a $100 million Anthropic investor, was the initial trigger, a claim SK Telecom firmly denies ("no ties to China whatsoever"). International chief Chris Ciauri said he is "very confident the models will become available again in the coming days."</p>
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn">
+        <tr><td class="col-en">deploy</td><td class="col-kr">배포·도입하다 (실제 운영에 적용)</td></tr>
+        <tr><td class="col-en">memorandum of understanding (MOU)</td><td class="col-kr">양해각서</td></tr>
+        <tr><td class="col-en">export control</td><td class="col-kr">수출 통제</td></tr>
+        <tr><td class="col-en">trigger</td><td class="col-kr">방아쇠, 촉발 요인</td></tr>
+        <tr><td class="col-en">data residency</td><td class="col-kr">데이터 레지던시 (데이터 보관 지역 요건)</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn">
+        <tr><td class="col-en">across its entire engineering organization</td><td class="col-kr">엔지니어링 조직 전체에 걸쳐</td></tr>
+        <tr><td class="col-en">under the shadow of</td><td class="col-kr">~의 그늘 아래에서</td></tr>
+        <tr><td class="col-en">no ties to China whatsoever</td><td class="col-kr">중국과 어떤 연계도 전혀 없다</td></tr>
+        <tr><td class="col-en">available again in the coming days</td><td class="col-kr">며칠 안에 다시 사용 가능한</td></tr>
+        <tr><td class="col-en">largest deployment wave in the region</td><td class="col-kr">역내 최대 도입 물결</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SIGNAL -->
+  <div class="signal">
+    <div class="signal-label">signal</div>
+    <div class="signal-body">이번 주의 세 신호는 '능력은 싸지고, 신뢰는 비싸진다'로 모인다. AI 영상 생성은 <strong>분당 4.2달러</strong>까지 내려와 크리에이터의 진입장벽을 허물고(그록 이매진 1.5), 한국 대기업은 일제히 클로드를 업무에 박아 넣으며 도구가 곧 인프라가 됐음을 보여준다(앤트로픽 서울). 그러나 같은 주, 단 <strong>13단어로 AI 검색을 속일 수 있다</strong>는 연구는 자동화된 답이 '읽은 것'에 불과함을 다시 일깨운다(코넬텍 WARP). 도구가 흔해질수록 진짜 자산은 <strong>출처를 의심하고 교차 검증하는 판단력</strong>으로 올라간다. 영상이든 리서치든, 결과물을 결론이 아니라 '단서'로 받아 들고 마지막에 사람의 눈으로 확인하는 습관 — 그것이 2026년 크리에이터의 차별점이다.</div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SOURCES -->
+  <div class="sources">
+    <div class="sources-label">sources</div>
+    <ul class="sources-list">
+      <li><a href="https://the-decoder.com/xai-updates-grok-imagine-to-1-5-with-image-to-video-generation-at-720p-resolution/">the-decoder — xAI updates Grok Imagine to 1.5 with image-to-video at 720p (2026.06)</a></li>
+      <li><a href="https://x.ai/news/grok-imagine-1-5">xAI — Grok Imagine 1.5 (official)</a></li>
+      <li><a href="https://www.tomsguide.com/ai/a-13-word-reddit-comment-can-trick-ai-search-into-recommending-scams-researchers-find">Tom's Guide — A 13-word Reddit comment can trick AI search into recommending scams (2026.06.18)</a></li>
+      <li><a href="https://arxiv.org/html/2605.24245">arXiv — Deep-Research Agents Can Be Poisoned via User-Generated Content (preprint)</a></li>
+      <li><a href="https://www.koreajoongangdaily.com/business/anthropic-confident-of-reenabling-mythos-fable-5-access-in-coming-days-executive/12727522">Korea JoongAng Daily — Anthropic 'very confident' Fable 5 returns within days (2026.06.18)</a></li>
+      <li><a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem">Anthropic — Seoul office and Korean AI ecosystem partnerships (official, 2026.06.18)</a></li>
+      <li><a href="https://www.upi.com/Top_News/World-News/2026/06/18/korea-Anthropic-Seoul-office-Korea-partnerships-Washington-AI-export-controls/4641781769900/">UPI — Anthropic opens Seoul office amid US AI restrictions (2026.06.18)</a></li>
+    </ul>
+  </div>
+
+  <footer class="footer">
+    <a href="./index.html">AI Brief</a>
+    <span class="f-date">2026.06.20</span>
+    <span class="f-copy">&copy; enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+  </footer>
+
+</div>
+
+<script>
+function switchLang(id, lang) {
+  const kr = document.getElementById(id + '-kr');
+  const en = document.getElementById(id + '-en');
+  const entry = kr.closest('.entry');
+  const btns = entry.querySelectorAll('.lang-btn');
+  kr.classList.toggle('visible', lang === 'kr');
+  en.classList.toggle('visible', lang === 'en');
+  btns.forEach(btn => btn.classList.remove('active'));
+  if (lang === 'kr') btns[0].classList.add('active');
+  else btns[1].classList.add('active');
+}
+</script>
+</body>
+</html>
