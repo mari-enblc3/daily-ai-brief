@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Brief — 2026.06.21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf9f7;
+    --text:#0d0c0b;
+    --muted:#888;
+    --rule:#e0ddd9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Helvetica Neue',Helvetica,'Noto Sans KR',Arial,sans-serif;
+    font-weight:400;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:520px;margin:0 auto;padding:36px 24px 60px;}
+  nav{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;letter-spacing:.02em;}
+  nav a{text-decoration:none;color:var(--text);}
+  nav a.archive{color:var(--muted);}
+  .dateline{margin-top:6px;font-size:12px;color:var(--muted);letter-spacing:.04em;}
+  hr.rule{border:0;border-top:1px solid var(--rule);margin:30px 0;}
+  .entry-num{font-size:12px;color:var(--muted);letter-spacing:.08em;}
+  .entry-cat{font-style:italic;color:var(--muted);font-size:12px;margin-top:2px;}
+  .entry-title{font-size:16px;font-weight:500;line-height:1.5;margin-top:8px;}
+  .entry-source{font-size:11px;color:var(--muted);margin-top:8px;}
+  .entry-source a{color:var(--muted);text-decoration:underline;}
+  .lang-toggle{margin:14px 0 6px;display:flex;gap:6px;}
+  .lang-btn{
+    font-size:11px;border:1px solid var(--rule);background:transparent;color:var(--muted);
+    padding:3px 10px;border-radius:11px;cursor:pointer;font-family:inherit;
+  }
+  .lang-btn.active{background:var(--text);color:var(--bg);border-color:var(--text);}
+  .summary-text{display:none;font-size:14px;line-height:1.75;margin-top:6px;}
+  .summary-text.visible{display:block;}
+  .learn-section{margin-top:18px;}
+  .learn-label{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+  table.learn{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:14px;}
+  table.learn td{padding:5px 0;border-bottom:1px solid var(--rule);vertical-align:top;}
+  td.col-en{font-style:italic;width:46%;padding-right:12px;}
+  td.col-kr{color:var(--muted);}
+  .signal-label{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;}
+  .signal-body{font-size:14px;line-height:1.8;margin-top:10px;}
+  .sources-list{list-style:none;margin-top:10px;}
+  .sources-list li{font-size:12px;color:var(--muted);margin-bottom:6px;line-height:1.5;}
+  .sources-list li::before{content:'\2192  ';}
+  .sources-list a{color:var(--muted);text-decoration:underline;word-break:break-all;}
+  .footer{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;
+    border-top:1px solid var(--rule);margin-top:40px;padding-top:18px;font-size:11px;color:var(--muted);
+  }
+  .footer a{color:var(--muted);text-decoration:none;}
+  .footer .copyright{font-size:10px;color:#bbb;width:100%;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a href="./index.html">AI Brief</a>
+    <a href="./index.html" class="archive">archive</a>
+  </nav>
+  <div class="dateline">&bull; 2026.06.21 — No.024</div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 01 -->
+  <div class="entry" id="s1">
+    <div class="entry-num">01</div>
+    <div class="entry-cat">AI for Creators</div>
+    <h2 class="entry-title">미니맥스 '허브' 공개 — 이미지·영상·음성·음악·편집을 한 곳에, "미적 판단은 결국 사람의 몫"</h2>
+    <div class="entry-source">출처: <a href="https://variety.com/2026/film/festivals/minimax-hub-ai-video-generator-shanghai-film-festival-1236781901/" target="_blank">Variety</a> (2026.06.15)</div>
+
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('art','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('art','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="art-kr">중국 AI 기업 미니맥스(MiniMax)가 상하이국제영화제에서 올인원 멀티모달 AI 영상 생성 플랫폼 '허브(Hub)'를 공개했다. 이미지 생성, 영상, 보이스오버, 음악, 편집을 하나의 플랫폼에 통합했고, 내장 AI 에이전트가 요구사항을 스스로 이해해 작업을 분해하고 모델을 선택·실행하며 품질 검증까지 자동으로 수행한다. 단순한 생성기를 넘어 "프로젝트를 운영할 줄 아는 창작 파트너"를 지향한다는 설명이다. 제품운영팀의 쉬뤼양은 "창작의 방향성과 미적 판단은 결국 사람에게 맡겨야 한다"고 강조하며, 도구가 워크플로우를 자동화하더라도 최종 결정권은 크리에이터에게 있음을 분명히 했다.</p>
+    <p class="summary-text" id="art-en">Chinese AI company MiniMax unveiled "Hub," an all-in-one multimodal AI video generator, at the Shanghai International Film Festival. The platform consolidates image creation, video, voiceover, music, and editing into a single workspace, with a built-in AI agent that understands the brief, breaks the work into tasks, selects models, executes, and verifies quality on its own. The pitch is that Hub is less a simple generator and more "a creative partner that knows how to run a project." Xu Lüyang of the product operations team stressed that "creative direction and aesthetic judgment must ultimately be left to humans" — making clear that even as the tool automates the workflow, the final call belongs to the creator.</p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn">
+        <tr><td class="col-en">consolidate</td><td class="col-kr">통합하다, 하나로 합치다</td></tr>
+        <tr><td class="col-en">multimodal</td><td class="col-kr">멀티모달(여러 형식의 입출력)</td></tr>
+        <tr><td class="col-en">voiceover</td><td class="col-kr">보이스오버, 내레이션 음성</td></tr>
+        <tr><td class="col-en">aesthetic</td><td class="col-kr">미적인, 심미적</td></tr>
+        <tr><td class="col-en">workflow</td><td class="col-kr">작업 흐름, 워크플로우</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn">
+        <tr><td class="col-en">all-in-one platform</td><td class="col-kr">올인원 통합 플랫폼</td></tr>
+        <tr><td class="col-en">break down tasks</td><td class="col-kr">작업을 분해하다</td></tr>
+        <tr><td class="col-en">a creative partner</td><td class="col-kr">창작 파트너</td></tr>
+        <tr><td class="col-en">left to humans</td><td class="col-kr">사람에게 맡겨지다</td></tr>
+        <tr><td class="col-en">final call</td><td class="col-kr">최종 결정권</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 02 -->
+  <div class="entry" id="s2">
+    <div class="entry-num">02</div>
+    <div class="entry-cat">AI Tools / Model Release</div>
+    <h2 class="entry-title">구글, '제미나이 옴니 플래시' 영상 생성·편집 배포 + 2.5 프로 업데이트</h2>
+    <div class="entry-source">출처: <a href="https://medium.com/adi-insights-innovations-collective/ai-update-friday-june-19-2026-404d0b767ca7" target="_blank">AI Update (Adi Insights)</a> (2026.06.19)</div>
+
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('tech','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('tech','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="tech-kr">구글이 이미지·오디오·영상·텍스트를 조합해 영상을 만들고 편집하는 멀티모달 모델 '제미나이 옴니 플래시(Gemini Omni Flash)'를 제미나이 앱, 구글 플로우, 유튜브 쇼츠에 배포하기 시작했다. AI 플러스·프로·울트라 구독자가 먼저 사용할 수 있으며 API는 수 주 내 제공된다. 같은 주 제미나이 2.5 프로는 추론 깊이·코드 생성 정확도·지시 이행을 개선하는 업데이트를 받았고, 2.5 플래시는 안드로이드와 워크스페이스 등 모든 소비자 제품의 기본 모델이 됐다. 월 4.99달러의 AI 플러스 요금으로 챗GPT 플러스보다 75% 저렴하게 책정해, 구글이 '벤치마크'가 아니라 '배포와 가격'으로 소비자 AI 경쟁을 끌고 가려는 전략이 뚜렷해졌다. 2백만 토큰 컨텍스트의 제미나이 3.5 프로는 6월 말 출시가 예상된다.</p>
+    <p class="summary-text" id="tech-en">Google has begun rolling out "Gemini Omni Flash," a multimodal model that creates and edits video from combinations of images, audio, video, and text, across the Gemini app, Google Flow, and YouTube Shorts. AI Plus, Pro, and Ultra subscribers get it first, with API access following in the coming weeks. The same week, Gemini 2.5 Pro received an update improving reasoning depth, code-generation accuracy, and instruction following, while 2.5 Flash became the default model across all consumer products, from Android to Workspace. Priced at $4.99/month for AI Plus — undercutting ChatGPT Plus by 75% — Google's strategy is now unmistakable: win consumer AI on distribution and price rather than benchmarks. Gemini 3.5 Pro, with a 2-million-token context window, is expected before the end of June.</p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn">
+        <tr><td class="col-en">roll out</td><td class="col-kr">단계적으로 출시·배포하다</td></tr>
+        <tr><td class="col-en">subscriber</td><td class="col-kr">구독자</td></tr>
+        <tr><td class="col-en">reasoning</td><td class="col-kr">추론, 논리적 사고</td></tr>
+        <tr><td class="col-en">default</td><td class="col-kr">기본값, 기본 설정</td></tr>
+        <tr><td class="col-en">undercut</td><td class="col-kr">(가격을) 더 싸게 매기다</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn">
+        <tr><td class="col-en">in the coming weeks</td><td class="col-kr">수 주 내에</td></tr>
+        <tr><td class="col-en">instruction following</td><td class="col-kr">지시 이행</td></tr>
+        <tr><td class="col-en">context window</td><td class="col-kr">컨텍스트 창(처리 가능 범위)</td></tr>
+        <tr><td class="col-en">win on distribution</td><td class="col-kr">배포로 승부하다</td></tr>
+        <tr><td class="col-en">across all products</td><td class="col-kr">모든 제품에 걸쳐</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ENTRY 03 -->
+  <div class="entry" id="s3">
+    <div class="entry-num">03</div>
+    <div class="entry-cat">AI Startup / VC</div>
+    <h2 class="entry-title">월드모델 스타트업 '오디세이' 3.1억 달러 시리즈B, 기업가치 14.5억 달러</h2>
+    <div class="entry-source">출처: <a href="https://news.crunchbase.com/venture/biggest-funding-rounds-cybersecurity-defense-startup-ai-odyssey-leads/" target="_blank">Crunchbase News</a> (2026.06)</div>
+
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('biz','kr')">한국어</button>
+      <button class="lang-btn" onclick="switchLang('biz','en')">English</button>
+    </div>
+    <p class="summary-text visible" id="biz-kr">AI 월드모델 개발사 오디세이(Odyssey)가 3억 1천만 달러 규모의 시리즈B를 유치하며 기업가치 14.5억 달러를 인정받아, 대형 거래가 줄어든 한 주의 최대 펀딩 라운드에 올랐다. 월드모델은 실시간으로 상호작용 가능한 영상·환경을 생성하는 기술로, 차세대 인터랙티브 콘텐츠·게임·영상 제작의 핵심 인프라로 주목받는다. Q1 2026 글로벌 벤처 투자의 80%(2,420억 달러)가 AI에 쏠린 가운데, 자본은 모델 툴·칩·데이터 같은 인프라, 명확한 예산을 가진 엔터프라이즈 제품, 그리고 시장 표준을 노리는 카테고리 리더에 집중되고 있다. 다만 미국 본사 기업이 AI 펀딩의 88%(3,190억 달러)를 흡수하며 자본 쏠림도 심화되는 추세다.</p>
+    <p class="summary-text" id="biz-en">AI world-model developer Odyssey raised a $310 million Series B at a $1.45 billion valuation, topping the biggest funding rounds in an otherwise slower week for large deals. World models are systems that generate interactive, real-time video and environments — increasingly seen as core infrastructure for next-generation interactive content, games, and video production. With 80% of global venture funding in Q1 2026 ($242 billion) flowing into AI, capital is concentrating in three buckets: infrastructure (model tooling, chips, data), enterprise products with clear budgets, and category leaders aiming to set the market standard. Still, the concentration is sharpening — U.S.-headquartered companies absorbed 88% ($319 billion) of AI funding.</p>
+
+    <div class="learn-section">
+      <div class="learn-label">vocabulary</div>
+      <table class="learn">
+        <tr><td class="col-en">valuation</td><td class="col-kr">기업가치, 밸류에이션</td></tr>
+        <tr><td class="col-en">infrastructure</td><td class="col-kr">인프라, 기반 시설</td></tr>
+        <tr><td class="col-en">venture funding</td><td class="col-kr">벤처 투자(금)</td></tr>
+        <tr><td class="col-en">concentrate</td><td class="col-kr">집중되다, 쏠리다</td></tr>
+        <tr><td class="col-en">absorb</td><td class="col-kr">흡수하다, 빨아들이다</td></tr>
+      </table>
+      <div class="learn-label">key phrases</div>
+      <table class="learn">
+        <tr><td class="col-en">Series B round</td><td class="col-kr">시리즈B 투자 라운드</td></tr>
+        <tr><td class="col-en">in an otherwise slower week</td><td class="col-kr">대체로 한산한 한 주에</td></tr>
+        <tr><td class="col-en">core infrastructure</td><td class="col-kr">핵심 인프라</td></tr>
+        <tr><td class="col-en">market standard</td><td class="col-kr">시장 표준</td></tr>
+        <tr><td class="col-en">capital concentration</td><td class="col-kr">자본 쏠림</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SIGNAL -->
+  <div class="signal">
+    <div class="signal-label">signal</div>
+    <div class="signal-body">오늘의 세 소식은 <strong>"생성에서 운영으로"</strong> 이동하는 크리에이터 도구의 방향을 한 줄로 꿰뚫는다. 미니맥스 허브와 제미나이 옴니 플래시는 이미지·영상·음성·편집을 하나의 에이전트가 분해·실행·검증하는 <strong>통합 워크플로우</strong>로 묶었고, 오디세이의 자금은 그 워크플로우가 결국 <strong>실시간 인터랙티브 영상(월드모델)</strong>로 향하고 있음을 자본 시장이 베팅하고 있음을 보여준다. 주목할 점은 경쟁의 축이 더 이상 단순 화질·벤치마크가 아니라 <strong>배포·가격·통합</strong>으로 옮겨갔다는 것이다. 크리에이터에게 이는 기회이자 경고다. 도구가 프로젝트를 '운영'할수록, 시장은 사람에게 <strong>방향성과 미적 판단</strong>이라는, 자동화되지 않는 역량을 더 비싸게 값쳐 줄 것이다.</div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- SOURCES -->
+  <div class="sources">
+    <div class="signal-label">sources</div>
+    <ul class="sources-list">
+      <li><a href="https://variety.com/2026/film/festivals/minimax-hub-ai-video-generator-shanghai-film-festival-1236781901/" target="_blank">Variety — MiniMax Launches All-in-One AI Video Generator Hub at Shanghai Film Festival</a></li>
+      <li><a href="https://medium.com/adi-insights-innovations-collective/ai-update-friday-june-19-2026-404d0b767ca7" target="_blank">Adi Insights — AI Update, Friday June 19, 2026 (Gemini Omni Flash / 2.5 Pro)</a></li>
+      <li><a href="https://news.crunchbase.com/venture/biggest-funding-rounds-cybersecurity-defense-startup-ai-odyssey-leads/" target="_blank">Crunchbase News — The Week's 10 Biggest Funding Rounds: Odyssey Leads With $310M</a></li>
+      <li><a href="https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/" target="_blank">Crunchbase News — Q1 2026 Venture Funding Records, AI $242B</a></li>
+      <li><a href="https://www.sixthtone.com/news/1018660" target="_blank">Sixth Tone — At the Shanghai Film Festival, AI Gets Its Mainstream Break</a></li>
+    </ul>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="./index.html">AI Brief</a>
+    <span>2026.06.21</span>
+    <span class="copyright">&copy; enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+  </footer>
+
+</div>
+
+<script>
+function switchLang(id, lang) {
+  const kr = document.getElementById(id + '-kr');
+  const en = document.getElementById(id + '-en');
+  const entry = kr.closest('.entry');
+  const btns = entry.querySelectorAll('.lang-btn');
+  kr.classList.toggle('visible', lang === 'kr');
+  en.classList.toggle('visible', lang === 'en');
+  btns.forEach(btn => btn.classList.remove('active'));
+  if (lang === 'kr') btns[0].classList.add('active');
+  else btns[1].classList.add('active');
+}
+</script>
+</body>
+</html>
