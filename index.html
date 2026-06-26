@@ -8,72 +8,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #faf9f7;
-    --text: #0d0c0b;
-    --muted: #888;
-    --rule: #e0ddd9;
+  :root{
+    --bg:#faf9f7;
+    --text:#0d0c0b;
+    --muted:#888;
+    --rule:#e0ddd9;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Helvetica Neue', Helvetica, 'Noto Sans KR', Arial, sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Helvetica Neue',Helvetica,'Noto Sans KR',Arial,sans-serif;
+    font-weight:400;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
   }
-  .wrap {
-    max-width: 520px;
-    margin: 0 auto;
-    padding: 40px 24px 60px;
-  }
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding-bottom: 18px;
-    border-bottom: 1px solid var(--rule);
-  }
-  nav a { text-decoration: none; color: var(--text); }
-  nav .brand { font-size: 15px; font-weight: 500; letter-spacing: 0.02em; }
-  .intro { margin: 26px 0 30px; }
-  .intro-desc { font-size: 13px; line-height: 1.85; color: #555; }
-  .archive-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
-  #archive { margin-top: 4px; }
-  a.entry-row {
-    display: block;
-    text-decoration: none;
-    color: var(--text);
-    border-bottom: 1px solid var(--rule);
-    padding: 16px 0;
-    transition: opacity 0.15s;
-  }
-  a.entry-row:hover { opacity: 0.6; }
-  .entry-row-inner { display: flex; gap: 14px; align-items: baseline; }
-  .entry-row-date {
-    font-size: 12px;
-    color: var(--muted);
-    white-space: nowrap;
-    letter-spacing: 0.02em;
-    min-width: 88px;
-  }
-  .entry-row-right { flex: 1; }
-  .entry-row-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
-  .entry-row-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
-  footer.footer {
-    margin-top: 40px;
-    padding-top: 18px;
-    border-top: 1px solid var(--rule);
-    font-size: 10px;
-    color: #bbb;
-  }
+  .wrap{max-width:520px;margin:0 auto;padding:32px 24px 64px;}
+  nav{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:18px;border-bottom:1px solid var(--rule);}
+  nav .brand{font-size:15px;font-weight:500;letter-spacing:.02em;text-decoration:none;color:var(--text);}
+  .intro{margin:24px 0 8px;}
+  .intro-desc{font-size:14px;font-weight:300;line-height:1.85;color:var(--text);}
+  .archive-label{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin:32px 0 6px;}
+  #archive{display:flex;flex-direction:column;}
+  a.entry-row{display:block;text-decoration:none;color:var(--text);padding:18px 0;border-bottom:1px solid var(--rule);transition:.15s;}
+  a.entry-row:hover{opacity:.6;}
+  .entry-row-inner{display:flex;gap:14px;align-items:baseline;}
+  .entry-row-date{font-size:12px;color:var(--muted);white-space:nowrap;min-width:78px;}
+  .entry-row-right{flex:1;}
+  .entry-row-title{font-size:15px;font-weight:500;margin-bottom:4px;}
+  .entry-row-desc{font-size:12.5px;font-weight:300;color:var(--muted);line-height:1.65;}
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--rule);}
+  footer .copy{font-size:10px;color:#bbb;}
 </style>
 </head>
 <body>
@@ -90,12 +55,15 @@
   <div class="archive-label">archive</div>
   <div id="archive"></div>
 
-  <footer class="footer">&copy; enblc3. Jeong A Mari Lee. All Rights Reserved.</footer>
+  <footer>
+    <span class="copy">© enblc3. Jeong A Mari Lee. All Rights Reserved.</span>
+  </footer>
 
 </div>
 
 <script>
 const BRIEFS = [
+  {"year":"2026","month":"06","day":"26","displayDate":"2026.06.26","title":"Daily AI Brief","desc":"게티이미지×오픈AI 4억 장 라이선스 이미지 챗GPT 답변 노출·디스플레이 전용·주가 200%↑ / 오픈AI 챗GPT 셀프서브 광고 매니저 출시·AI 비서가 광고 플랫폼으로·GEO 유료화 / 삼성 2023년 챗GPT 금지 철회·약 12.5만 명에 엔터프라이즈·코덱스 배포","url":"./daily-ai-brief-2026-06-26.html","num":"027"},
   {"year":"2026","month":"06","day":"24","displayDate":"2026.06.24","title":"Daily AI Brief","desc":"미스트랄 OCR 4 공개·170개 언어·블라인드 테스트 72% 선호·페이지당 4달러 / 모인게이지, 1:1 고객 에이전트 스타트업 Aampe 전액현금 인수·'마케팅의 미래는 수백만 AI 에이전트' / 'AI 공장' 하드리안 10억 달러·기업가치 75억 달러 협의설(블룸버그)…회사는 '부정확' 반박","url":"./daily-ai-brief-2026-06-24.html","num":"026"},
   {"year":"2026","month":"06","day":"23","displayDate":"2026.06.23","title":"Daily AI Brief","desc":"피그마 콘피그 2026 개막·메이크/디자인 에이전트 예고 '사람의 판단이 핵심' / 구글 제미나이 3.5 프로 임박 200만 토큰·딥싱크, 6월 출시 약속 마감 / 앤트로픽 Fable 5 무료체험 6.23 종료·수출통제로 멈춘 채 과금 전환, SK텔레콤이 도화선","url":"./daily-ai-brief-2026-06-23.html","num":"025"},
   {"year":"2026","month":"06","day":"21","displayDate":"2026.06.21","title":"Daily AI Brief","desc":"미니맥스 '허브' 올인원 멀티모달 AI 영상 생성 공개·'미적 판단은 사람의 몫' / 구글 제미나이 옴니 플래시 영상 생성·편집 배포 + 2.5 프로 업데이트·플래시 기본 모델화 / 월드모델 스타트업 오디세이 3.1억 달러 시리즈B·기업가치 14.5억 달러","url":"./daily-ai-brief-2026-06-21.html","num":"024"},
@@ -132,7 +100,7 @@ function render() {
     a.className = 'entry-row';
     a.innerHTML = `
       <div class="entry-row-inner">
-        <span class="entry-row-date">&bull; ${b.displayDate}</span>
+        <span class="entry-row-date">• ${b.displayDate}</span>
         <div class="entry-row-right">
           <div class="entry-row-title">${b.title} — No.${b.num}</div>
           <div class="entry-row-desc">${b.desc}</div>
